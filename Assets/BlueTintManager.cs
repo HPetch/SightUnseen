@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using TMPro;
 
 public class BlueTintManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BlueTintManager : MonoBehaviour
     }
     private BLUELIGHT_STRENGTH currentStrength;
     private PostProcessVolume volume;
+    [SerializeField] private TMP_Dropdown dropdown;
 
     void Start()
     {
@@ -21,8 +23,35 @@ public class BlueTintManager : MonoBehaviour
         volume.enabled = false;
     }
 
+    //Trigger this on dropdown value changed
+    public void updateStrength()
+    {
+        switch (dropdown.value)
+        {
+            case 0:
+                setStrength(BLUELIGHT_STRENGTH.Off);
+                break;
+            case 1:
+                setStrength(BLUELIGHT_STRENGTH.Low);
+                break;
+            case 2:
+                setStrength(BLUELIGHT_STRENGTH.Medium);
+                break;
+            case 3:
+                setStrength(BLUELIGHT_STRENGTH.High);
+                break;
+            case 4:
+                setStrength(BLUELIGHT_STRENGTH.Max);
+                break;
+            default:
+                Debug.LogError("Blue-tint dropdown set to invalid value!");
+                setStrength(BLUELIGHT_STRENGTH.Off);
+                break;
+        }
+    }
+
     //Set blue light strength if called
-    public void setStrength(BLUELIGHT_STRENGTH newStrength)
+    private void setStrength(BLUELIGHT_STRENGTH newStrength)
     {
         currentStrength = newStrength;
 
