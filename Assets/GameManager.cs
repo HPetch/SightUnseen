@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("Global settings")]
+    [SerializeField] private bool isDontDestroyOnLoad = false;
     [SerializeField] private bool CybervisionOn = true;
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
@@ -48,7 +49,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+
+        if (isDontDestroyOnLoad) DontDestroyOnLoad(this.gameObject);
 
         //Auto bind cybervision immediately
         refreshCybereye();
@@ -212,5 +214,44 @@ public class GameManager : MonoBehaviour
             else LeftEyepatchCanvas.GetComponent<Animator>().SetBool("isHiding", doHide);
         } else 
             Debug.LogError("Hide viewport eye is invalid, is '" + eye + "' a typo?");
+    }
+
+    public Camera getActiveCyberCamera()
+    {
+        Camera returnCam = null;
+        foreach (Camera cam in currentCybereyes)
+        {
+            if ((cam.enabled == true) && (returnCam == null))
+            {
+                returnCam = cam;
+                Debug.Log(cam);
+            }
+
+            if (returnCam == null)
+            {
+                Debug.LogWarning("Could not find a cybereye camera that is active? Does your viewport currently work?");
+            }
+        }
+        return returnCam;
+    }
+
+    public Camera getActiveNormalCamera()
+    {
+        if (!isDouble.isOn)
+        {
+            if (isRightEye)
+            {
+                return leftEye;
+            }
+            else
+            {
+                return rightEye;
+            }
+        }
+        else
+        {
+            Debug.LogError("Trying to return a normal camera when isDouble is on.");
+            return null;
+        }
     }
 }

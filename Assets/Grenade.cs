@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Grenade : MonoBehaviour
 {
     // Thanks to https://youtu.be/rQG9aUWarwE for implementation
     public float timeBeforeExplosion = 3f;
     public bool isEMP = false;
-
+    public Color imageColour = Color.black;
+    public GameObject canvasToSpawn;
+    private ParticleSystem particles;
+    private GameObject flashbang;
+    private bool successfulHit = false; //Enable to true if both it sees us and the player sees it.
+   
     public float viewRadius;
     [Range(0,360)] public float viewAngle;
 
@@ -18,6 +24,7 @@ public class Grenade : MonoBehaviour
 
     private void Start()
     {
+        particles = GetComponentInChildren<ParticleSystem>();
         StartCoroutine(FindTargetsWithDelay(timeBeforeExplosion));
     }
     IEnumerator FindTargetsWithDelay(float delay)
@@ -48,6 +55,25 @@ public class Grenade : MonoBehaviour
                 }
             }
         }
+
+        //If it exists, trigger the grenade receiver script to see if it too can see the grenade. If so, enable a bool
+        foreach (Transform target in visibleTargets)
+        {
+            if (target.GetComponent<GrenadeReceiver>() != null)
+            {
+                List<Transform> playerVisibleGrenades = target.GetComponent<GrenadeReceiver>().FindVisibleTargets();
+
+                //Find this grenade in the list, if it is, then we have hit it.
+                foreach (Transform grenade in playerVisibleGrenades)
+                {
+                    if (grenade == transform)
+                    {
+                        successfulHit = true;
+                    }
+                }
+            }
+        }
+
     }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
@@ -61,17 +87,68 @@ public class Grenade : MonoBehaviour
 
     private void Explode()
     {
-         if (isEMP)
-        {
-            //If EMP, change image to EMP colour and affect cyber eyes
-        } else
-        {
-            //If not EMP, change image to flashbang colour
-            //Start hiding it
-            //Do a coroutine
-            //When coroutine finishes, fade the thing out
+        particles.Play(); //Play particle system
+        StartCoroutine(timeToDestroy(1.2f));
+        string layerText = ""; //What's the name of the layer mask for this to be in
 
-            //OR just play the animation
+        //Check if we actually hit in the FindVisibleTargets
+        if (successfulHit)
+        {
+
+            //If an EMP, only affect the cyber eye currently active.
+            if (isEMP)
+            {
+                if (GameManager.Instance.isRightEye)
+                    layerText = "RightEyeHMD";
+                else
+                    layerText = "LeftEyeHMD";
+
+                //Get camera
+                Camera thisCam = GameManager.Instance.getActiveCyberCamera();
+
+                flashbang = Instantiate(canvasToSpawn, thisCam.transform);
+                flashbang.GetComponentInChildren<Image>().color = imageColour;
+
+                flashbang.GetComponent<Canvas>().worldCamera = thisCam;
+
+                //Update canvas and children to use correct layer mask so visible in 1 eye only
+                flashbang.layer = LayerMask.NameToLayer(layerText);
+                foreach (Transform child in flashbang.GetComponentsInChildren<Transform>())
+                {
+                    child.gameObject.layer = LayerMask.NameToLayer(layerText);
+                }
+
+            }
+            else
+            {
+                //Define which eye is the normal eye
+                if (!GameManager.Instance.isRightEye)
+                    layerText = "RightEyeHMD";
+                else
+                    layerText = "LeftEyeHMD";
+
+                Camera thisCam = GameManager.Instance.getActiveNormalCamera();
+
+                flashbang = Instantiate(canvasToSpawn, thisCam.transform);
+                flashbang.GetComponentInChildren<Image>().color = imageColour;
+
+                flashbang.GetComponent<Canvas>().worldCamera = thisCam;
+
+                //Update canvas and children to use correct layer mask so visible in 1 eye only
+                flashbang.layer = LayerMask.NameToLayer(layerText);
+                foreach (Transform child in flashbang.GetComponentsInChildren<Transform>())
+                {
+                    child.gameObject.layer = LayerMask.NameToLayer(layerText);
+                }
+            }
         }
+    }
+
+    private IEnumerator timeToDestroy(float seconds)
+    {
+        //Wait for seconds, then destroy object
+        yield return new WaitForSeconds(seconds);
+        Destroy(flashbang);
+        Destroy(gameObject);
     }
 }

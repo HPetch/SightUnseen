@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2923976313507361692, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 678429567
+      objectReference: {fileID: 0}
     - target: {fileID: 2923976314917426932, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
       propertyPath: m_Name
       value: PlayerRigOXR V1
@@ -310,14 +314,47 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6209336549730103247, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1886389119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 279307664940798999, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8577914186343972844}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2062145793109328266, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3467520884871417398}
   m_SourcePrefab: {fileID: 100100000, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
+--- !u!1 &2339221885070561381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2062145793109328266, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
+  m_PrefabInstance: {fileID: 4388937355619881455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3467520884871417398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339221885070561381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e8662e4d5b33e49a37ccd8aa2317f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 5
+  viewAngle: 110
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 4194304
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1610612737
+  visibleTargets: []
 --- !u!4 &4542143634832442872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 279307664940798999, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor (typeof(Grenade))]
+[CustomEditor (typeof(GrenadeReceiver))]
 public class GrenadeViewEditor : Editor
 {
     private void OnSceneGUI()
     {
-        Grenade script = (Grenade)target;
+        GrenadeReceiver script = (GrenadeReceiver)target;
         Handles.color = Color.white;
         Handles.DrawWireArc(script.transform.position, Vector3.up, Vector3.forward, 360, script.viewRadius);
         Vector3 ViewAngleA = script.DirFromAngle(-script.viewAngle / 2, false);
