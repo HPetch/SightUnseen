@@ -21,19 +21,20 @@ public class GameManager : MonoBehaviour
     //Each eye has an Override to display stuff on the HMD no matter what (i.e. flashbang)
     [Header("Left Eye")]
     public Camera leftEye;
-    [SerializeField] private GameObject LeftEyepatchCanvas;
+    //[SerializeField] private GameObject LeftEyepatchCanvas;
     [SerializeField] private LayerMask leftDefaultMask;
     [SerializeField] private LayerMask leftCybereyeMask;
 
     [Header("Right Eye")]
     public Camera rightEye;
-    [SerializeField] private GameObject RightEyepatchCanvas;
+    //[SerializeField] private GameObject RightEyepatchCanvas;
     [SerializeField] private LayerMask rightDefaultMask;
     [SerializeField] private LayerMask rightCybereyeMask;
 
 
     [Header("Detached eye throwable")]
     public GameObject detachedEyePrefab;
+    private Canvas eyepatchCanvas;
     [SerializeField] private Color eyepatchColour;
 
     public static GameManager Instance;
@@ -54,6 +55,9 @@ public class GameManager : MonoBehaviour
 
         //Auto bind cybervision immediately
         refreshCybereye();
+
+        //Get eyepatch canvas for detached eye.
+        eyepatchCanvas = detachedEyePrefab.GetComponentInChildren<Canvas>();
     }
 
     public void ToggleDoubleCybereyes()
@@ -199,6 +203,8 @@ public class GameManager : MonoBehaviour
 
     public void hideViewport(string eye, bool doHide)
     {
+        eyepatchCanvas.GetComponent<Animator>().SetBool("isHiding", doHide);
+        /*
         if (eye.ToLower() == "right")
         {
             //Hide or show the right eye
@@ -214,6 +220,7 @@ public class GameManager : MonoBehaviour
             else LeftEyepatchCanvas.GetComponent<Animator>().SetBool("isHiding", doHide);
         } else 
             Debug.LogError("Hide viewport eye is invalid, is '" + eye + "' a typo?");
+        */
     }
 
     public Camera getActiveCyberCamera()
