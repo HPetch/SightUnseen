@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4388714630980923051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2336757324526141852}
+  - component: {fileID: 7821633824892614025}
+  - component: {fileID: 1290084474717687807}
+  - component: {fileID: 4752216711043480134}
+  - component: {fileID: 1015490207245856324}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2336757324526141852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388714630980923051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7821633824892614025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388714630980923051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f6c53a05569a343ae784e2e75f25ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorCamPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1290084474717687807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388714630980923051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3e3385f7e370047bf74b13de09e997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dummyPlayerPrefab: {fileID: 6087279793106835742, guid: 707fb0e6b68e13b4a8ea1dfb53a2386d, type: 3}
+  spawnAtEditorCamera: 1
+--- !u!114 &4752216711043480134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388714630980923051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6bc6014605d8c49838f06cb2c5f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDontDestroyOnLoad: 0
+  CybervisionOn: 1
+  isRightEye: 1
+  eyeChoice: {fileID: 0}
+  isDouble: {fileID: 0}
+  EMPColour: {r: 0.06274475, g: 0.074126646, b: 0.2830189, a: 1}
+  flashColour: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  leftEye: {fileID: 0}
+  LeftEyepatchCanvas: {fileID: 0}
+  leftDefaultMask:
+    serializedVersion: 2
+    m_Bits: 678429567
+  leftCybereyeMask:
+    serializedVersion: 2
+    m_Bits: 1215300479
+  rightEye: {fileID: 0}
+  RightEyepatchCanvas: {fileID: 0}
+  rightDefaultMask:
+    serializedVersion: 2
+    m_Bits: 812647295
+  rightCybereyeMask:
+    serializedVersion: 2
+    m_Bits: 1349518207
+  detachedEyePrefab: {fileID: 0}
+  eyepatchColour: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1015490207245856324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388714630980923051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbcf8daa39eae14eb117d0c732767b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
