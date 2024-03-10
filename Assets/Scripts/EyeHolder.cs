@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HurricaneVR;
+using UnityEngine.SpatialTracking;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EyeHolder : MonoBehaviour
     private Rigidbody rb;
 
     private Renderer[] renderers;
+    private TrackedPoseDriver hmdTracker;
 
 
     [SerializeField] private float stillMotionTimer = 1f;
@@ -21,6 +23,9 @@ public class EyeHolder : MonoBehaviour
     {
         stillMotionMax = stillMotionTimer; //Remember the still motion timer variable as we'll be counting it down per frames
         rb = GetComponent<Rigidbody>();
+
+        //Get HMD tracker
+        hmdTracker = GetComponentInChildren<TrackedPoseDriver>();
 
         //Get all renderer components to be hidden when in socket and out of socket
         renderers = GetComponentsInChildren<Renderer>();
@@ -77,8 +82,10 @@ public class EyeHolder : MonoBehaviour
             if ((stillMotionTimer < 0f) && !eyeSetDown)
             {
                 eyeSetDown = true;
+                hmdTracker.enabled = true; //Start tracking headset
                 ResetOrientation();
                 GameManager.Instance.hideViewport("cyber", false);
+                
 
             }
 
@@ -86,6 +93,7 @@ public class EyeHolder : MonoBehaviour
             if (!eyeSetDown)
             {
                 GameManager.Instance.hideViewport("cyber", true);
+                hmdTracker.enabled = false; //Disable this so eye doesnt move about in hand
             }
 
         }
