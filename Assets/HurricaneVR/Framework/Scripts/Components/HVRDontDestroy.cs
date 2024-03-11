@@ -6,7 +6,7 @@ namespace HurricaneVR.Framework.Components
     {
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
     }
 }

@@ -51,6 +51,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
+        if ((leftEye != null) && (rightEye != null))
+        {
+            SettingsManager initialSettings = GameObject.FindGameObjectWithTag("Settings").GetComponent<SettingsManager>();
+            isRightEye = initialSettings.rightEyeSelected;
+            //Left handed gun should be swapped in instead and be tracked as a variable here.
+        }
+
         if (isDontDestroyOnLoad) DontDestroyOnLoad(this.gameObject);
 
         //Auto bind cybervision immediately

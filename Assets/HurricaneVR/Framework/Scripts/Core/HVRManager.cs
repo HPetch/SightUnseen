@@ -19,7 +19,7 @@ namespace HurricaneVR.Framework.Core
             if (!Instance)
             {
                 Instance = this;
-                DontDestroyOnLoad(this.gameObject);
+                //DontDestroyOnLoad(this.gameObject);
                 if (!GrabberManager)
                 {
                     GrabberManager = gameObject.AddComponent<HVRGrabberManager>();
