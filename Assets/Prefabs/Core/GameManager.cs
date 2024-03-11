@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
         {
             SettingsManager initialSettings = GameObject.FindGameObjectWithTag("Settings").GetComponent<SettingsManager>();
             isRightEye = initialSettings.rightEyeSelected;
+
+            if (isRightEye) eyeChoice.value = 0; else eyeChoice.value = 1;
             //Left handed gun should be swapped in instead and be tracked as a variable here.
         }
 
