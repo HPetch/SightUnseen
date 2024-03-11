@@ -53,8 +53,7 @@ public class GameManager : MonoBehaviour
 
         if ((leftEye != null) && (rightEye != null))
         {
-            SettingsManager initialSettings = GameObject.FindGameObjectWithTag("Settings").GetComponent<SettingsManager>();
-            isRightEye = initialSettings.rightEyeSelected;
+                isRightEye = SettingsManager.Instance.rightEyeSelected;
 
             if (isRightEye) eyeChoice.value = 0; else eyeChoice.value = 1;
             //Left handed gun should be swapped in instead and be tracked as a variable here.
@@ -111,6 +110,9 @@ public class GameManager : MonoBehaviour
 
     private void refreshCybereye()
     {
+        //Make sure whenever cybervision is changed by setting, its disabled immediately
+        SetCybervisionState(false);
+
         //Instead of CLEARING the eye references, just attempt to remove both instances of the HMD eyes for now.
         if (currentCybereyes.Contains(rightEye)) currentCybereyes.Remove(rightEye);
         if (currentCybereyes.Contains(leftEye)) currentCybereyes.Remove(leftEye);
@@ -213,6 +215,11 @@ public class GameManager : MonoBehaviour
     public void hideViewport(string eye, bool doHide)
     {
         eyepatchCanvas.GetComponent<Animator>().SetBool("isHiding", doHide);
+
+        if (doHide)
+        {
+            SetCybervisionState(false); //Turn off cybervision is camera is hidden
+        }
         /*
         if (eye.ToLower() == "right")
         {
