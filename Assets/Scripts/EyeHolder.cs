@@ -69,10 +69,10 @@ public class EyeHolder : MonoBehaviour
         //While eye is spawned, keep checking for the velocity to be 0 for multiple seconds uninterrupted, then unhide viewport.
         if (eyeIsSpawned)
         {
-            Debug.Log(rb.velocity);
+            //Debug.Log(rb.velocity);
             stillMotionTimer -= Time.deltaTime; //Subtract from change in time, so once it hits 0 after X seconds
 
-            if (rb.velocity != Vector3.zero)
+            if (float.Parse(Vector3.Distance(rb.velocity, Vector3.zero).ToString("F3")) != 0f)
             {
                 stillMotionTimer = stillMotionMax; //Reset timer
                 eyeSetDown = false;
