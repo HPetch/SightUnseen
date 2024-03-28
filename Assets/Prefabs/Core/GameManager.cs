@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Global settings")]
     [SerializeField] private bool isDontDestroyOnLoad = false;
     [SerializeField] private bool CybervisionOn = true;
+    //[SerializeField] private GameObject playerObject;
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
     public Toggle isDouble;
@@ -60,6 +61,8 @@ public class GameManager : MonoBehaviour
         }
 
         if (isDontDestroyOnLoad) DontDestroyOnLoad(this.gameObject);
+
+        //playerObject = GameObject.FindGameObjectWithTag("HVR Player");
 
         //Auto bind cybervision immediately
         refreshCybereye();

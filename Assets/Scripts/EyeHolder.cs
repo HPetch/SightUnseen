@@ -13,11 +13,14 @@ public class EyeHolder : MonoBehaviour
 
     private Renderer[] renderers;
     private TrackedPoseDriver hmdTracker;
+    private bool inSpecialZone;
 
 
     [SerializeField] private float stillMotionTimer = 1f;
     private float stillMotionMax;
     private bool eyeSetDown;
+
+    [SerializeField] private GameObject directionIndicator;
 
     private void Awake()
     {
@@ -103,6 +106,12 @@ public class EyeHolder : MonoBehaviour
     {
         //Reset velocity and rotation immediately
         rb.velocity = Vector3.zero;
+
         transform.rotation = Quaternion.identity;
+
+        //Vector3 newRot = Vector3()
+
+        //transform.LookAt(GameObject.FindGameObjectWithTag("HVR Player").transform, Vector3.up); //Automatically look at where the player character would be, for easier orientation
+
     }
 }
