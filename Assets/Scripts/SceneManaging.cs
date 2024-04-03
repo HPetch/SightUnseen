@@ -9,4 +9,21 @@ public class SceneManaging : MonoBehaviour
     {
         SceneManager.LoadScene(buildIndex);
     }
+
+    public void LoadNextScene()
+    {
+        LoadSceneDelayed(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadSceneDelayed(int buildIndex)
+    {
+        StartCoroutine(DelayBeforeSwitch(1f, buildIndex));
+    }
+
+    private IEnumerator DelayBeforeSwitch(float timeBeforeNextLevel, int buildIndex)
+    {
+        yield return new WaitForSeconds(timeBeforeNextLevel);
+        SceneManager.LoadScene(buildIndex);
+
+    }
 }
