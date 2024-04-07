@@ -117,6 +117,8 @@ namespace HurricaneVR.Framework.Core.Player
 
 
         [Header("Debugging")]
+        public bool rotatingByEye;
+        public GameObject detachedEye;
         public bool MouseTurning;
 
         public float MouseSensitivityX = 1f;
@@ -413,18 +415,36 @@ namespace HurricaneVR.Framework.Core.Player
 
         protected virtual void HandleRotation()
         {
-            if (RotationType == RotationType.Smooth)
+            if (!rotatingByEye)
             {
-                HandleSmoothRotation();
-            }
-            else if (RotationType == RotationType.Snap)
+                if (RotationType == RotationType.Smooth)
+                {
+                    HandleSmoothRotation();
+                }
+                else if (RotationType == RotationType.Snap)
+                {
+                    HandleSnapRotation();
+                }
+            } else //If rotating by eye, have the eye holder script try to rotate camera instead
             {
-                HandleSnapRotation();
+                EyeRotate();
             }
 
             HandlMouseRotation();
 
             _previousTurnAxis = GetTurnAxis().x;
+        }
+
+        //Hacking this together to get namespace issue where I can't reference EyeHolder directly, just affect the detached eye's gameobject directly. it's close enough to fine.
+        //Code from HnadleSnapRotation()
+        private void EyeRotate()
+        {
+            var input = GetTurnAxis().x;
+            if (Math.Abs(input) < SnapThreshold || Mathf.Abs(_previousTurnAxis) > SnapThreshold)
+                return;
+
+            var rotation = Quaternion.Euler(0, Mathf.Sign(input) * SnapAmount, 0);
+            detachedEye.transform.rotation *= rotation;
         }
 
         protected virtual void HandlMouseRotation()

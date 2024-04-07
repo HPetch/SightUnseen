@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d45e4bab3ca934db7274f88c3e2dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   stillMotionTimer: 0.25
   directionIndicator: {fileID: 5586474339857983589}
 --- !u!135 &724305658779081231
@@ -356,7 +357,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3254868926024027099}
   - component: {fileID: 8848323590061822608}
-  m_Layer: 8
+  - component: {fileID: 9151750083752807159}
+  m_Layer: 29
   m_Name: Direction Indicator Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,6 +442,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &9151750083752807159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586474339857983589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ada3804fc14f04e956ef1deb27bf2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerToBe: 29
 --- !u!1 &6802522138265257457
 GameObject:
   m_ObjectHideFlags: 0

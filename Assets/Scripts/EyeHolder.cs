@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using HurricaneVR;
 using UnityEngine.SpatialTracking;
+using HurricaneVR.Framework.ControllerInput;
+using HurricaneVR.Framework.Core.Player;
+using UnityEngine.Windows;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -15,6 +18,10 @@ public class EyeHolder : MonoBehaviour
     private TrackedPoseDriver hmdTracker;
     private bool inSpecialZone;
 
+    //Eye camera rotating on joystick button press
+    [SerializeField] private HVRPlayerController playerController;
+    private bool useDetachedEye = false;
+
 
     [SerializeField] private float stillMotionTimer = 1f;
     private float stillMotionMax;
@@ -24,6 +31,7 @@ public class EyeHolder : MonoBehaviour
 
     private void Awake()
     {
+        playerController = GameObject.FindObjectOfType<HVRPlayerController>();
         stillMotionMax = stillMotionTimer; //Remember the still motion timer variable as we'll be counting it down per frames
         rb = GetComponent<Rigidbody>();
 
@@ -41,6 +49,9 @@ public class EyeHolder : MonoBehaviour
         {
             item.enabled = enabled;
         }
+
+        directionIndicator.SetActive(enabled);
+
     }
 
     public void SwitchEyeToDetached(bool doDetached)
@@ -59,6 +70,10 @@ public class EyeHolder : MonoBehaviour
             GameManager.Instance.doAttachedVision();
             eyeIsSpawned = false;
             GameManager.Instance.hideViewport("cyber", false);
+
+            //Also, ensure that eyeball is no longer the rotation target and playerController has it back.
+            playerController.rotatingByEye = false;
+            //playerController.RotationEnabled = true;
         }
     }
 
@@ -112,6 +127,32 @@ public class EyeHolder : MonoBehaviour
         //Vector3 newRot = Vector3()
 
         //transform.LookAt(GameObject.FindGameObjectWithTag("HVR Player").transform, Vector3.up); //Automatically look at where the player character would be, for easier orientation
+        
 
+        //Form a new vector3 where you want to look at, then do lookat on that vector3. e.g. newRot.Y = transform.Y transform.lookat(newRot).
+    }
+
+
+    //Controls whether rotation targets the detached eye if it is out of socket, allowing for finer control with the player.
+    public void SwitchRotationTarget()
+    {
+
+        if (eyeIsSpawned)
+        {
+            //Because this toggles between the modes each time the method is called, switch what this value currently is then execute branch
+            useDetachedEye = !useDetachedEye;
+            if (useDetachedEye)
+            {
+                //playerController.RotationEnabled = false;
+                playerController.rotatingByEye = true;
+
+            }
+            else
+            {
+                //playerController.RotationEnabled = true;
+                playerController.rotatingByEye = false;
+
+            }
+        }
     }
 }
