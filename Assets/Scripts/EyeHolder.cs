@@ -6,6 +6,7 @@ using UnityEngine.SpatialTracking;
 using HurricaneVR.Framework.ControllerInput;
 using HurricaneVR.Framework.Core.Player;
 using UnityEngine.Windows;
+using Unity.VisualScripting;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class EyeHolder : MonoBehaviour
     //Eye camera rotating on joystick button press
     [SerializeField] private HVRPlayerController playerController;
     private bool useDetachedEye = false;
+    [SerializeField] private GameObject eyeballRotTargetAnim;
+    [SerializeField] private GameObject bodyRotTargetAnim;
 
 
     [SerializeField] private float stillMotionTimer = 1f;
@@ -31,7 +34,7 @@ public class EyeHolder : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GameObject.FindObjectOfType<HVRPlayerController>();
+        playerController = FindObjectOfType<HVRPlayerController>();
         stillMotionMax = stillMotionTimer; //Remember the still motion timer variable as we'll be counting it down per frames
         rb = GetComponent<Rigidbody>();
 
@@ -121,15 +124,14 @@ public class EyeHolder : MonoBehaviour
     {
         //Reset velocity and rotation immediately
         rb.velocity = Vector3.zero;
-
         transform.rotation = Quaternion.identity;
 
-        //Vector3 newRot = Vector3()
+        Vector3 targetPos; //Position of player in X and Z axis, on this object's Y axis so it does not get angled upwards.
+        targetPos.y = transform.position.y;
+        targetPos.x = playerController.transform.position.x;
+        targetPos.z = playerController.transform.position.z;
 
-        //transform.LookAt(GameObject.FindGameObjectWithTag("HVR Player").transform, Vector3.up); //Automatically look at where the player character would be, for easier orientation
-        
-
-        //Form a new vector3 where you want to look at, then do lookat on that vector3. e.g. newRot.Y = transform.Y transform.lookat(newRot).
+        transform.LookAt(targetPos, Vector3.up);
     }
 
 
@@ -146,11 +148,16 @@ public class EyeHolder : MonoBehaviour
                 //playerController.RotationEnabled = false;
                 playerController.rotatingByEye = true;
 
+                //Play animation indicating the targetting got changed
+                //Enable game object - animation will play automatically then get disabled at the end automatically.
+                eyeballRotTargetAnim.SetActive(true);
+
             }
             else
             {
                 //playerController.RotationEnabled = true;
                 playerController.rotatingByEye = false;
+                bodyRotTargetAnim.SetActive(true);
 
             }
         }
