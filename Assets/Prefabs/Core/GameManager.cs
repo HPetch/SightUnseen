@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask rightDefaultMask;
     [SerializeField] private LayerMask rightCybereyeMask;
 
+    [Header("Head Polish")]
+    [SerializeField] private bool IgnoreHeadPolish;
+    [SerializeField] private GameObject LeftEyeInHead;
+    [SerializeField] private GameObject RightEyeInHead;
 
     [Header("Detached eye throwable")]
     public GameObject detachedEyePrefab;
@@ -123,6 +127,15 @@ public class GameManager : MonoBehaviour
         //If right eye is currently the cybereye, make sure it's reset 
         if (isRightEye) currentCybereyes.Add(rightEye); else currentCybereyes.Add(leftEye);
 
+        //Correctly put eyes in head (when looking at yourself in detached eye view
+        if (isRightEye) RightEyeInHead.SetActive(false); else LeftEyeInHead.SetActive(false);
+
+        if (isDouble || IgnoreHeadPolish)
+        {
+            LeftEyeInHead.SetActive(true);
+            RightEyeInHead.SetActive(true);
+        }
+
         //Add detached eye prefab, too.
         currentCybereyes.Add(detachedEyePrefab.GetComponentInChildren<Camera>());
 
@@ -206,6 +219,7 @@ public class GameManager : MonoBehaviour
         else
         {
             //Otherwise, it'll be in both eyes.
+            //NOTE: CHANGE THIS! there should be a gadget or extra camera or something on the players hands that should just see this camera in this mode.
             detachedEyePrefab.GetComponentInChildren<Camera>().stereoTargetEye = StereoTargetEyeMask.Both;
         }
         foreach (Camera cam in currentCybereyes)
