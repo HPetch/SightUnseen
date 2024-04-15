@@ -18,7 +18,7 @@ public class ForceLayerAfterHVR : MonoBehaviour
         gameObject.layer = layerToBe;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         //HVR likes to update the layer constantly. Stop doing that! Bad HVR! Keep checking and uncheck it if it changes. This is unoptimal code, but its the foundations we have.
         if (gameObject.layer != layerToBe)
