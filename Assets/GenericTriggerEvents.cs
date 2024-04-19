@@ -8,6 +8,15 @@ public class GenericTriggerEvents : MonoBehaviour
     [SerializeField] private UnityEvent OnTriggered;
     [SerializeField] private LayerMask layersToCheck;
     public bool isActive = true;
+    [SerializeField] private GameObject[] objectsToDisable;
+
+    public void disableAllObjectsInArray()
+    {
+        foreach (GameObject item in objectsToDisable)
+        {
+            item.SetActive(false);
+        }
+    }
 
     public void setTriggerActive(bool isOn)
     {
