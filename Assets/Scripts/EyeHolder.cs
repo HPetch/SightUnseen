@@ -162,4 +162,15 @@ public class EyeHolder : MonoBehaviour
             }
         }
     }
+    public void TeleportEyeBackToPlayer()
+    {
+        if (eyeIsSpawned)
+        {
+            transform.position = playerController.transform.position + Vector3.forward;
+
+            //Ensure velocity is reset, to avoid collision momentum issues.
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+    }
 }
