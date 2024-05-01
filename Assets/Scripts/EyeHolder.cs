@@ -21,6 +21,7 @@ public class EyeHolder : MonoBehaviour
 
     //Eye camera rotating on joystick button press
     [SerializeField] private HVRPlayerController playerController;
+    [SerializeField] private Transform RecallLocation;
     private bool useDetachedEye = false;
     [SerializeField] private GameObject eyeballRotTargetAnim;
     [SerializeField] private GameObject bodyRotTargetAnim;
@@ -166,7 +167,7 @@ public class EyeHolder : MonoBehaviour
     {
         if (eyeIsSpawned)
         {
-            transform.position = playerController.transform.position + Vector3.forward;
+            transform.position = RecallLocation.position;
 
             //Ensure velocity is reset, to avoid collision momentum issues.
             rb.velocity = Vector3.zero;

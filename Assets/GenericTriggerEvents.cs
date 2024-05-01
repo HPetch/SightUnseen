@@ -23,7 +23,7 @@ public class GenericTriggerEvents : MonoBehaviour
         isActive = isOn;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //First check if player has entered trigger while it is Active
         if ((((1 << other.gameObject.layer) & layersToCheck) != 0) && (isActive))
