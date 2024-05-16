@@ -12,11 +12,11 @@ public class EditorCameraPosition : MonoBehaviour
     private void OnRenderObject()
     {
         //Every time the camera updates in the editor, update the Vector3.
-        if (Application.isEditor && !Application.isPlaying)
+        /*if (Application.isEditor && !Application.isPlaying)
         {
             Camera sceneCamera = SceneView.lastActiveSceneView.camera;
             editorCamPos = sceneCamera.transform.position;
-        }
+        }*/
     }
 
     public Vector3 getEditorPos()
