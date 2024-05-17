@@ -15,6 +15,11 @@ public class SceneManaging : MonoBehaviour
         LoadSceneDelayed(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void reloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void LoadSceneDelayed(int buildIndex)
     {
         StartCoroutine(DelayBeforeSwitch(1f, buildIndex));
