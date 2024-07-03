@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
     public Toggle isDouble;
+    public GameObject glasses;
     public List<Camera> currentCybereyes = new List<Camera>();
     [SerializeField] private Color EMPColour;
     [SerializeField] private Color flashColour;
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
         //Also forces view to be from the head perspective
         if (isDouble.isOn)
         {
+            glasses.SetActive(true);
             currentCybereyes.Add(rightEye);
             currentCybereyes.Add(leftEye);
             if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
@@ -100,6 +102,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            glasses.SetActive(false);
             if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
             detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
             refreshCybereye();
