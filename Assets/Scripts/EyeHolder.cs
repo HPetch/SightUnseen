@@ -7,10 +7,11 @@ using HurricaneVR.Framework.ControllerInput;
 using HurricaneVR.Framework.Core.Player;
 using UnityEngine.Windows;
 using Unity.VisualScripting;
+using DG.Tweening;
 
 public class EyeHolder : MonoBehaviour
 {
-    private bool eyeIsSpawned = false;
+    public bool eyeIsSpawned = false;
     private GameManager gameManager;
     private Camera thisCam;
     private Rigidbody rb;
@@ -32,6 +33,9 @@ public class EyeHolder : MonoBehaviour
     private bool eyeSetDown;
 
     [SerializeField] private GameObject directionIndicator;
+
+    public bool watchMode;
+    public GameObject watchCam;
 
     private void Awake()
     {
@@ -67,6 +71,13 @@ public class EyeHolder : MonoBehaviour
             //Tell gamemanager to disable Cybereye Camera and enable Detached Camera and edit its target eye based on isRightEye.
             eyeIsSpawned = true;
             GameManager.Instance.hideViewport("cyber", true);
+            if (watchMode)
+            {
+                //the unused vector is a test to make a more fluid pop up if we want it
+                Vector3 firstScale = new Vector3( 0.013761f, 0.013761f, 0f);
+                Vector3 secondScale = new Vector3(0.013761f, 0.013761f, 0.013761f);
+                watchCam.transform.DOScale(secondScale, 0.3f);
+            }
         } else
         {
             //If not, we want to return vision to the Right Camera
@@ -78,6 +89,12 @@ public class EyeHolder : MonoBehaviour
             //Also, ensure that eyeball is no longer the rotation target and playerController has it back.
             playerController.rotatingByEye = false;
             //playerController.RotationEnabled = true;
+            if (watchMode)
+            {
+                //if we want the more fluid pop up then copy paste the vectors here too
+                Vector3 firstScale = new Vector3(0, 0.013761f, 0f);
+                watchCam.transform.DOScale(firstScale, 0.3f);
+            }
         }
     }
 
@@ -117,7 +134,7 @@ public class EyeHolder : MonoBehaviour
                 GameManager.Instance.hideViewport("cyber", true);
                 hmdTracker.enabled = false; //Disable this so eye doesnt move about in hand
             }
-
+            //transform.LookAt(TargetOffset());
         }
     }
 
@@ -131,8 +148,21 @@ public class EyeHolder : MonoBehaviour
         targetPos.y = transform.position.y;
         targetPos.x = playerController.transform.position.x;
         targetPos.z = playerController.transform.position.z;
-
         transform.LookAt(targetPos, Vector3.up);
+
+        //offset the eye rotation based on which direction the player is looking
+        Quaternion newRotation = transform.rotation;
+        if (playerController.transform.rotation.y >= 0)
+        {
+            newRotation.y -= 90;
+        }
+        else
+        {
+            newRotation.y += 90;
+        }
+
+        transform.rotation = newRotation.normalized;
+        //Debug.Log(targetPos);
     }
 
 
