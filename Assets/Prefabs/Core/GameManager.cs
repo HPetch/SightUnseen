@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using INab.WorldScanFX;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
     public Toggle isDouble;
-    private List<Camera> currentCybereyes = new List<Camera>();
+    public List<Camera> currentCybereyes = new List<Camera>();
     [SerializeField] private Color EMPColour;
     [SerializeField] private Color flashColour;
 
@@ -38,11 +39,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RightEyeInHead;
 
     [Header("Detached eye throwable")]
+    public bool switchCam;
     public GameObject detachedEyePrefab;
     private Canvas eyepatchCanvas;
     [SerializeField] private Color eyepatchColour;
+    EyeHolder eyeHolder;
 
     public static GameManager Instance;
+
+    [Header("Scan Data")]
+    public ScanFXBase scanFX;
 
     private void Awake()
     {
@@ -73,6 +79,7 @@ public class GameManager : MonoBehaviour
 
         //Get eyepatch canvas for detached eye.
         eyepatchCanvas = detachedEyePrefab.GetComponentInChildren<Canvas>();
+        eyeHolder = detachedEyePrefab.GetComponent<EyeHolder>();
     }
 
     public void ToggleDoubleCybereyes()
@@ -81,18 +88,26 @@ public class GameManager : MonoBehaviour
         currentCybereyes.Clear();
 
         //If this should be double, add both cameras to be targetted by currentCybereyes.
+        //Also forces view to be from the head perspective
         if (isDouble.isOn)
         {
             currentCybereyes.Add(rightEye);
             currentCybereyes.Add(leftEye);
+            if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
             Debug.Log("1");
             
         }
         else
         {
+            if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
             refreshCybereye();
             Debug.Log("2");
         }
+        //Forces the switch cam to be false to stop any weird edge cases
+        switchCam = false;
+
         UpdateDetachedEyeTarget();
     }
 
@@ -111,14 +126,30 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
-        refreshCybereye();
+
+        //if eye is out of head then enable the other eye that should be in the players head
+        if (eyeHolder.eyeIsSpawned)
+        {
+            if (isRightEye)
+            {
+                rightEye.enabled = false;
+                leftEye.enabled = true;
+            }
+            else
+            {
+                rightEye.enabled = true;
+                leftEye.enabled = false;
+            }
+        }
+        
+
         UpdateDetachedEyeTarget();
     }
 
     private void refreshCybereye()
     {
         //Make sure whenever cybervision is changed by setting, its disabled immediately
-        SetCybervisionState(false);
+        //SetCybervisionState(false);
 
         //Instead of CLEARING the eye references, just attempt to remove both instances of the HMD eyes for now.
         if (currentCybereyes.Contains(rightEye)) currentCybereyes.Remove(rightEye);
@@ -130,10 +161,16 @@ public class GameManager : MonoBehaviour
         //Correctly put eyes in head (when looking at yourself in detached eye view
         if (isRightEye) RightEyeInHead.SetActive(false); else LeftEyeInHead.SetActive(false);
 
-        if (isDouble || IgnoreHeadPolish)
+        if (isDouble.isOn || IgnoreHeadPolish)
         {
             LeftEyeInHead.SetActive(true);
             RightEyeInHead.SetActive(true);
+
+            //if (switchCam == true)
+            //{
+            //    switchCam = false;
+            //    if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+            //}
         }
 
         //Add detached eye prefab, too.
@@ -145,16 +182,48 @@ public class GameManager : MonoBehaviour
 
     public void ToggleCybervision()
     {
-        //If Cybervision is already on, turn it off from whichever eye(s) have cybervision, and vice versa if off.
-        if (CybervisionOn)
+        //player can only toggle cybervision when the eye is not detached from face
+        if(eyeHolder.eyeIsSpawned == false)
         {
-
-            SetCybervisionState(false);
+            if (CybervisionOn)
+            {
+                scanFX.scansLeft = 0;
+                scanFX.timeLeft = 0f;
+                scanFX.timePassed = 0f;
+                scanFX.PassScanOriginProperties();
+                scanFX.StartScan(1);
+                SetCybervisionState(false);
+            }
+            else
+            {
+                scanFX.scansLeft = 0;
+                scanFX.timeLeft = 0f;
+                scanFX.timePassed = 0f;
+                scanFX.PassScanOriginProperties();
+                scanFX.StartScan(1);
+                SetCybervisionState(true);
+            }
         }
         else
         {
-            SetCybervisionState(true);
+            if (isDouble.isOn)
+            {
+                if (switchCam == false)
+                {
+                    switchCam = true;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                }
+                else
+                {
+                    switchCam = false;
+                    if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                }
+            }
+            
         }
+        //If Cybervision is already on, turn it off from whichever eye(s) have cybervision, and vice versa if off.
+        
     }
 
     private void SetCybervisionState(bool value)
@@ -187,13 +256,16 @@ public class GameManager : MonoBehaviour
     public void doDetachedVision()
     {
         //Disable all cameras
-        foreach (Camera eye in currentCybereyes)
+        if (!isDouble.isOn)
         {
-            eye.enabled = false;
+            foreach (Camera eye in currentCybereyes)
+            {
+                eye.enabled = false;
+            }
+            //Re-enable the detached eye camera
+            if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
+                detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
         }
-        //Re-enable the detached eye camera
-        if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
-            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
     }
 
     public void doAttachedVision()
