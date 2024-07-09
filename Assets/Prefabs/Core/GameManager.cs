@@ -4,12 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using INab.WorldScanFX;
+using HurricaneVR.Framework.Components;
+using UnityEngine.Events;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Global settings")]
     [SerializeField] private bool isDontDestroyOnLoad = false;
-    [SerializeField] private bool CybervisionOn = true;
+    [SerializeField] public bool CybervisionOn = true;
     //[SerializeField] private GameObject playerObject;
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
@@ -24,14 +27,14 @@ public class GameManager : MonoBehaviour
     [Header("Left Eye")]
     public Camera leftEye;
     //[SerializeField] private GameObject LeftEyepatchCanvas;
-    [SerializeField] private LayerMask leftDefaultMask;
-    [SerializeField] private LayerMask leftCybereyeMask;
+    [SerializeField] public LayerMask leftDefaultMask;
+    [SerializeField] public LayerMask leftCybereyeMask;
 
     [Header("Right Eye")]
     public Camera rightEye;
     //[SerializeField] private GameObject RightEyepatchCanvas;
-    [SerializeField] private LayerMask rightDefaultMask;
-    [SerializeField] private LayerMask rightCybereyeMask;
+    [SerializeField] public LayerMask rightDefaultMask;
+    [SerializeField] public LayerMask rightCybereyeMask;
 
     [Header("Head Polish")]
     [SerializeField] private bool IgnoreHeadPolish;
@@ -45,10 +48,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Color eyepatchColour;
     EyeHolder eyeHolder;
 
+    [Header("Glasses Mode Stuff")]
+    public GameObject glasses;
+    public bool glassesLeverPreventer;
     public static GameManager Instance;
 
     [Header("Scan Data")]
     public ScanFXBase scanFX;
+    public GameObject scanMask;
+    Coroutine scanRoutine;
+    bool isScanning = false;
+    float currentScanTime;
+    public float maxScanTimer = 7;
 
     private void Awake()
     {
@@ -91,6 +102,7 @@ public class GameManager : MonoBehaviour
         //Also forces view to be from the head perspective
         if (isDouble.isOn)
         {
+            glasses.SetActive(true);
             currentCybereyes.Add(rightEye);
             currentCybereyes.Add(leftEye);
             if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
@@ -100,13 +112,25 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
-            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+            glasses.SetActive(false);
+            if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
             refreshCybereye();
             Debug.Log("2");
         }
         //Forces the switch cam to be false to stop any weird edge cases
         switchCam = false;
+        //reset cybervision to be correct
+        if (eyeHolder.eyeIsSpawned == true)
+        {
+            SetCybervisionState(false);
+            if (!isDouble.isOn)
+            {
+                SetCybervisionState(true);
+            }
+        }
+            
+        
 
         UpdateDetachedEyeTarget();
     }
@@ -183,50 +207,221 @@ public class GameManager : MonoBehaviour
     public void ToggleCybervision()
     {
         //player can only toggle cybervision when the eye is not detached from face
-        if(eyeHolder.eyeIsSpawned == false)
+        if (eyeHolder.eyeIsSpawned == false)
         {
+            //find the mesh to use later
+            MeshRenderer glassesMesh = glasses.GetComponentInChildren<MeshRenderer>();
+
+            //disable cybervision
             if (CybervisionOn)
             {
-                scanFX.scansLeft = 0;
-                scanFX.timeLeft = 0f;
-                scanFX.timePassed = 0f;
-                scanFX.PassScanOriginProperties();
-                scanFX.StartScan(1);
-                SetCybervisionState(false);
+                //stop any scanners
+                ScanEffect(false);
+
+                //if in double mode then move the glasses to be on the players forehead
+                if (isDouble.isOn)
+                {
+                    MoveGlasses(false);
+                    glassesMesh.enabled = true;
+                }
             }
+            //enable cybervision
             else
             {
-                scanFX.scansLeft = 0;
-                scanFX.timeLeft = 0f;
-                scanFX.timePassed = 0f;
-                scanFX.PassScanOriginProperties();
-                scanFX.StartScan(1);
-                SetCybervisionState(true);
+                ScanEffect(true);
+
+                //if in double eye mode then move the glasses to be in front of the player
+                if (isDouble.isOn)
+                {
+                    MoveGlasses(true);
+                    glassesMesh.enabled = false;
+                }
             }
         }
+        //switching perspective when in double mode
         else
         {
             if (isDouble.isOn)
             {
+                //if in normal perspective
                 if (switchCam == false)
                 {
+                    //run the scan effect, move glasses to players face and enable the eye camera
                     switchCam = true;
+                    ScanEffect(true);
+                    MoveGlasses(true);
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
                 }
                 else
                 {
+                    //otherwise do the opposite
                     switchCam = false;
+                    ScanEffect(false);
+                    MoveGlasses(false);
                     if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
                 }
             }
             
+
         }
         //If Cybervision is already on, turn it off from whichever eye(s) have cybervision, and vice versa if off.
         
     }
 
-    private void SetCybervisionState(bool value)
+    void MoveGlasses(bool onFace)
+    {
+        HVRRotationTracker tracker = glasses.GetComponent<HVRRotationTracker>();
+        HVRPhysicsLever lever = glasses.GetComponent<HVRPhysicsLever>();
+        //move glasses to be on the players face
+        if (onFace)
+        {
+            glassesLeverPreventer = true;
+            tracker.Steps = 0;
+            tracker.MaximumAngle = 1000;
+            tracker.enabled = false;
+            lever.enabled = false;
+            glasses.transform.Rotate(50, 0, 0);
+            tracker.MaximumAngle = 93;
+            tracker.Steps = 2;
+            tracker.enabled = true;
+            lever.enabled = true;
+        }
+        //move glasses to be on the players forehead
+        else
+        {
+            glassesLeverPreventer = true;
+            tracker.MaximumAngle = 1000;
+            tracker.Steps = 0;
+            tracker.enabled = false;
+            lever.enabled = false;
+            Vector3 pos = new Vector3(68, 0, 0);
+            glasses.transform.Rotate(-50, 0, 0);
+
+            tracker.MaximumAngle = 93;
+            tracker.Steps = 2;
+            tracker.enabled = true;
+            lever.enabled = true;
+        }
+        //run routine to make the glassses act normal again
+        StartCoroutine(GlassesTimer());
+    }
+
+    public void ScanEffect(bool shouldRun)
+    {
+        if (shouldRun)
+        {
+            //reset all scanner data in case the player spams the button
+            if (scanRoutine != null)
+            {
+                StopCoroutine(scanRoutine);
+            }
+            scanMask.transform.localScale = Vector3.zero;
+            scanMask.transform.position = detachedEyePrefab.transform.position;
+            scanFX.scansLeft = 0;
+            scanFX.timeLeft = 0f;
+            scanFX.timePassed = 0f;
+
+            //run the scan
+            scanFX.PassScanOriginProperties();
+            scanFX.StartScan(1);
+            SetCybervisionState(true);
+            currentScanTime = 0;
+            isScanning = true;
+            scanRoutine = StartCoroutine(ScanMaskExpand());
+        }
+        else
+        {
+            //stop any currently running scanners and reset mask 
+            if (scanRoutine != null)
+            {
+                StopCoroutine(scanRoutine);
+            }
+            scanMask.transform.localScale = Vector3.zero;
+            SetCybervisionState(false);
+        }
+    }
+
+    //we need this coroutine becasuse the glasses are little babies and want to constantly override literally anything that we do 
+    IEnumerator GlassesTimer()
+    {
+        yield return new WaitForSecondsRealtime(.01f);
+        glassesLeverPreventer = false;
+    }
+
+    public void GlassesGrab()
+    {
+        //we need the glassesLeverPreventer bool to be false here so that things actually act normal when pressing the A button
+        if (isDouble.isOn && glassesLeverPreventer == false)
+        {
+            MeshRenderer glassesMesh = glasses.GetComponentInChildren<MeshRenderer>();
+            if (eyeHolder.eyeIsSpawned)
+            {
+                glassesMesh.enabled = true;
+                if (switchCam == false)
+                {
+                    switchCam = true;
+
+                    ScanEffect(true);
+
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                }
+                else
+                {
+                    switchCam = false;
+
+                    ScanEffect(false);
+
+                    if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                }
+            }
+            else
+            {
+                if (switchCam == false)
+                {
+                    switchCam = true;
+                    ScanEffect(true);
+                    glassesMesh.enabled = false;
+                }
+                else
+                {
+                    switchCam = false;
+                    ScanEffect(false);
+                    glassesMesh.enabled = true;
+                }
+            }
+            
+        }
+    }
+
+    void ChangeView()
+    {
+
+    }
+
+    IEnumerator ScanMaskExpand()
+    {
+        //run a timer that expands the mask sphere over time
+        while (isScanning == true)
+        {
+            currentScanTime += Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if (currentScanTime >= maxScanTimer)
+            {
+                isScanning = false;
+                scanRoutine = null;
+            }
+
+            if (isScanning == true)
+            {
+                scanMask.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+            }
+        }
+    }
+
+    public void SetCybervisionState(bool value)
     {
         Debug.Log("3");
         //If we want cybervision on, turn on cybervision
@@ -238,6 +433,11 @@ public class GameManager : MonoBehaviour
                 //We should know which eye this is affecting, and thus which culling masks to set for the current eyes
                 if (isRightEye) cam.cullingMask = rightCybereyeMask; else cam.cullingMask = leftCybereyeMask;
             }
+            if (isDouble.isOn && eyeHolder.eyeIsSpawned)
+            {
+                Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
+                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+            }
             CybervisionOn = true;
         }
         else
@@ -248,6 +448,11 @@ public class GameManager : MonoBehaviour
             {
                 //We should know which eye this is affecting, and thus which culling masks to set for the current eyes
                 if (isRightEye) cam.cullingMask = rightDefaultMask; else cam.cullingMask = leftDefaultMask;
+            }
+            if (isDouble.isOn && eyeHolder.eyeIsSpawned)
+            {
+                Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
+                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
             }
             CybervisionOn = false;
         }
@@ -305,10 +510,10 @@ public class GameManager : MonoBehaviour
     {
         eyepatchCanvas.GetComponent<Animator>().SetBool("isHiding", doHide);
 
-        if (doHide)
-        {
-            SetCybervisionState(false); //Turn off cybervision is camera is hidden
-        }
+        //if (doHide)
+        //{
+        //    SetCybervisionState(false); //Turn off cybervision is camera is hidden
+        //}
         /*
         if (eye.ToLower() == "right")
         {

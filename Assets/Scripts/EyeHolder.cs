@@ -66,9 +66,15 @@ public class EyeHolder : MonoBehaviour
     {
         if (doDetached)
         {
+            //GameManager.Instance.SetCybervisionState(true);
             GameManager.Instance.UpdateDetachedEyeTarget();
             GameManager.Instance.doDetachedVision();
             //Tell gamemanager to disable Cybereye Camera and enable Detached Camera and edit its target eye based on isRightEye.
+            GameManager.Instance.CybervisionOn = false;
+            if (GameManager.Instance.isDouble.isOn && GameManager.Instance.switchCam || !GameManager.Instance.isDouble.isOn && GameManager.Instance.CybervisionOn)
+            {
+                GameManager.Instance.ToggleCybervision();
+            }
             eyeIsSpawned = true;
             GameManager.Instance.hideViewport("cyber", true);
             if (watchMode)
@@ -78,11 +84,19 @@ public class EyeHolder : MonoBehaviour
                 Vector3 secondScale = new Vector3(0.013761f, 0.013761f, 0.013761f);
                 watchCam.transform.DOScale(secondScale, 0.3f);
             }
+            Camera eyeCam = GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>();
+            if (GameManager.Instance.isRightEye) eyeCam.cullingMask = GameManager.Instance.rightCybereyeMask; else eyeCam.cullingMask = GameManager.Instance.leftCybereyeMask;
         } else
         {
             //If not, we want to return vision to the Right Camera
             GameManager.Instance.UpdateDetachedEyeTarget();
             GameManager.Instance.doAttachedVision();
+            GameManager.Instance.CybervisionOn = true;
+            if(GameManager.Instance.isDouble.isOn && GameManager.Instance.switchCam || !GameManager.Instance.isDouble.isOn && GameManager.Instance.CybervisionOn)
+            {
+                GameManager.Instance.ToggleCybervision();
+            }
+            
             eyeIsSpawned = false;
             GameManager.Instance.hideViewport("cyber", false);
 
@@ -95,6 +109,7 @@ public class EyeHolder : MonoBehaviour
                 Vector3 firstScale = new Vector3(0, 0.013761f, 0f);
                 watchCam.transform.DOScale(firstScale, 0.3f);
             }
+            GameManager.Instance.SetCybervisionState(false);
         }
     }
 
@@ -124,8 +139,14 @@ public class EyeHolder : MonoBehaviour
                 hmdTracker.enabled = true; //Start tracking headset
                 ResetOrientation();
                 GameManager.Instance.hideViewport("cyber", false);
-                
 
+                if (!GameManager.Instance.isDouble.isOn)
+                {
+                    GameManager.Instance.CybervisionOn = false;
+                    GameManager.Instance.ScanEffect(true);
+                    //GameManager.Instance.ToggleCybervision();
+                }
+                
             }
 
             //If eye goes back to being moved around again, hide the viewport
