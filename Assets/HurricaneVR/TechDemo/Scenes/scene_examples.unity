@@ -5346,6 +5346,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1182096390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!114 &345020360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 692900378431957716, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+  m_PrefabInstance: {fileID: 1779902288454378306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2457a80f7d17e46b9298c2dfa2eed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &348278652
 GameObject:
   m_ObjectHideFlags: 0
@@ -40587,6 +40598,26 @@ PrefabInstance:
     - target: {fileID: 1150429607640469919, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
       propertyPath: m_Name
       value: Limit Lever Reversed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+      propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+      propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 345020360}
+    - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+      propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+      propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnStepChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
+      propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
