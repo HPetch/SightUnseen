@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 7039584346220174002}
   - component: {fileID: 8465876162673409229}
   - component: {fileID: 724305658779081231}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: Detached Eyeball 2
-  m_TagString: Untagged
+  m_TagString: Eyeball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,9 +323,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d45e4bab3ca934db7274f88c3e2dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eyeIsSpawned: 0
   playerController: {fileID: 0}
+  RecallLocation: {fileID: 0}
+  eyeballRotTargetAnim: {fileID: 0}
+  bodyRotTargetAnim: {fileID: 0}
   stillMotionTimer: 0.25
   directionIndicator: {fileID: 5586474339857983589}
+  watchMode: 0
+  watchCam: {fileID: 0}
 --- !u!135 &724305658779081231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -552,7 +558,7 @@ GameObject:
   - component: {fileID: 5193791934884113745}
   - component: {fileID: 7310599840716551124}
   - component: {fileID: 63733192707927208}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: Eye Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

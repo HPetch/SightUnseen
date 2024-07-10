@@ -386,7 +386,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3159
+  m_VersionIndex: 3162
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8097
+  m_VersionIndex: 8100
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1769,6 +1769,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4573035971860979683}
+  - component: {fileID: 7394923700448350128}
+  - component: {fileID: 6478117954148657459}
+  - component: {fileID: 578114929973199880}
   m_Layer: 0
   m_Name: Security Laser
   m_TagString: Untagged
@@ -1784,7 +1787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8160189178573482686}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07232341, y: -0.051987957, z: 0.808759, w: 0.58135664}
+  m_LocalRotation: {x: -0.07232207, y: -0.051986866, z: 0.80875957, w: 0.58135605}
   m_LocalPosition: {x: -7.35, y: 0.433, z: 14.328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1792,3 +1795,61 @@ Transform:
   - {fileID: 6736944611908323173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -10.22, z: 108.581}
+--- !u!114 &7394923700448350128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160189178573482686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fba50691c4c804ea3f345eb904cc95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Life: 10
+  Damageable: 1
+  Desctructible: {fileID: 6478117954148657459}
+--- !u!114 &6478117954148657459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160189178573482686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f0a0ab295247a681b1b569944a2bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyedVersion: {fileID: 0}
+  ExplosionRadius: 0.1
+  ExplosionPower: 1
+  ExplosionUpwardsPower: 1
+  RemoveDebris: 1
+  RemoveDebrisTimerUpper: 10
+  RemoveDebrisTimerLower: 5
+  IgnorePlayerCollision: 1
+--- !u!136 &578114929973199880
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160189178573482686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.12, z: 0}
