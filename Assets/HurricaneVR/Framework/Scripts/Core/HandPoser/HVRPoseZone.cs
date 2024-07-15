@@ -23,6 +23,8 @@ namespace HurricaneVR.Framework.Core.HandPoser
         [Tooltip("Poser that defines the pose to animate to, captured on awake from same object if not supplied.")]
         public HVRHandPoser Poser;
 
+        [SerializeField] private GameObject[] objectsToEnableWhenPosing;
+
         private readonly List<HVRHandGrabber> overlappedHands = new List<HVRHandGrabber>(2);
         private readonly List<HVRHandGrabber> hands = new List<HVRHandGrabber>(2);
         private readonly Collider[] _colliders = new Collider[100];
@@ -72,6 +74,13 @@ namespace HurricaneVR.Framework.Core.HandPoser
                 }
 
                 hands.Add(hand);
+
+                //Enable precise finger colliders if in zone.
+                if (objectsToEnableWhenPosing[0].activeInHierarchy == false)
+                foreach (GameObject obj in objectsToEnableWhenPosing)
+                {
+                        obj.SetActive(true);
+                }
             }
 
 
@@ -91,6 +100,11 @@ namespace HurricaneVR.Framework.Core.HandPoser
                 {
                     hand.SetAnimatorOverridePose(null);
                     overlappedHands.RemoveAt(i);
+
+                    foreach (GameObject obj in objectsToEnableWhenPosing)
+                    {
+                        obj.SetActive(false);
+                    }
                 }
             }
         }
