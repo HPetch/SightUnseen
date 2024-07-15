@@ -176,13 +176,21 @@ public class EyeHolder : MonoBehaviour
         if (playerController.transform.rotation.y >= 0)
         {
             newRotation.y -= 90;
+            //newRotation.y -= playerController.snapVar;
         }
         else
         {
             newRotation.y += 90;
+            //newRotation.y += playerController.snapVar;
         }
 
         transform.rotation = newRotation.normalized;
+
+        //if used snap rotation we just move it again lol
+        if(playerController.snapVar != 0)
+        {
+            transform.Rotate(0, playerController.snapVar, 0);
+        }
         //Debug.Log(targetPos);
     }
 

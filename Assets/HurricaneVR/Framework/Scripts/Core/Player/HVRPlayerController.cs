@@ -63,6 +63,7 @@ namespace HurricaneVR.Framework.Core.Player
         public float SmoothTurnSpeed = 90f;
         public float SmoothTurnThreshold = .1f;
         public float SnapAmount = 45f;
+        public float snapVar;
 
         [Tooltip("Axis threshold to be considered valid for snap turning.")]
         public float SnapThreshold = .75f;
@@ -445,6 +446,7 @@ namespace HurricaneVR.Framework.Core.Player
 
             var rotation = Quaternion.Euler(0, Mathf.Sign(input) * SnapAmount, 0);
             detachedEye.transform.rotation *= rotation;
+            //snapVar += Mathf.Sign(input) * SnapAmount;
         }
 
         protected virtual void HandlMouseRotation()
@@ -473,6 +475,7 @@ namespace HurricaneVR.Framework.Core.Player
 
             var rotation = Quaternion.Euler(0, Mathf.Sign(input) * SnapAmount, 0);
             transform.rotation *= rotation;
+            snapVar += Mathf.Sign(input) * SnapAmount;
         }
 
         protected virtual void HandleSmoothRotation()
