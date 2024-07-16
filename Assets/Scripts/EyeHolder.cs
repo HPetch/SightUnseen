@@ -143,7 +143,13 @@ public class EyeHolder : MonoBehaviour
                 if (!GameManager.Instance.isDouble.isOn)
                 {
                     GameManager.Instance.CybervisionOn = false;
-                    GameManager.Instance.ScanEffect(true);
+
+                    //play scan effect
+                    //GameManager.Instance.ScanEffect(true);
+
+                    //scan may cause epilepsy? so it just sets the state and makes the mask huge for now
+                    GameManager.Instance.SetCybervisionState(true);
+                    GameManager.Instance.scanMask.transform.localScale = new Vector3(100, 100, 100);
                     //GameManager.Instance.ToggleCybervision();
                 }
                 
