@@ -407,6 +407,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GlassesRelease()
+    {
+        if(switchCam == false)
+        {
+            MoveGlasses(false);
+        }
+    }
+
     void ChangeView()
     {
 
