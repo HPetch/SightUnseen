@@ -1755,6 +1755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8994054031557183216}
   - {fileID: 7225827256776555650}
   - {fileID: 3072150880280160487}
   - {fileID: 5118303478303729206}
@@ -2488,6 +2489,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 3893311869495859099, guid: 950c673c9cf3b8444b0d5dd2f84370d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4052012504635403323, guid: 950c673c9cf3b8444b0d5dd2f84370d9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.98150486
@@ -2850,3 +2855,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d1b667b6234620a01e126539c3f6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &5800497260735372658
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8497868009276989158}
+    m_Modifications:
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0077000484
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.008800268
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.011099905
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221826639471845652, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+      propertyPath: m_Name
+      value: Quest2 Guide Controller L
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+--- !u!4 &8994054031557183216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3219737263741131650, guid: d35ad09a03114914ab6211e1026fca56, type: 3}
+  m_PrefabInstance: {fileID: 5800497260735372658}
+  m_PrefabAsset: {fileID: 0}
