@@ -10,11 +10,9 @@ public class DialogueTrigger : MonoBehaviour
     public List<DialogueDetails> dialogue;
     AudioSource audioSource;
     Coroutine delayRoutine;
-    public List<GameObject> subtitles = new List<GameObject>();
+    public List<RectTransform> subtitles = new List<RectTransform>();
     public bool newClipPlaying = false;
     public int currentClipID = 0;
-    public RectTransform goAwayPos;
-    public RectTransform appearPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,30 +20,29 @@ public class DialogueTrigger : MonoBehaviour
         audioSource = GameObject.Find("PlayerController").GetComponent<AudioSource>();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Subtitles"))
         {
-            subtitles.Add(obj);
+            subtitles.Add(obj.GetComponent<RectTransform>());
         }
-
-        //get the refs for appearing and disappearing
-
-        goAwayPos = GameObject.Find("GoAwayPos").GetComponent<RectTransform>();
-        appearPos = GameObject.Find("AppearPos").GetComponent<RectTransform>();
     }
 
     void Update()
     {
         //if a new clip was started and the clip is over, begin to play a new clip
-        if(newClipPlaying && audioSource.time >= audioSource.clip.length)
+        if(newClipPlaying && audioSource.time >= audioSource.clip.length && !dialogue[currentClipID].isLastInSequence)
         {
             newClipPlaying = false;
             delayRoutine = StartCoroutine(AudioDelay());
 
-            foreach (var c in subtitles)
+            if (GameManager.Instance.displaySubtitles.isOn)
             {
-                TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
-                //Vector3 moveVector = c.gameObject.transform.position;
-                //moveVector.y = -150;
-                tmp.DOFade(0, 0.5f);
-                c.transform.DOMove(goAwayPos.position, 0.5f);
+                foreach (var c in subtitles)
+                {
+                    TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
+                    //Vector3 moveVector = c.gameObject.transform.position;
+                    //moveVector.y = -150;
+                    tmp.DOFade(0, 0.5f);
+                    //c.transform.DOMove(goAwayPos.position, 0.5f);
+                    c.DOAnchorPos(new Vector2(0, -150), 0.5f);
+                }
             }
         }
     }
@@ -53,19 +50,29 @@ public class DialogueTrigger : MonoBehaviour
     //play the first clip
     public void PlayFirstAudioClip()
     {
-        //change the text for subtitles and make them appear
-        foreach (var c in subtitles)
+        currentClipID = 0;
+        if (delayRoutine != null)
         {
-            TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
-            Vector3 moveVector = c.gameObject.transform.position;
-            moveVector.y = -50;
-            c.gameObject.transform.position = moveVector;
-
-            tmp.text = dialogue[0].dialogueText;
-            tmp.DOFade(1, 0.5f);
-            //moveVector.y = -100;
-            c.transform.DOMove(appearPos.position, 0.5f);
+            StopCoroutine(delayRoutine);
         }
+        if (GameManager.Instance.displaySubtitles.isOn)
+        {
+            //change the text for subtitles and make them appear
+            foreach (var c in subtitles)
+            {
+                TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
+                Vector3 moveVector = c.gameObject.transform.position;
+                //moveVector.y = -50;
+                //c.gameObject.transform.position = moveVector;
+                c.DOAnchorPos(new Vector2(0, -50), 0f);
+
+                tmp.text = dialogue[0].dialogueText;
+                tmp.DOFade(1, 0.5f);
+                //moveVector.y = -100;
+                c.DOAnchorPos(new Vector2(0, -105), 0.5f);
+            }
+        }
+        
         //play the audio
         audioSource.clip = dialogue[0].audio;
         audioSource.Play();
@@ -75,18 +82,24 @@ public class DialogueTrigger : MonoBehaviour
     //play the next clip in the sequence
     void PlayAudioClip()
     {
-        foreach (var c in subtitles)
+        if (GameManager.Instance.displaySubtitles.isOn)
         {
-            TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
-            Vector3 moveVector = c.gameObject.transform.position;
-            moveVector.y = -50;
-            c.gameObject.transform.position = moveVector;
+            foreach (var c in subtitles)
+            {
+                TextMeshProUGUI tmp = c.GetComponent<TextMeshProUGUI>();
+                Vector3 moveVector = c.gameObject.transform.position;
+                //moveVector.y = -50;
+                //c.gameObject.transform.position = moveVector;
+                c.DOAnchorPos(new Vector2(0, -50), 0f);
 
-            tmp.text = dialogue[currentClipID].dialogueText;
-            tmp.DOFade(1, 0.5f);
-            //moveVector.y = -100;
-            c.transform.DOMove(appearPos.position, 0.5f);
+                tmp.text = dialogue[currentClipID].dialogueText;
+                tmp.DOFade(1, 0.5f);
+                //moveVector.y = -100;
+                //c.transform.DOMove(appearPos.position, 0.5f);
+                c.DOAnchorPos(new Vector2(0, -105), 0.5f);
+            }
         }
+        
         audioSource.clip = dialogue[currentClipID].audio;
         audioSource.Play();
         newClipPlaying = true;
@@ -109,4 +122,5 @@ public class DialogueDetails
     public AudioClip audio;
     public float waitTimer = 1.5f;
     public bool isInteruptable;
+    public bool isLastInSequence = false;
 }
