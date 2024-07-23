@@ -5029,10 +5029,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 685202085570554832, guid: 6974999791dc8804fafee05e319aa932, type: 3}
-      propertyPath: RaycastLayermask.m_Bits
-      value: 1048577
-      objectReference: {fileID: 0}
     - target: {fileID: 885885627402359450, guid: 6974999791dc8804fafee05e319aa932, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -5153,10 +5149,6 @@ PrefabInstance:
       propertyPath: Transforms.Array.data[0]
       value: 
       objectReference: {fileID: 8237771281066642270}
-    - target: {fileID: 9015003508622070302, guid: 6974999791dc8804fafee05e319aa932, type: 3}
-      propertyPath: RaycastLayermask.m_Bits
-      value: 1048577
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3924027508494267238, guid: 6974999791dc8804fafee05e319aa932, type: 3}
     - {fileID: 3924027509947911010, guid: 6974999791dc8804fafee05e319aa932, type: 3}
@@ -5613,6 +5605,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d45e4bab3ca934db7274f88c3e2dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eyeIsSpawned: 0
+  playerController: {fileID: 0}
+  RecallLocation: {fileID: 0}
+  eyeballRotTargetAnim: {fileID: 0}
+  bodyRotTargetAnim: {fileID: 0}
+  stillMotionTimer: 1
+  directionIndicator: {fileID: 0}
+  watchMode: 0
+  watchCam: {fileID: 0}
 --- !u!4 &8908863090656484105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1516105458626609929, guid: 77602654006fc474ba90227fdc6f88b6, type: 3}

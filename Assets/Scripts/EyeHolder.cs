@@ -143,7 +143,13 @@ public class EyeHolder : MonoBehaviour
                 if (!GameManager.Instance.isDouble.isOn)
                 {
                     GameManager.Instance.CybervisionOn = false;
-                    GameManager.Instance.ScanEffect(true);
+
+                    //play scan effect
+                    //GameManager.Instance.ScanEffect(true);
+
+                    //scan may cause epilepsy? so it just sets the state and makes the mask huge for now
+                    GameManager.Instance.SetCybervisionState(true);
+                    GameManager.Instance.scanMask.transform.localScale = new Vector3(100, 100, 100);
                     //GameManager.Instance.ToggleCybervision();
                 }
                 
@@ -176,13 +182,21 @@ public class EyeHolder : MonoBehaviour
         if (playerController.transform.rotation.y >= 0)
         {
             newRotation.y -= 90;
+            //newRotation.y -= playerController.snapVar;
         }
         else
         {
             newRotation.y += 90;
+            //newRotation.y += playerController.snapVar;
         }
 
         transform.rotation = newRotation.normalized;
+
+        //if used snap rotation we just move it again lol
+        if(playerController.snapVar != 0)
+        {
+            transform.Rotate(0, playerController.snapVar, 0);
+        }
         //Debug.Log(targetPos);
     }
 

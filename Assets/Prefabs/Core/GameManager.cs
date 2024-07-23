@@ -10,6 +10,9 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    //bool for forcing glasses mode for the little babies
+    public bool forceBabyMode;
+
     [Header("Global settings")]
     [SerializeField] private bool isDontDestroyOnLoad = false;
     [SerializeField] public bool CybervisionOn = true;
@@ -91,6 +94,12 @@ public class GameManager : MonoBehaviour
         //Get eyepatch canvas for detached eye.
         eyepatchCanvas = detachedEyePrefab.GetComponentInChildren<Canvas>();
         eyeHolder = detachedEyePrefab.GetComponent<EyeHolder>();
+
+        if (forceBabyMode)
+        {
+            isDouble.isOn = true;
+            ToggleDoubleCybereyes();
+        }
     }
 
     public void ToggleDoubleCybereyes()
@@ -112,11 +121,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            glasses.SetActive(false);
-            if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
-            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
-            refreshCybereye();
-            Debug.Log("2");
+            if(forceBabyMode == false)
+            {
+                glasses.SetActive(false);
+                if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                refreshCybereye();
+                Debug.Log("2");
+            }
         }
         //Forces the switch cam to be false to stop any weird edge cases
         switchCam = false;
