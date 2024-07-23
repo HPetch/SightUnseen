@@ -12,22 +12,26 @@ public class VaultDoorOpener : MonoBehaviour
     //When in range and grab point is released, play an animation.
 
     [SerializeField] private float angleGoal = 0f;
+    private Collider wheelCollider;
     private Animator animator;
     private float currentAngle;
+    private HVRRotationTracker rot;
     private HVRGrabbable grabbable;
-    private UnityEvent onComplete;
+    [SerializeField] private UnityEvent onComplete;
 
     private void Awake()
     {
         //Get the Door Offset animator.
         animator = GetComponentInParent<Animator>();
         grabbable = GetComponent<HVRGrabbable>();
+        rot = GetComponent<HVRRotationTracker>();
+        wheelCollider = GetComponentInChildren<Collider>();
     }
 
     public void updateRotate()
     {
         //While the user is grabbing the door, keep checking the current angle of the grabbable.
-        currentAngle = GetComponent<HVRRotationTracker>().ClampedAngle;
+        currentAngle = rot.ClampedAngle;
 
         //If the current angle is rotated past the threshold (currently only works going leftwards (negative numbers)), user has completed this challenge.
         if (currentAngle > angleGoal)
@@ -38,6 +42,7 @@ public class VaultDoorOpener : MonoBehaviour
             grabbable.ForceRelease();
             grabbable.enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
+            wheelCollider.enabled = false;
             
             animator.SetBool("unlocked", true); //Animate the door opening
 
