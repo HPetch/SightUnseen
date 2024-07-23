@@ -10,6 +10,9 @@ public class SlidingDoorLogic : MonoBehaviour
     [SerializeField] private LayerMask layersToCheck;
     public bool isActive = true;
     private bool opening = false;
+    public AudioClip openClip;
+    public AudioClip closeClip;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Awake()
@@ -45,6 +48,8 @@ public class SlidingDoorLogic : MonoBehaviour
         {
             animator.SetBool("isOpening", true);
             opening = true;
+            audioSource.clip = openClip;
+            audioSource.Play();
         }
     }
 
@@ -67,6 +72,8 @@ public class SlidingDoorLogic : MonoBehaviour
         {
             animator.SetBool("isOpening", false);
             opening = false;
+            audioSource.clip = closeClip;
+            audioSource.Play();
         }
     }
 
