@@ -21,19 +21,23 @@ public class VaultDoorOpener : MonoBehaviour
     {
         //Get the Door Offset animator.
         animator = GetComponentInParent<Animator>();
+        grabbable = GetComponent<HVRGrabbable>();
     }
 
     public void updateRotate()
     {
         //While the user is grabbing the door, keep checking the current angle of the grabbable.
-        currentAngle = transform.rotation.eulerAngles.y;
+        currentAngle = GetComponent<HVRRotationTracker>().ClampedAngle;
 
         //If the current angle is rotated past the threshold (currently only works going leftwards (negative numbers)), user has completed this challenge.
-        if (currentAngle < angleGoal)
+        if (currentAngle > angleGoal)
         {
+            Debug.LogWarning("Ready to open this door");
+
             //Force the player to no longer hold the wheel and turn it off, to prevent any bugs with animation.
             grabbable.ForceRelease();
             grabbable.enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
             
             animator.SetBool("unlocked", true); //Animate the door opening
 
