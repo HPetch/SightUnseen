@@ -12,6 +12,7 @@ using INab.WorldScanFX;
 using QFX.MFX;
 using UnityEngine.InputSystem.HID;
 using HurricaneVR.Framework.Components;
+using HurricaneVR.Framework.Core.Utils;
 
 public class Recaller : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Recaller : MonoBehaviour
     public HVRGrabTrigger GrabTrigger;
     public HVRPosableGrabPoint GrabPoint;
 
+
+    public AudioClip eyeRecall;
+    public AudioClip gunRecall;
     public void Start()
     {
         Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
@@ -54,6 +58,7 @@ public class Recaller : MonoBehaviour
             if (Grabber.IsGrabbing)
                 Grabber.ForceRelease();
             Grabber.Grab(gunPrefab, GrabTrigger, GrabPoint);
+            //PlaySFX(gunRecall);
         }
     }
 
@@ -96,11 +101,9 @@ public class Recaller : MonoBehaviour
                 }
                 GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
             }
+            AudioSource source = eyePrefab.GetComponent<AudioSource>();
+            source.clip = eyeRecall;
+            source.Play();
         }
-    }
-
-    public void ScanEffect()
-    {
-
     }
 }

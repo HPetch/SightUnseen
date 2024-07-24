@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     public GameObject glasses;
     public bool glassesLeverPreventer;
     public static GameManager Instance;
+    public AudioClip glassesOn;
+    public AudioClip glassesOff;
 
     [Header("Scan Data")]
     public ScanFXBase scanFX;
@@ -64,6 +66,9 @@ public class GameManager : MonoBehaviour
     bool isScanning = false;
     float currentScanTime;
     public float maxScanTimer = 7;
+    public AudioClip enableCyberVision;
+    public AudioClip disableCyberVision;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -249,6 +254,8 @@ public class GameManager : MonoBehaviour
                 {
                     MoveGlasses(false);
                     glassesMesh.enabled = true;
+                    PlayAudio(glassesOff);
+                    PlayAudio(disableCyberVision);
                 }
             }
             //enable cybervision
@@ -261,6 +268,8 @@ public class GameManager : MonoBehaviour
                 {
                     MoveGlasses(true);
                     glassesMesh.enabled = false;
+                    PlayAudio(glassesOn);
+                    PlayAudio(enableCyberVision);
                 }
             }
         }
@@ -277,6 +286,7 @@ public class GameManager : MonoBehaviour
                     ScanEffect(true);
                     MoveGlasses(true);
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    PlayAudio(glassesOn);
                 }
                 else
                 {
@@ -286,6 +296,7 @@ public class GameManager : MonoBehaviour
                     MoveGlasses(false);
                     if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                    PlayAudio(glassesOff);
                 }
             }
             
@@ -356,6 +367,7 @@ public class GameManager : MonoBehaviour
             isScanning = true;
             scanRoutine = StartCoroutine(ScanMaskExpand());
             Debug.Log("Ran scan");
+            PlayAudio(enableCyberVision);
         }
         else
         {
@@ -366,6 +378,7 @@ public class GameManager : MonoBehaviour
             }
             scanMask.transform.localScale = Vector3.zero;
             SetCybervisionState(false);
+            PlayAudio(disableCyberVision);
         }
     }
 
@@ -605,5 +618,11 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Trying to return a normal camera when isDouble is on.");
             return null;
         }
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HurricaneVR.Framework.Components;
+using HurricaneVR.Framework.Core.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,10 @@ namespace HurricaneVR.TechDemo.Scripts
         public int MaxLength => Code?.Length ?? 0;
 
         private bool _unlocked;
+
+        public AudioSource audioSource;
+        public AudioClip correctClip;
+        public AudioClip incorrectClip;
 
         protected virtual void Start()
         {
@@ -95,6 +100,11 @@ namespace HurricaneVR.TechDemo.Scripts
                     Unlock();
                 }
             }
+            else if(Index >= 0 && Index >= MaxLength)
+            {
+                audioSource.clip = incorrectClip;
+                audioSource.Play();
+            }
             else if (Index >= 0 && Index < MaxLength)
             {
                 Entry += keyPadButton.Key;
@@ -112,6 +122,9 @@ namespace HurricaneVR.TechDemo.Scripts
                 Unlocked.Invoke();
             _unlocked = true;
             Debug.Log($"unlocked!");
+
+            audioSource.clip = correctClip;
+            audioSource.Play();
         }
     }
 }
