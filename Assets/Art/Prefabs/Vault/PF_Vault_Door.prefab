@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5429423411100106809}
   - component: {fileID: 6817409125065320635}
   - component: {fileID: 8700821887113423637}
+  - component: {fileID: 616602325600202365}
   m_Layer: 0
   m_Name: Door.001
   m_TagString: Untagged
@@ -185,6 +186,28 @@ MonoBehaviour:
   - {fileID: 6705723855150614598}
   - {fileID: 6845103861973146871}
   - {fileID: 8300993256381402635}
+--- !u!64 &616602325600202365
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493579300319121130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3459603051315571903, guid: ec75f99d6413c2949a6c82294bec52da, type: 3}
 --- !u!1 &2140292345042116357
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 4
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0, b: 0, a: 0.5686275}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -332,6 +355,7 @@ Transform:
   m_Children:
   - {fileID: 6845103861973146871}
   - {fileID: 7895325343068457771}
+  - {fileID: 8839489565119705370}
   - {fileID: 6168827726512517763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,12 +470,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4284800863182536395}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.86602545, y: 0, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: 0.76350516, y: 3.328, z: -2.811}
+  m_LocalRotation: {x: -0.86602545, y: -0, z: -0, w: 0.49999994}
+  m_LocalPosition: {x: -0.11249483, y: 3.3279998, z: -0.9619994}
   m_LocalScale: {x: 0.10197, y: 0.04772677, z: 1.3965656}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6168827726512517763}
+  m_Father: {fileID: 2887567622262835277}
   m_LocalEulerAnglesHint: {x: -120, y: 0, z: 0}
 --- !u!33 &765191891745921030
 MeshFilter:
@@ -516,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 4
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0, b: 0, a: 0.5686275}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -949,7 +973,6 @@ Transform:
   - {fileID: 6705723855150614598}
   - {fileID: 8922316400112530260}
   - {fileID: 8419453555589655719}
-  - {fileID: 8839489565119705370}
   m_Father: {fileID: 2887567622262835277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &867579159394282015

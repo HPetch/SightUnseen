@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
     public Toggle isDouble;
+    public Toggle displaySubtitles;
     public List<Camera> currentCybereyes = new List<Camera>();
     [SerializeField] private Color EMPColour;
     [SerializeField] private Color flashColour;
@@ -124,8 +125,21 @@ public class GameManager : MonoBehaviour
             if(forceBabyMode == false)
             {
                 glasses.SetActive(false);
-                if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
-                detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                if (eyeHolder.eyeIsSpawned)
+                {
+                    if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    ScanEffect(true);
+                    SetCybervisionState(true);
+                }
+                else
+                {
+                    if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    ScanEffect(false);
+                    SetCybervisionState(false);
+                }
+                
                 refreshCybereye();
                 Debug.Log("2");
             }
@@ -341,6 +355,7 @@ public class GameManager : MonoBehaviour
             currentScanTime = 0;
             isScanning = true;
             scanRoutine = StartCoroutine(ScanMaskExpand());
+            Debug.Log("Ran scan");
         }
         else
         {
@@ -404,6 +419,14 @@ public class GameManager : MonoBehaviour
                 }
             }
             
+        }
+    }
+
+    public void GlassesRelease()
+    {
+        if(switchCam == false)
+        {
+            MoveGlasses(false);
         }
     }
 
