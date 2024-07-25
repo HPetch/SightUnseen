@@ -31,7 +31,7 @@ public class EyeHolder : MonoBehaviour
 
     [SerializeField] private float stillMotionTimer = 1f;
     private float stillMotionMax;
-    private bool eyeSetDown;
+    public bool eyeSetDown;
 
     [SerializeField] private GameObject directionIndicator;
 
