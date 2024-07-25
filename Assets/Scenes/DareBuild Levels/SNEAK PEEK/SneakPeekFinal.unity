@@ -12399,7 +12399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -12410,6 +12410,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 831766508}
@@ -12418,11 +12422,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1640095171}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 686037331}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
@@ -12434,12 +12446,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayFirstAudioClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DialogueTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -12450,6 +12470,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -12457,11 +12481,55 @@ PrefabInstance:
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6742033214810536088, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2542507330497284484, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686037331}
   m_SourcePrefab: {fileID: 100100000, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+--- !u!1 &686037330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2542507330497284484, guid: 6d27760462e99c64eb1f988cbad0eaa2, type: 3}
+  m_PrefabInstance: {fileID: 686037329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &686037331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686037330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 0
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: Oh no. I think that was the emergency alarm instead of the lightswitch.
+    audio: {fileID: 8300000, guid: 564632ab9926aa541b1aacbdd94bac9f, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: "Let\u2019s get out of here as quickly as possible."
+    audio: {fileID: 8300000, guid: 4043b0353dae14546a9da8a2c7aa7baf, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
 --- !u!1001 &690735129
 PrefabInstance:
   m_ObjectHideFlags: 0
