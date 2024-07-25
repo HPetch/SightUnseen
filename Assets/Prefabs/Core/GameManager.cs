@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviour
         characterController = player.GetComponent<CharacterController>();
         recall = player.GetComponent<Recaller>();
 
+        displaySubtitles.isOn = false;
+        displaySubtitles.isOn = true;
+
         // If there is an instance, and it's not me, delete myself.
         if (Instance != null && Instance != this)
         {
@@ -132,6 +135,8 @@ public class GameManager : MonoBehaviour
         {
             ApplyStartupSettings();
         }
+
+        glasses.SetActive(false);
     }
 
     private void Update()
