@@ -25,6 +25,8 @@ public class Recaller : MonoBehaviour
     public HVRGrabTrigger GrabTrigger;
     public HVRPosableGrabPoint GrabPoint;
 
+    public AudioClip recallEye;
+
     public void Start()
     {
         //Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
@@ -72,6 +74,9 @@ public class Recaller : MonoBehaviour
             var mfxActivator = eyePrefab.gameObject.GetComponent<MfxController>();
             if (mfxActivator != null)
                 mfxActivator.ActivateBackward();
+
+            AudioSource source = eyePrefab.GetComponent<AudioSource>();
+            source.clip = recallEye;
 
             //force player view if in glasses mode
             if (GameManager.Instance.isDouble.isOn)

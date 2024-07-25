@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public bool isRightEye = true;
     public TMP_Dropdown eyeChoice;
     public Toggle isDouble;
+    public Toggle displaySubtitles;
     public List<Camera> currentCybereyes = new List<Camera>();
     [SerializeField] private Color EMPColour;
     [SerializeField] private Color flashColour;
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour
     public GameObject glasses;
     public bool glassesLeverPreventer;
     public static GameManager Instance;
+    public AudioClip glassesOn;
+    public AudioClip glassesOff;
 
     [Header("Scan Data")]
     public ScanFXBase scanFX;
@@ -69,6 +72,9 @@ public class GameManager : MonoBehaviour
     bool isScanning = false;
     float currentScanTime;
     public float maxScanTimer = 7;
+    public AudioClip enableCyberVision;
+    public AudioClip disableCyberVision;
+    public AudioSource audioSource;
 
     [Header("Movement Data")]
     public Toggle smoothMovement;
@@ -269,6 +275,8 @@ public class GameManager : MonoBehaviour
                 {
                     MoveGlasses(false);
                     glassesMesh.enabled = true;
+                    PlayAudio(glassesOff);
+                    PlayAudio(disableCyberVision);
                 }
             }
             //enable cybervision
@@ -281,6 +289,8 @@ public class GameManager : MonoBehaviour
                 {
                     MoveGlasses(true);
                     glassesMesh.enabled = false;
+                    PlayAudio(glassesOn);
+                    PlayAudio(enableCyberVision);
                 }
             }
         }
@@ -297,6 +307,7 @@ public class GameManager : MonoBehaviour
                     ScanEffect(true);
                     MoveGlasses(true);
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    PlayAudio(glassesOn);
                 }
                 else
                 {
@@ -306,6 +317,7 @@ public class GameManager : MonoBehaviour
                     MoveGlasses(false);
                     if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                    PlayAudio(glassesOff);
                 }
             }
             
@@ -375,6 +387,7 @@ public class GameManager : MonoBehaviour
             currentScanTime = 0;
             isScanning = true;
             scanRoutine = StartCoroutine(ScanMaskExpand());
+            PlayAudio(enableCyberVision);
         }
         else
         {
@@ -385,6 +398,7 @@ public class GameManager : MonoBehaviour
             }
             scanMask.transform.localScale = Vector3.zero;
             SetCybervisionState(false);
+            PlayAudio(disableCyberVision);
         }
     }
 
@@ -646,6 +660,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlayAudio(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
     void ApplyStartupSettings()
     {
         if (settings.rightEye)
