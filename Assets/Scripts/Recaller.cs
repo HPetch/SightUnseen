@@ -12,7 +12,6 @@ using INab.WorldScanFX;
 using QFX.MFX;
 using UnityEngine.InputSystem.HID;
 using HurricaneVR.Framework.Components;
-using HurricaneVR.Framework.Core.Utils;
 
 public class Recaller : MonoBehaviour
 {
@@ -26,12 +25,9 @@ public class Recaller : MonoBehaviour
     public HVRGrabTrigger GrabTrigger;
     public HVRPosableGrabPoint GrabPoint;
 
-
-    public AudioClip eyeRecall;
-    public AudioClip gunRecall;
     public void Start()
     {
-        Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
+        //Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
     }
 
     public void GrabGun()
@@ -39,14 +35,7 @@ public class Recaller : MonoBehaviour
         if (gunPrefab && Grabber)
         {
             //pick which hand to send the gun to based on the toggle use some UI menu or something to change this
-            if (alterHand)
-            {
-                Grabber = rightHand;
-            }
-            else
-            {
-                Grabber = leftHand;
-            }
+            //AlterHandCheck();
             //just in case we want the button to drop the object if the player is holding it
             if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == gunPrefab)
             {
@@ -58,7 +47,6 @@ public class Recaller : MonoBehaviour
             if (Grabber.IsGrabbing)
                 Grabber.ForceRelease();
             Grabber.Grab(gunPrefab, GrabTrigger, GrabPoint);
-            //PlaySFX(gunRecall);
         }
     }
 
@@ -69,14 +57,7 @@ public class Recaller : MonoBehaviour
         tracker.StepChanged.RemoveAllListeners();
         if (eyePrefab && Grabber)
         {
-            if (alterHand)
-            {
-                Grabber = rightHand;
-            }
-            else
-            {
-                Grabber = leftHand;
-            }
+            //AlterHandCheck();
             if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == eyePrefab)
             {
                 Grabber.ForceRelease();
@@ -101,9 +82,15 @@ public class Recaller : MonoBehaviour
                 }
                 GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
             }
-            AudioSource source = eyePrefab.GetComponent<AudioSource>();
-            source.clip = eyeRecall;
-            source.Play();
         }
+    }
+
+    void AlterHandCheck()
+    {
+        if (GameManager.Instance.rightHandRecall.isOn)
+        {
+            Grabber = rightHand;
+        }
+        else { Grabber = leftHand; }
     }
 }
