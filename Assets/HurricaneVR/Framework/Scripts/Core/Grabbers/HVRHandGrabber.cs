@@ -213,7 +213,7 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
         public bool IsInitialLineGrab => IsLineGrab && !_primaryGrabPointGrab && PosableGrabPoint.LineInitialCanReposition;
 
-
+        public AudioSource audioSource;
         public HVRGrabbable TriggerHoverTarget
         {
             get { return _triggerHoverTarget; }
@@ -2212,8 +2212,10 @@ namespace HurricaneVR.Framework.Core.Grabbers
             SetupGrab(grabbable);
             IsClimbing = grabbable.GetComponent<HVRClimbable>();
             if (grabbable.HandGrabbedClip)
-                if (SFXPlayer.Instance)
-                    SFXPlayer.Instance.PlaySFX(grabbable.HandGrabbedClip, transform.position);
+            {
+                audioSource.clip = grabbable.HandGrabbedClip;
+                audioSource.Play();
+            }
         }
 
         public void SetupGrab(HVRGrabbable grabbable)

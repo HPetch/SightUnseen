@@ -118,6 +118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2097152
   Poser: {fileID: 0}
+  objectsToEnableWhenPosing: []
 --- !u!114 &1240871054004478576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +775,7 @@ GameObject:
   - component: {fileID: 6361817487434591921}
   - component: {fileID: 4197260137012514238}
   - component: {fileID: 8149418041396619897}
+  - component: {fileID: 7878313071896259875}
   m_Layer: 0
   m_Name: KeyPad
   m_TagString: Untagged
@@ -859,6 +861,9 @@ MonoBehaviour:
   Display: {fileID: 2192945850443556528}
   Entry: 
   ForceUnlock: 0
+  audioSource: {fileID: 7878313071896259875}
+  correctClip: {fileID: 8300000, guid: 018d951540328e84887231036396cdfa, type: 3}
+  incorrectClip: {fileID: 8300000, guid: 542d941817af62643bc22e8a854bd682, type: 3}
 --- !u!65 &8149418041396619897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -880,6 +885,102 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0446264, y: 0.19014859, z: 0.12694356}
   m_Center: {x: 0.024090571, y: 0.09532106, z: -1.01741495e-16}
+--- !u!82 &7878313071896259875
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111649384435978071}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4098414803643846811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1678,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: NumericButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5850548659153776852}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1626,6 +1779,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &5850548659153776852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 945789490040206937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6039572776504716082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -1643,6 +1807,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeypadButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5852604726239370015}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1692,6 +1908,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &5852604726239370015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 948550299505548690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6041909370153091321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -1708,6 +1935,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: KeypadButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5652010841433812074}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -1763,6 +2042,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
   m_PrefabInstance: {fileID: 1332700931091524327}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5652010841433812074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 1332700931091524327}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1548906013934014683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1774,6 +2064,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: KeypadButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5291619978701411926}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -1824,6 +2166,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &5291619978701411926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 1548906013934014683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5444306760964427184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -1840,6 +2193,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: KeypadButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9091185607843369268}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -1895,6 +2300,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
   m_PrefabInstance: {fileID: 2466614291277453241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9091185607843369268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 2466614291277453241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2496213014562955235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1906,6 +2322,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: KeypadButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9130231338817821038}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -1961,6 +2429,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
   m_PrefabInstance: {fileID: 2496213014562955235}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9130231338817821038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 2496213014562955235}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4337055200091218836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1976,6 +2455,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: NumericButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6926849847545423129}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -2026,6 +2557,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &6926849847545423129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 4337055200091218836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7115847177657171711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -2087,6 +2629,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29d5576815f16844e95b9ddd81de691c, type: 3}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3926682327856801358}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2100,6 +2682,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7274575475719136561, guid: 401617cbcd20280469233efd17f261d9, type: 3}
   m_PrefabInstance: {fileID: 5794891841977833625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3926682327856801358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+  m_PrefabInstance: {fileID: 5794891841977833625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6730440094956669610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2156,6 +2749,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f07fd2dea99bf2748a55ca8324d49eb8, type: 3}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4283666737899041917}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2169,6 +2802,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7274575475719136561, guid: 401617cbcd20280469233efd17f261d9, type: 3}
   m_PrefabInstance: {fileID: 6730440094956669610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4283666737899041917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7356057870146780887, guid: 401617cbcd20280469233efd17f261d9, type: 3}
+  m_PrefabInstance: {fileID: 6730440094956669610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6979342152716904926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2180,6 +2824,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: NumericButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4380550188750778195}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -2230,6 +2926,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &4380550188750778195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 6979342152716904926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4479774597571671221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -2247,6 +2954,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeypadButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4170019917847105692}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2296,6 +3055,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+--- !u!114 &4170019917847105692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 7336274183700076049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4269253530789202810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
@@ -2312,6 +3082,58 @@ PrefabInstance:
     - target: {fileID: 2694620697804989124, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_Name
       value: KeypadButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 7878313071896259875}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3c82212a52e6b64b9c2a15e780818f3, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082a5e0375a4f96488f206a9cd7aac3b, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e36d54f794886649928d84b7f08dd98, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: buttonSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7827b5a2b156f54ba2a6950d627a8b0, type: 3}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2452786430432717157}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoKeypadButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
       propertyPath: m_RootOrder
@@ -2367,3 +3189,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6841181101793877355, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
   m_PrefabInstance: {fileID: 9086928995635458024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2452786430432717157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6634168962736932493, guid: 038474ada41bfc14fa26e30f0bb9d69b, type: 3}
+  m_PrefabInstance: {fileID: 9086928995635458024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b9c2e98753421459a808cbea92bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

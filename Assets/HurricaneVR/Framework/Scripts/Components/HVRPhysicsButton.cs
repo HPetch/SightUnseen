@@ -62,7 +62,7 @@ namespace HurricaneVR.Framework.Components
         private ConfigurableJoint _joint;
         private ConfigurableJoint _limitJoint;
 
-
+        public AudioSource audioSource;
         protected virtual void Awake()
         {
             transform.localPosition = StartPosition;
@@ -190,7 +190,20 @@ namespace HurricaneVR.Framework.Components
             }
             ButtonUp.Invoke(this);
         }
+
+        public void PressedDownAudio()
+        {
+            audioSource.clip = SFXButtonDown;
+            audioSource.Play();
+        }
+        public void PressedUpAudio()
+        {
+            audioSource.clip = SFXButtonUp;
+            audioSource.Play();
+        }
     }
+
+    
 
     [Serializable]
     public class HVRButtonEvent : UnityEvent<HVRPhysicsButton> { }

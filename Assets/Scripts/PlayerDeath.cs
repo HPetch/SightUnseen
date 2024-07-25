@@ -8,6 +8,7 @@ public class PlayerDeath : MonoBehaviour
 {
     public Image fadeImage;
     public Transform lastCheckpoint;
+    public int deathCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +25,14 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Laser"))
         {
+            deathCounter++;
             fadeImage.DOFade(1, 1).OnComplete(MovePlayerToCheckpoint);
         }
 
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             lastCheckpoint = other.transform;
+            deathCounter = 0;
         }
     }
 

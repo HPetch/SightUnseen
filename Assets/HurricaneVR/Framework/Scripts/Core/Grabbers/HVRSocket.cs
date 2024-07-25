@@ -80,6 +80,8 @@ namespace HurricaneVR.Framework.Core.Grabbers
         [Tooltip("Fallback released sfx to play if the socketable doesn't have one.")]
         public AudioClip AudioReleasedFallback;
 
+        public AudioSource audioSource;
+
 
         [Header("Socketable Filtering")]
         [Tooltip("Filters to filter out socketables.")]
@@ -698,7 +700,8 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
         protected virtual void PlaySFX(AudioClip clip)
         {
-            if (SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(clip, transform.position);
+            audioSource.clip = clip;
+            audioSource.Play();
         }
 
         protected virtual float GetSocketableScaleSize(HVRSocketable socketable)

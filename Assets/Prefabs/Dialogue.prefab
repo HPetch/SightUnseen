@@ -1,0 +1,986 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &70212006007718572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3310698924276400182}
+  - component: {fileID: 3493347303993537500}
+  - component: {fileID: 7633827253747708553}
+  - component: {fileID: 7974005130191553008}
+  m_Layer: 0
+  m_Name: SeeGirlInCybervision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3310698924276400182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70212006007718572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3871698, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1567943360949376355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3493347303993537500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70212006007718572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 1
+  dialogue:
+  - dialogueText: "That\u2019s it, babe!"
+    audio: {fileID: 8300000, guid: 09bd71481558eb1438d9e0f6f82bae9e, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &7633827253747708553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70212006007718572}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 11.334443, y: 2.0539353, z: 8.421612}
+  m_Center: {x: -1.099257, y: 0.5269675, z: -0.38506603}
+--- !u!114 &7974005130191553008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70212006007718572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b89cb17b0aab4eaabc1a5b771feaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 556479997929490696}
+  myTrigger: {fileID: 3493347303993537500}
+  isCyberVisionCheck: 1
+  isEyeTakeOutCheck: 0
+  isEyeStopCheck: 0
+  col: {fileID: 7633827253747708553}
+  playerEye: {fileID: 0}
+--- !u!1 &464593636274810405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2031453888253786839}
+  - component: {fileID: 5230933110885875395}
+  - component: {fileID: 823706586887094846}
+  - component: {fileID: 5048840321113568226}
+  m_Layer: 0
+  m_Name: EyeCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2031453888253786839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464593636274810405}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3046429764633327939}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5230933110885875395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464593636274810405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: 'Yes babe, you got it!
+
+      Now, try throwing it.
+
+'
+    audio: {fileID: 8300000, guid: 8f9a05b87750ff74b9b90fde3fd0b714, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &823706586887094846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464593636274810405}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 2.0243354, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.5121677, y: 0.5269675, z: -0.22438288}
+--- !u!114 &5048840321113568226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464593636274810405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b89cb17b0aab4eaabc1a5b771feaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 2828493618603519261}
+  myTrigger: {fileID: 5230933110885875395}
+  isCyberVisionCheck: 0
+  isEyeTakeOutCheck: 1
+  isEyeStopCheck: 0
+  col: {fileID: 823706586887094846}
+  playerEye: {fileID: 0}
+--- !u!1 &1819736834919464729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3046429764633327939}
+  m_Layer: 0
+  m_Name: KeyCode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3046429764633327939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819736834919464729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8428869859572440263}
+  - {fileID: 2031453888253786839}
+  - {fileID: 2541790184453954717}
+  m_Father: {fileID: 9004986749353645234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3519387681577357868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411059891183489619}
+  m_Layer: 0
+  m_Name: BreakRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1411059891183489619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519387681577357868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.745, y: 3.156, z: -15.871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5159022035613731871}
+  m_Father: {fileID: 9004986749353645234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3724642388894478316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5732952515357095855}
+  - component: {fileID: 556479997929490696}
+  - component: {fileID: 3080818212121820911}
+  m_Layer: 0
+  m_Name: Opening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5732952515357095855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724642388894478316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3871698, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1567943360949376355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556479997929490696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724642388894478316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: Hey there babe. It is nice to meet you.
+    audio: {fileID: 8300000, guid: 52d7b56bebe381c4b9f01f0966279d35, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: I am Candy. Your assistant that comes with the secret cybernetic
+      cyber eye 3001.
+    audio: {fileID: 8300000, guid: 36ed2063a5def41489845e5085bb1fbe, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: 'By previous user, I have been set to the setting: Girlfriend.'
+    audio: {fileID: 8300000, guid: 320aa7ad611b69a4a97a45ee8edc4c6d, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: "You may change this setting but your history with women indicates
+      you probably won\u2019t."
+    audio: {fileID: 8300000, guid: d32f88a6ffd58ab4aabc3496f20f8673, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: 'It turns out it is currently: Dark.'
+    audio: {fileID: 8300000, guid: 1191deb61a39d5442acd2c9c5821846b, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: You should turn on the cybervision to help you see me and find
+      us a lightswitch.
+    audio: {fileID: 8300000, guid: 031603eccfacf86458bfcae34f5822d9, type: 3}
+    waitTimer: 0
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &3080818212121820911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724642388894478316}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.0539353, z: 1}
+  m_Center: {x: 0, y: 0.5269675, z: 0}
+--- !u!1 &4112956898449117501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5159022035613731871}
+  - component: {fileID: 3846981297581949491}
+  - component: {fileID: 2329232197836338166}
+  m_Layer: 0
+  m_Name: OhNOGuardIsReal!!!!!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5159022035613731871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112956898449117501}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1411059891183489619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3846981297581949491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112956898449117501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: 'Babe. Babe!
+
+      Stop!
+
+'
+    audio: {fileID: 8300000, guid: 9856186652edec4479616c48fa3136c2, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: There's an enemy around the corner and it will shoot anything that
+      has a heat signature.
+    audio: {fileID: 8300000, guid: 59444533f745bf446843a6048929a001, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: If only you could see around the corner to help you in there.
+    audio: {fileID: 8300000, guid: afd3e442bc2bba344a39bdd5e09cd189, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &2329232197836338166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112956898449117501}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0243354, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.5121677, y: 0.5269675, z: -0.22438288}
+--- !u!1 &6022643129884462522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2541790184453954717}
+  - component: {fileID: 6611591828889848162}
+  - component: {fileID: 686914586152815541}
+  - component: {fileID: 7567120094264597049}
+  m_Layer: 0
+  m_Name: EyeOutCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2541790184453954717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022643129884462522}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3046429764633327939}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6611591828889848162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022643129884462522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: Are you feeling a little bit sick? You should try shutting one
+      eye to switch between the views.
+    audio: {fileID: 8300000, guid: 8f9a05b87750ff74b9b90fde3fd0b714, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &686914586152815541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022643129884462522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 2.5847297, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.23197055, y: 0.5269675, z: -0.22438288}
+--- !u!114 &7567120094264597049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022643129884462522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b89cb17b0aab4eaabc1a5b771feaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5230933110885875395}
+  myTrigger: {fileID: 6611591828889848162}
+  isCyberVisionCheck: 0
+  isEyeTakeOutCheck: 0
+  isEyeStopCheck: 1
+  col: {fileID: 686914586152815541}
+  playerEye: {fileID: 0}
+--- !u!1 &6219101177347248792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7801140009481602421}
+  - component: {fileID: 552848052603233760}
+  - component: {fileID: 1991849545943666743}
+  m_Layer: 0
+  m_Name: Hold on Chat Something Is Amiss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7801140009481602421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219101177347248792}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4825579238087795189}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552848052603233760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219101177347248792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: "Babe. Something feels off.\r\nHmm. It\u2019s probably nothing.\r\n"
+    audio: {fileID: 8300000, guid: 2e96ad2d70fd4274d807dc4b1a511bee, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: But you might want to grab that convenient gun on the table just
+      in case.
+    audio: {fileID: 8300000, guid: 8138fba692a43044792506739bf9b285, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &1991849545943666743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219101177347248792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0243354, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.5121677, y: 0.5269675, z: -0.22438288}
+--- !u!1 &7168955540843888085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8428869859572440263}
+  - component: {fileID: 2828493618603519261}
+  - component: {fileID: 8428172936590663964}
+  m_Layer: 0
+  m_Name: TakeEyeOutTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8428869859572440263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168955540843888085}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3046429764633327939}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2828493618603519261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168955540843888085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: Okay. Babe, looks like we need a code.
+    audio: {fileID: 8300000, guid: 739773b8e42948d43b93185f8f45a9f7, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: Between you and me, the security here sucks so they probably have
+      hidden it somewhere nearby. Like the next room.
+    audio: {fileID: 8300000, guid: 9e1227c2974c6744eb6bfb99a3a8debc, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: Bring your hand close to your right/left eyesocket, where the secret
+      cybernetic cyber eye 3002 is.
+    audio: {fileID: 8300000, guid: aa2cb2bc8fe4d204fac8e77e60afa748, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &8428172936590663964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168955540843888085}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0243354, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.5121677, y: 0.5269675, z: -0.22438288}
+--- !u!1 &7914899316039106834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4825579238087795189}
+  m_Layer: 0
+  m_Name: Security
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4825579238087795189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914899316039106834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.978, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7801140009481602421}
+  m_Father: {fileID: 9004986749353645234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8196216676637777470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9004986749353645234}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9004986749353645234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196216676637777470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8348303, y: 2.1453416, z: 6.5002813}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1567943360949376355}
+  - {fileID: 3046429764633327939}
+  - {fileID: 4825579238087795189}
+  - {fileID: 1411059891183489619}
+  - {fileID: 7822310301115007970}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8437184609079940929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567943360949376355}
+  m_Layer: 0
+  m_Name: Vault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567943360949376355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437184609079940929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5732952515357095855}
+  - {fileID: 3310698924276400182}
+  m_Father: {fileID: 9004986749353645234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8835947235270423610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800738229931720831}
+  - component: {fileID: 9153546925759956752}
+  - component: {fileID: 2153406198966218876}
+  m_Layer: 0
+  m_Name: ANOTHER GUARD????
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800738229931720831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835947235270423610}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.377, y: -0.7393416, z: 0.039718628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7822310301115007970}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9153546925759956752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835947235270423610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: 'Oh no. You saw that too, right?
+
+      The guard just standing
+      there, ready to kill us?
+
+'
+    audio: {fileID: 8300000, guid: afaf50e7eb0aa604bb76a7fcf9cc59fe, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+  - dialogueText: "We can avoid that\u2026 We\u2019ll just need to be able to aim
+      at it without it being able to aim at us."
+    audio: {fileID: 8300000, guid: 28db1278f1ca0d24b9ffaf05d09cc5e3, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+--- !u!65 &2153406198966218876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835947235270423610}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0243354, y: 2.0539353, z: 5.2626715}
+  m_Center: {x: 0.5121677, y: 0.5269675, z: -0.22438288}
+--- !u!1 &8928566451584321205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7822310301115007970}
+  m_Layer: 0
+  m_Name: Archive
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7822310301115007970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928566451584321205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.766, y: 3.156, z: -19.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 800738229931720831}
+  m_Father: {fileID: 9004986749353645234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -18,6 +18,8 @@ public class VaultDoorOpener : MonoBehaviour
     private HVRRotationTracker rot;
     private HVRGrabbable grabbable;
     [SerializeField] private UnityEvent onComplete;
+    public AudioClip openClip;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -48,5 +50,8 @@ public class VaultDoorOpener : MonoBehaviour
 
             onComplete.Invoke(); //Invoke anything that would happen once completed (e.g. dialogue lines)
         }
+
+        audioSource.clip = openClip;
+        audioSource.Play();
     }
 }
