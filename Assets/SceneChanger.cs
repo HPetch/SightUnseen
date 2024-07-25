@@ -7,6 +7,12 @@ public class SceneChanger : MonoBehaviour
 {
     public int buildIndexTarget;
     public float timeBeforeNextLevel = 1f;
+    [SerializeField] private bool doOnEnable = false;
+
+    private void OnEnable()
+    {
+        if (doOnEnable) StartCoroutine(DelayBeforeAct());
+    }
 
     public void ButtonPushed()
     {
@@ -16,7 +22,13 @@ public class SceneChanger : MonoBehaviour
     private IEnumerator DelayBeforeAct()
     {
         yield return new WaitForSeconds(timeBeforeNextLevel);
-        SceneManager.LoadScene(buildIndexTarget);
+       AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(buildIndexTarget);
+
+        while (!asyncOperation.isDone)
+        {
+            Debug.Log("Progress = " + asyncOperation.progress);
+            yield return null;
+        }
 
     }
 
