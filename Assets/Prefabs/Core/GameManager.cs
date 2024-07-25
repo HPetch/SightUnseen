@@ -7,11 +7,15 @@ using INab.WorldScanFX;
 using HurricaneVR.Framework.Components;
 using UnityEngine.Events;
 using DG.Tweening;
+using HurricaneVR.Framework.Core.Player;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     //bool for forcing glasses mode for the little babies
     public bool forceBabyMode;
+    public SettingsSO settings;
+    public bool isInSetup;
 
     [Header("Global settings")]
     [SerializeField] private bool isDontDestroyOnLoad = false;
@@ -23,6 +27,8 @@ public class GameManager : MonoBehaviour
     public List<Camera> currentCybereyes = new List<Camera>();
     [SerializeField] private Color EMPColour;
     [SerializeField] private Color flashColour;
+    SceneManaging sceneManager;
+    public Toggle rightHandRecall;
 
     //Set up Default and Cybereye culling masks correctly in Inspector
     //You can't add mask layers in code in a more user-friendly way.
@@ -64,8 +70,23 @@ public class GameManager : MonoBehaviour
     float currentScanTime;
     public float maxScanTimer = 7;
 
+    [Header("Movement Data")]
+    public Toggle smoothMovement;
+    HVRTeleportCollisonHandler teleportCol;
+    HVRTeleporter teleporter;
+    CharacterController characterController;
+    Recaller recall;
+    public float fallDelayTimer = 1;
+
     private void Awake()
     {
+        sceneManager = GetComponent<SceneManaging>();
+        GameObject player = GameObject.Find("PlayerController");
+        teleportCol = player.GetComponent<HVRTeleportCollisonHandler>();
+        teleporter = player.GetComponent<HVRTeleporter>();
+        characterController = player.GetComponent<CharacterController>();
+        recall = player.GetComponent<Recaller>();
+
         // If there is an instance, and it's not me, delete myself.
         if (Instance != null && Instance != this)
         {
@@ -99,6 +120,19 @@ public class GameManager : MonoBehaviour
         {
             isDouble.isOn = true;
             ToggleDoubleCybereyes();
+        }
+
+        if(isInSetup == false)
+        {
+            ApplyStartupSettings();
+        }
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current[Key.R].wasPressedThisFrame)
+        {
+            sceneManager.LoadOnboardingScene();
         }
     }
 
@@ -545,6 +579,34 @@ public class GameManager : MonoBehaviour
         */
     }
 
+    public void SmoothMovementToggle()
+    {
+        if (smoothMovement.isOn)
+        {
+            characterController.enabled = true;
+            teleportCol.enabled = false;
+            teleporter.enabled = false;
+        }
+        else
+        {
+            characterController.enabled = false;
+            teleportCol.enabled = true;
+            teleporter.enabled = true;
+        }
+    }
+
+    public void ToggleRecallHand()
+    {
+        if (rightHandRecall.isOn)
+        {
+            recall.Grabber = recall.rightHand;
+        }
+        else
+        {
+            recall.Grabber = recall.leftHand;
+        }
+    }
+
     public Camera getActiveCyberCamera()
     {
         Camera returnCam = null;
@@ -582,5 +644,55 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Trying to return a normal camera when isDouble is on.");
             return null;
         }
+    }
+
+    void ApplyStartupSettings()
+    {
+        if (settings.rightEye)
+        {
+            eyeChoice.value = 0;
+        }
+        else
+        {
+            eyeChoice.value = 1;
+        }
+
+        if (settings.glassesOn)
+        {
+            isDouble.isOn = true;
+        }
+        else
+        {
+            isDouble.isOn = false;
+        }
+
+        if (settings.rightHanded)
+        {
+            rightHandRecall.isOn = true;
+        }
+        else
+        {
+            rightHandRecall.isOn = false;
+        }
+
+        if (settings.smoothMovement)
+        {
+            smoothMovement.isOn = true;
+        }
+        else
+        {
+            smoothMovement.isOn = false;
+        }
+
+        eyeChoiceToggle();
+        ToggleDoubleCybereyes();
+        ToggleRecallHand();
+        StartCoroutine(FallDelay());
+    }
+
+    IEnumerator FallDelay()
+    {
+        yield return new WaitForSeconds(fallDelayTimer);
+        SmoothMovementToggle();
     }
 }

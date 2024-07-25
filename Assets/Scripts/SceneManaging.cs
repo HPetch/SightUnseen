@@ -31,4 +31,9 @@ public class SceneManaging : MonoBehaviour
         SceneManager.LoadScene(buildIndex);
 
     }
+
+    public void LoadOnboardingScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
