@@ -23,6 +23,8 @@ namespace HurricaneVR.Framework.Weapons
         public List<AudioClip> SlideBackVariations = new List<AudioClip>();
         public List<AudioClip> SlideForwardVariations = new List<AudioClip>();
 
+        public AudioSource audioSource;
+
         private void Start()
         {
             AddVariation(Fired, FiredVariations);
@@ -78,7 +80,8 @@ namespace HurricaneVR.Framework.Weapons
             if (!clip)
                 return;
 
-            if(SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(clip, transform.position);
+            audioSource.clip = clip;
+            audioSource.Play();
         }
 
         private void AddVariation(AudioClip clip, List<AudioClip> variations)

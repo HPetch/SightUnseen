@@ -8,6 +8,7 @@ using HurricaneVR.Framework.Core.Player;
 using UnityEngine.Windows;
 using Unity.VisualScripting;
 using DG.Tweening;
+using HurricaneVR.Framework.Core.Utils;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -30,12 +31,15 @@ public class EyeHolder : MonoBehaviour
 
     [SerializeField] private float stillMotionTimer = 1f;
     private float stillMotionMax;
-    private bool eyeSetDown;
+    public bool eyeSetDown;
 
     [SerializeField] private GameObject directionIndicator;
 
     public bool watchMode;
     public GameObject watchCam;
+
+    public AudioSource audioSource;
+    public AudioClip turnOnSound;
 
     private void Awake()
     {
@@ -152,6 +156,9 @@ public class EyeHolder : MonoBehaviour
                     GameManager.Instance.scanMask.transform.localScale = new Vector3(100, 100, 100);
                     //GameManager.Instance.ToggleCybervision();
                 }
+
+                audioSource.clip = turnOnSound;
+                audioSource.Play();
                 
             }
 
@@ -238,5 +245,10 @@ public class EyeHolder : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
+    }
+
+    protected virtual void PlaySFX(AudioClip clip)
+    {
+        if (SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(clip, transform.position);
     }
 }
