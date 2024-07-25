@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Settings")]
-public class SettingsSO : ScriptableObject
+public class OnboardingSettingsSO : ScriptableObject
 {
     public bool rightHanded;
     public bool rightEye;

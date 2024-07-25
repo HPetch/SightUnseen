@@ -86,7 +86,11 @@ public class DialogueTrigger : MonoBehaviour
             {
                 if (storedDialogue.currentDialogue.dialogue[storedDialogue.currentDialogue.currentClipID].isNotInteruptable == false)
                 {
-                    storedDialogue.currentDialogue.StopCoroutine(storedDialogue.currentDialogue.delayRoutine);
+                    if (storedDialogue.currentDialogue.delayRoutine != null)
+                    {
+                        storedDialogue.currentDialogue.StopCoroutine(storedDialogue.currentDialogue.delayRoutine);
+                    }
+                    
                     storedDialogue.currentDialogue.interupted = true;
                     storedDialogue.currentDialogue.audioSource.Stop();
                     storedDialogue.currentDialogue = null;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnboardingSetup : MonoBehaviour
 {
-    public SettingsSO settings;
+    public OnboardingSettingsSO settings;
     //// Start is called before the first frame update
     //void Start()
     //{

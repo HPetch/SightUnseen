@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 {
     //bool for forcing glasses mode for the little babies
     public bool forceBabyMode;
-    public SettingsSO settings;
+    public OnboardingSettingsSO settings;
     public bool isInSetup;
 
     [Header("Global settings")]
@@ -164,8 +164,17 @@ public class GameManager : MonoBehaviour
             if(forceBabyMode == false)
             {
                 glasses.SetActive(false);
-                if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
-                detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                if (eyeHolder.eyeIsSpawned)
+                {
+                    if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                }
+                else
+                {
+                    if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                }
+                
                 refreshCybereye();
                 Debug.Log("2");
             }
@@ -523,26 +532,32 @@ public class GameManager : MonoBehaviour
         //Disable all cameras
         if (!isDouble.isOn)
         {
-            foreach (Camera eye in currentCybereyes)
-            {
-                eye.enabled = false;
-            }
-            //Re-enable the detached eye camera
-            if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
-                detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+            //foreach (Camera eye in currentCybereyes)
+            //{
+            //    eye.enabled = false;
+            //}
+            ////Re-enable the detached eye camera
+            //if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
+            //    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+
+            if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
         }
     }
 
     public void doAttachedVision()
     {
-        //Disable all cameras
-        foreach (Camera eye in currentCybereyes)
-        {
-            eye.enabled = true;
-        }
-        //Disable the detached eye camera
-        if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
-            detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+        ////Disable all cameras
+        //foreach (Camera eye in currentCybereyes)
+        //{
+        //    eye.enabled = true;
+        //}
+        ////Disable the detached eye camera
+        //if (currentCybereyes.Contains(detachedEyePrefab.GetComponentInChildren<Camera>()))
+        //    detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+
+        if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+        detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
     }
 
     public void UpdateDetachedEyeTarget()
