@@ -106,13 +106,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        if ((leftEye != null) && (rightEye != null))
-        {
-                isRightEye = SettingsManager.Instance.rightEyeSelected;
+        //if ((leftEye != null) && (rightEye != null))
+        //{
+        //        isRightEye = SettingsManager.Instance.rightEyeSelected;
 
-            if (isRightEye) eyeChoice.value = 0; else eyeChoice.value = 1;
-            //Left handed gun should be swapped in instead and be tracked as a variable here.
-        }
+        //    if (isRightEye) eyeChoice.value = 0; else eyeChoice.value = 1;
+        //    //Left handed gun should be swapped in instead and be tracked as a variable here.
+        //}
 
         if (isDontDestroyOnLoad) DontDestroyOnLoad(this.gameObject);
 
