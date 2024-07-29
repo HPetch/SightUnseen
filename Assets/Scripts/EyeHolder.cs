@@ -41,6 +41,8 @@ public class EyeHolder : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip turnOnSound;
 
+    public GameObject onGunPos;
+
     private void Awake()
     {
         playerController = FindObjectOfType<HVRPlayerController>();
@@ -68,6 +70,7 @@ public class EyeHolder : MonoBehaviour
 
     public void SwitchEyeToDetached(bool doDetached)
     {
+        Debug.Log("s");
         if (doDetached)
         {
             //GameManager.Instance.SetCybervisionState(true);
@@ -250,5 +253,11 @@ public class EyeHolder : MonoBehaviour
     protected virtual void PlaySFX(AudioClip clip)
     {
         if (SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(clip, transform.position);
+    }
+
+    public void AttachToGun()
+    {
+        transform.position = Vector3.zero;
+        transform.parent = onGunPos.transform;
     }
 }
