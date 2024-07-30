@@ -10,6 +10,7 @@ using Unity.VisualScripting;
 using DG.Tweening;
 using HurricaneVR.Framework.Core.Utils;
 using HurricaneVR.Framework.Core.Grabbers;
+using static System.Security.Cryptography.ECCurve;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -272,6 +273,8 @@ public class EyeHolder : MonoBehaviour
         else
         {
             GameManager.Instance.hideViewport("cyber", true);
+            EyeOnGunAimer aimer = gunSocket.GetComponentInParent<EyeOnGunAimer>();
+            aimer.ForceVisibleOff();
             eyeSetDown = false;
             onGun = false;
             //transform.parent = null;
@@ -283,6 +286,8 @@ public class EyeHolder : MonoBehaviour
         if (onGun)
         {
             SphereCollider collider = gameObject.GetComponent<SphereCollider>();
+            //EyeOnGunAimer aimer = gunSocket.GetComponentInParent<EyeOnGunAimer>();
+            //aimer.SetTrajectoryVisible(false);
             //transform.parent = null;
             gunSocket.ForceRelease();
             stillMotionTimer = stillMotionMax;

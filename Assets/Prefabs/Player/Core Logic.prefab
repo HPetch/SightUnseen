@@ -967,6 +967,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.20098901, y: 0.07448188, z: 0.16990764}
   m_Center: {x: 0.002947256, y: -0.006824677, z: 0.13557999}
+--- !u!1 &3092568232601808935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027755002926809142}
+  m_Layer: 0
+  m_Name: AimPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027755002926809142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092568232601808935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.097, z: 0.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 755253480025273789}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3284238528144906186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,9 +2372,22 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 376822841181420323}
-        m_TargetAssemblyTypeName: EyeHolder, Assembly-CSharp
-        m_MethodName: AttachToGun
+        m_TargetAssemblyTypeName: HurricaneVR.Framework.Core.Grabbers.HVRSocket,
+          HurricaneVR.Framework
+        m_MethodName: EnableAutoGrab
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8283186409769659926}
+        m_TargetAssemblyTypeName: EyeOnGunAimer, Assembly-CSharp
+        m_MethodName: ForceVisibleOff
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2358,6 +2402,31 @@ MonoBehaviour:
       - m_Target: {fileID: 544876631524724068}
         m_TargetAssemblyTypeName: EyeHolder, Assembly-CSharp
         m_MethodName: AttachToGun
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 376822841181420323}
+        m_TargetAssemblyTypeName: HurricaneVR.Framework.Core.Grabbers.HVRSocket,
+          HurricaneVR.Framework
+        m_MethodName: EnableAutoGrab
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8283186409769659926}
+        m_TargetAssemblyTypeName: EyeOnGunAimer, Assembly-CSharp
+        m_MethodName: SetTrajectoryVisible
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2681,6 +2750,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8975194520341124228}
     m_Modifications:
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1640801102521217970, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: m_Name
       value: Working Sci Fi Revolver Gun (1)
@@ -2795,10 +2892,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2151853872836763898, guid: fe20aa426e4192048916a0759127446a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 696912844198179366}
+    - targetCorrespondingSourceObject: {fileID: 2151853872836763898, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2027755002926809142}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1640801102521217970, guid: fe20aa426e4192048916a0759127446a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7200173398459128848}
+    - targetCorrespondingSourceObject: {fileID: 1640801102521217970, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8283186409769659926}
   m_SourcePrefab: {fileID: 100100000, guid: fe20aa426e4192048916a0759127446a, type: 3}
 --- !u!1 &99804128266151669 stripped
 GameObject:
@@ -2901,6 +3004,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8283186409769659926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99804128266151669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cadfc97175174b45a28012a6c6432ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMarker: {fileID: 0}
+  maxPoints: 50
+  increment: 0.025
+  rayOverlap: 1.1
+  force: 3
+  StartPosition: {fileID: 2027755002926809142}
+  isAiming: 0
+  eyePrefab: {fileID: 5607991884728263036}
 --- !u!4 &755253480025273789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2151853872836763898, guid: fe20aa426e4192048916a0759127446a, type: 3}
