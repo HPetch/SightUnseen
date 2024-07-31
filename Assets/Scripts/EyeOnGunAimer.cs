@@ -111,9 +111,17 @@ public class EyeOnGunAimer : MonoBehaviour
 
     public void SetTrajectoryVisible(bool visible)
     {
-        isAiming = visible;
-        trajectoryLine.enabled = visible;
-        hitMarker.gameObject.SetActive(visible);
+        if (GameManager.Instance.showAimTrajectory.isOn)
+        {
+            isAiming = visible;
+            trajectoryLine.enabled = visible;
+            hitMarker.gameObject.SetActive(visible);
+        }
+        else
+        {
+            ForceVisibleOff();
+        }
+        
     }
 
     public void ForceVisibleOff()

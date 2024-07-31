@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     public AudioClip enableCyberVision;
     public AudioClip disableCyberVision;
     public AudioSource audioSource;
+    public Toggle showAimTrajectory;
 
     [Header("Movement Data")]
     public Toggle smoothMovement;
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
     CharacterController characterController;
     Recaller recall;
     public float fallDelayTimer = 1;
+    HVRPlayerController hvrPlayerController;
 
     private void Awake()
     {
@@ -92,6 +94,7 @@ public class GameManager : MonoBehaviour
         teleporter = player.GetComponent<HVRTeleporter>();
         characterController = player.GetComponent<CharacterController>();
         recall = player.GetComponent<Recaller>();
+        hvrPlayerController = player.GetComponent<HVRPlayerController>();
 
         displaySubtitles.isOn = false;
         displaySubtitles.isOn = true;
@@ -136,7 +139,11 @@ public class GameManager : MonoBehaviour
             ApplyStartupSettings();
         }
 
-        glasses.SetActive(false);
+        if (!isDouble.isOn)
+        {
+            glasses.SetActive(false);
+        }
+        
     }
 
     private void Update()
@@ -617,18 +624,27 @@ public class GameManager : MonoBehaviour
     {
         if (smoothMovement.isOn)
         {
-            characterController.enabled = true;
+            hvrPlayerController.teleportModeOn = false;
+            //characterController.enabled = true;
             teleportCol.enabled = false;
             teleporter.enabled = false;
         }
         else
         {
-            characterController.enabled = false;
+            hvrPlayerController.teleportModeOn = true;
+            //characterController.enabled = false;
             teleportCol.enabled = true;
             teleporter.enabled = true;
         }
     }
 
+    public void MoveGlassesBack()
+    {
+        if (isDouble.isOn && !switchCam)
+        {
+            MoveGlasses(false);
+        }
+    }
     public void ToggleRecallHand()
     {
         if (rightHandRecall.isOn)
