@@ -816,6 +816,28 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
             return (point - ourPoint).sqrMagnitude;
         }
+
+        public void EnableAutoGrab(bool canDo)
+        {
+            if (canDo)
+            {
+                GrabsFromHand = true;
+            }
+            else
+            {
+                GrabsFromHand = false;
+                StartCoroutine(GrabCooldown());
+            }
+        }
+
+        IEnumerator GrabCooldown()
+        {
+            yield return new WaitForSeconds(1);
+            if(GrabsFromHand == false)
+            {
+                GrabsFromHand = true;
+            }
+        }
     }
 
     [Serializable]
@@ -834,4 +856,6 @@ namespace HurricaneVR.Framework.Core.Grabbers
         Kinematic,
         RemoveRigidbody
     }
+
+
 }

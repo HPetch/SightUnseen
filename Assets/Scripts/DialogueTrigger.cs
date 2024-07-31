@@ -34,7 +34,7 @@ public class DialogueTrigger : MonoBehaviour
     void Update()
     {
         //if a new clip was started and the clip is over, begin to play a new clip
-        if(newClipPlaying && audioSource.time >= audioSource.clip.length)
+        if(newClipPlaying && audioSource.time >= audioSource.clip.length || !audioSource.isPlaying && newClipPlaying)
         {
             if(interupted == false)
             {
