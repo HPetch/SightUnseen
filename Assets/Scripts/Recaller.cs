@@ -77,6 +77,7 @@ public class Recaller : MonoBehaviour
 
             AudioSource source = eyePrefab.GetComponent<AudioSource>();
             source.clip = recallEye;
+            source.Play();
 
             //force player view if in glasses mode
             if (GameManager.Instance.isDouble.isOn)
