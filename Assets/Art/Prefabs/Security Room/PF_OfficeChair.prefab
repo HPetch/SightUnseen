@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1863592318990230881
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7710200289952432573
 Transform:
@@ -216,10 +216,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
       propertyPath: m_Name
-      value: Office_chair-PF
+      value: PF_OfficeChair
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275719297798415260, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059881126267625481, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4723318972315858231, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6698367459750108070, guid: ebd8543fbff28a94ab788a1f2958ad57, type: 3}
       insertIndex: -1

@@ -1,12 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1340332906620292297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3222726264285528611}
+  - component: {fileID: 940881476777635015}
+  - component: {fileID: 3624514519077521804}
+  m_Layer: 0
+  m_Name: SM_ElevatorWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3222726264285528611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340332906620292297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2381205625320392448}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &940881476777635015
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340332906620292297}
+  m_Mesh: {fileID: -2125625306583470185, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
+--- !u!23 &3624514519077521804
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340332906620292297}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &58169794651841566
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -22,15 +105,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.736
+      value: -1.7359993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.677
+      value: 1.6769994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (25)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88,7 +171,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -104,15 +187,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.587
+      value: -1.5869997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.821
+      value: 1.8209995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (17)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -170,7 +253,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -186,15 +269,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.587
+      value: -1.5869997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.117
+      value: 2.1169994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -234,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (4)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -252,7 +335,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -268,15 +351,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.879
+      value: -1.8789995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.385
+      value: 1.3849998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -316,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (10)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -328,91 +411,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
   m_PrefabInstance: {fileID: 324635204627576466}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &533372124111169306
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.09552
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.803
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-      propertyPath: m_Name
-      value: ElevatorbUTTON (27)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
---- !u!4 &66518681940689137 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
-  m_PrefabInstance: {fileID: 533372124111169306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &873718288102062103
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -428,15 +433,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.882
+      value: -1.8819993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.971
+      value: 1.9709996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -476,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (16)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -608,6 +613,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
+    - target: {fileID: 5892794740994626861, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      propertyPath: m_Name
+      value: Button Frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892794740994626861, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 8169845243212559661, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -663,7 +676,103 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8534432305161132645, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6476360738049272895}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1805621483435985878}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 219529053635662201}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2254165934727886542}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2325469619095363301}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4684544145856667884}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1356351610161557216}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 270209477982856540}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8479167829209317416}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3915386567453205804}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3441361846129818949}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7865402138789148365}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5740810314284073903}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7428035312241928464}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 321924235490909775}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5348441164484750278}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3023432364310212901}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7104163278991796026}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2944723959890559207}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7718513429023643666}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8228282366563174715}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9141804375342094822}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4574667897743612337}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2955798094183023623}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 523561477363991541}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7018071150418896198}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5618523710507624942}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5485895560964956056}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6116237255965616249}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 840672683940683772}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3697332654008172117}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1586420077225984632}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0568b4b947a1d447a9e2e0eafffaec9, type: 3}
 --- !u!4 &1659206807080450899 stripped
@@ -677,7 +786,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -693,15 +802,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.882
+      value: -1.8819993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.117
+      value: 2.1169994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -741,7 +850,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (6)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -833,7 +942,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -849,15 +958,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.882
+      value: -1.8819993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.263
+      value: 2.2629993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -897,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (3)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -915,7 +1024,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -931,15 +1040,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.027
+      value: -2.0269992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.385
+      value: 1.3849998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -979,7 +1088,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (11)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1059,7 +1168,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1075,15 +1184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.59
+      value: -1.5899994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.385
+      value: 1.3849998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1123,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (9)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1207,9 +1316,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Elevator
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7511558181221131132, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
+    - {fileID: -5754084199372789682, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3222726264285528611}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4768430455287638762}
@@ -1233,105 +1347,6 @@ PrefabInstance:
       addedObject: {fileID: 1659206807080450899}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6476360738049272895}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1805621483435985878}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 219529053635662201}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2254165934727886542}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2325469619095363301}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4684544145856667884}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1356351610161557216}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 270209477982856540}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8479167829209317416}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3915386567453205804}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3441361846129818949}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7865402138789148365}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5740810314284073903}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7428035312241928464}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 321924235490909775}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5348441164484750278}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3023432364310212901}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7104163278991796026}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2944723959890559207}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7718513429023643666}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8228282366563174715}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9141804375342094822}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4574667897743612337}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2955798094183023623}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 523561477363991541}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7018071150418896198}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5618523710507624942}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5485895560964956056}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6116237255965616249}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 840672683940683772}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3697332654008172117}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1586420077225984632}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 66518681940689137}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7993009122902427214}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
@@ -1346,7 +1361,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1362,15 +1377,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.587
+      value: -1.5869997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.263
+      value: 2.2629993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1410,7 +1425,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (1)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1428,7 +1443,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1444,15 +1459,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.587
+      value: -1.5869997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.971
+      value: 1.9709996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1492,7 +1507,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (12)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1510,7 +1525,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1526,15 +1541,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.587
+      value: -1.5869997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.677
+      value: 1.6769994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1574,7 +1589,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (22)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1592,7 +1607,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1608,15 +1623,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.884
+      value: -1.8839996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.532
+      value: 1.5319995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1656,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (32)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1674,7 +1689,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1690,15 +1705,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.027
+      value: -2.0269992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.677
+      value: 1.6769994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1738,7 +1753,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (24)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1756,7 +1771,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1772,15 +1787,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.027
+      value: -2.0269992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.117
+      value: 2.1169994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1820,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (8)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1838,7 +1853,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1854,15 +1869,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.736
+      value: -1.7359993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.117
+      value: 2.1169994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1902,7 +1917,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (5)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1920,7 +1935,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -1936,15 +1951,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.738
+      value: -1.7379997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.532
+      value: 1.5319995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1984,7 +1999,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (31)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2066,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
     - target: {fileID: 919132149155446097, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       propertyPath: m_Name
-      value: PF_Elevator
+      value: SM_ElevatorWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2086,6 +2101,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2381205625320392448}
     m_Modifications:
+    - target: {fileID: 361625392664748138, guid: df2e6c4043c876346b007d0e1d9eb25c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8145534847878698047, guid: df2e6c4043c876346b007d0e1d9eb25c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8000293
@@ -2130,6 +2149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Rug_Rectangle
       objectReference: {fileID: 0}
+    - target: {fileID: 8809340372423560837, guid: df2e6c4043c876346b007d0e1d9eb25c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2146,7 +2169,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2162,15 +2185,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.736
+      value: -1.7359993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.263
+      value: 2.2629993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2210,7 +2233,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (2)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2228,7 +2251,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2244,15 +2267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.027
+      value: -2.0269992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.971
+      value: 1.9709996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2292,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (14)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2310,7 +2333,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2326,15 +2349,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.027
+      value: -2.0269992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.821
+      value: 1.8209995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2374,7 +2397,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (19)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2392,7 +2415,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2408,15 +2431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.736
+      value: -1.7359993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.821
+      value: 1.8209995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2456,7 +2479,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (20)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2474,7 +2497,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2490,15 +2513,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.441
+      value: -1.4409994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.821
+      value: 1.8209996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2538,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (18)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2620,7 +2643,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
     - target: {fileID: 919132149155446097, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       propertyPath: m_Name
-      value: PF_Elevator (1)
+      value: SM_ElevatorWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2638,7 +2661,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2654,15 +2677,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.882
+      value: -1.8819993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.821
+      value: 1.8209995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2702,7 +2725,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (21)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2720,7 +2743,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2736,15 +2759,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.442
+      value: -1.4419998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.385
+      value: 1.3849999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2784,7 +2807,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2802,7 +2825,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2818,15 +2841,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.736
+      value: -1.7359993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.971
+      value: 1.9709996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2866,7 +2889,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (15)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2948,7 +2971,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
     - target: {fileID: 919132149155446097, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       propertyPath: m_Name
-      value: PF_Elevator (2)
+      value: SM_ElevatorWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2966,7 +2989,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -2982,15 +3005,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.441
+      value: -1.4409994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.677
+      value: 1.6769996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3030,7 +3053,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (23)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3048,7 +3071,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3064,15 +3087,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.882
+      value: -1.8819993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.677
+      value: 1.6769994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3112,7 +3135,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (26)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3130,7 +3153,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3146,15 +3169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.441
+      value: -1.4409994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.971
+      value: 1.9709992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3194,7 +3217,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (13)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3212,7 +3235,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3228,15 +3251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.589
+      value: -1.5889995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.532
+      value: 1.5319995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3276,7 +3299,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (28)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3294,7 +3317,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3310,15 +3333,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.441
+      value: -1.4409994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.117
+      value: 2.1169994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3358,7 +3381,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (7)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3376,7 +3399,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3392,15 +3415,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.443
+      value: -1.4429997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.532
+      value: 1.5319996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3440,7 +3463,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (29)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3522,7 +3545,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3e5c1181b4cd1345bd0bf7987d74958, type: 2}
     - target: {fileID: 919132149155446097, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
       propertyPath: m_Name
-      value: PF_Elevator (3)
+      value: SM_ElevatorWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dfd2cbab7665d1c4f93f118983b1f874, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3540,7 +3567,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2381205625320392448}
+    m_TransformParent: {fileID: 1659206807080450899}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalScale.x
@@ -3556,15 +3583,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.3719997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.029
+      value: -2.028999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.532
+      value: 1.5319995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3604,7 +3631,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e8460cba889dd348b5f7b2e1a09fd59, type: 2}
     - target: {fileID: 919132149155446097, guid: f6d7411d898a88c45963e15b0fb50903, type: 3}
       propertyPath: m_Name
-      value: ElevatorbUTTON (30)
+      value: SM_ElevatorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
