@@ -7,6 +7,8 @@ public class GravitySwitch : MonoBehaviour
     private Vector3 gravity;
     private bool drivingObjectGravity = false;
     private Collider eye;
+    public AudioSource audioSource;
+    public AudioClip eyeStick;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +17,8 @@ public class GravitySwitch : MonoBehaviour
             drivingObjectGravity = true;
             eye = other;
             eye.attachedRigidbody.useGravity = false;
+            audioSource.clip = eyeStick;
+            audioSource.Play();
         }
     }
 
