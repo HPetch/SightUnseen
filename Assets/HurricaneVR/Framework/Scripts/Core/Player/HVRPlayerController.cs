@@ -17,7 +17,7 @@ namespace HurricaneVR.Framework.Core.Player
     {
         [Header("Settings")]
         public bool CanJump = false;
-
+        public bool teleportModeOn;
         public bool CanSteerWhileJumping = true;
         public bool CanSprint = true;
         public bool CanCrouch = true;
@@ -301,8 +301,11 @@ namespace HurricaneVR.Framework.Core.Player
 
             if (CharacterController.enabled)
             {
-               
-                HandleMovement(); 
+                if (!teleportModeOn)
+                {
+                    HandleMovement();
+                }
+                
 
                 if (CanRotate())
                 {

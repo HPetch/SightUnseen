@@ -1039,8 +1039,8 @@ namespace HurricaneVR.Framework.Core.Player
             TeleportState = TeleportState.None;
             IsTeleporting = false;
             AfterTeleport.Invoke();
-            //if (CharacterController)
-            //    CharacterController.enabled = true;
+            if (CharacterController)
+                CharacterController.enabled = true;
 
             if (LeftHand) LeftHand.BreakDistanceCooldown();
             if (RightHand) RightHand.BreakDistanceCooldown();

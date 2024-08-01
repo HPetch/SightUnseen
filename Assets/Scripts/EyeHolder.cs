@@ -9,6 +9,8 @@ using UnityEngine.Windows;
 using Unity.VisualScripting;
 using DG.Tweening;
 using HurricaneVR.Framework.Core.Utils;
+using HurricaneVR.Framework.Core.Grabbers;
+using static System.Security.Cryptography.ECCurve;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -41,6 +43,10 @@ public class EyeHolder : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip turnOnSound;
 
+    public GameObject onGunPos;
+    public bool onGun;
+    public HVRSocket gunSocket;
+
     private void Awake()
     {
         playerController = FindObjectOfType<HVRPlayerController>();
@@ -68,6 +74,7 @@ public class EyeHolder : MonoBehaviour
 
     public void SwitchEyeToDetached(bool doDetached)
     {
+        Debug.Log("s");
         if (doDetached)
         {
             //GameManager.Instance.SetCybervisionState(true);
@@ -137,7 +144,7 @@ public class EyeHolder : MonoBehaviour
             }
 
             //If the timer hits 0, we have been still for a second, so can unveil the eye prefab.
-            if ((stillMotionTimer < 0f) && !eyeSetDown)
+            if ((stillMotionTimer < 0f) && !eyeSetDown && !onGun)
             {
                 eyeSetDown = true;
                 hmdTracker.enabled = true; //Start tracking headset
@@ -250,5 +257,45 @@ public class EyeHolder : MonoBehaviour
     protected virtual void PlaySFX(AudioClip clip)
     {
         if (SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(clip, transform.position);
+    }
+
+    public void AttachToGun(bool attached)
+    {
+        if (attached)
+        {
+            GameManager.Instance.hideViewport("cyber", true);
+            eyeSetDown = false;
+            onGun = true;
+            
+            //transform.parent = onGunPos.transform;
+            transform.localPosition = Vector3.zero;
+        }
+        else
+        {
+            GameManager.Instance.hideViewport("cyber", true);
+            EyeOnGunAimer aimer = gunSocket.GetComponentInParent<EyeOnGunAimer>();
+            aimer.ForceVisibleOff();
+            eyeSetDown = false;
+            onGun = false;
+            //transform.parent = null;
+        }
+    }
+
+    public void FireEye()
+    {
+        if (onGun)
+        {
+            SphereCollider collider = gameObject.GetComponent<SphereCollider>();
+            //EyeOnGunAimer aimer = gunSocket.GetComponentInParent<EyeOnGunAimer>();
+            //aimer.SetTrajectoryVisible(false);
+            //transform.parent = null;
+            gunSocket.ForceRelease();
+            stillMotionTimer = stillMotionMax;
+            eyeSetDown = false;
+            collider.isTrigger = false;
+            rb.isKinematic = false;
+            rb.AddForce(transform.forward * 3, ForceMode.Impulse);
+            onGun = false;
+        }
     }
 }
