@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Gun
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
   - _NORMALMAP
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _METALLICGLOSSMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 74881332b4ac91b4c96c2d3735a909ef, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4b04334fc423ace488c288fa9cbb9c8d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dd5fe60751deb1a42a35201689e481e6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3382e2d1abfebb44c9248307d0be0869, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ce324587f549bd2418dc67e370efa05b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -72,7 +73,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.591
+    - _Glossiness: 0.68
     - _GlossyReflections: 1
     - _Metallic: 0.067
     - _Mode: 0
@@ -85,6 +86,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.8867924, g: 0.6501551, b: 0.47267708, a: 1}
+    - _EmissionColor: {r: 0.9716981, g: 0.6001328, b: 0.49043253, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
