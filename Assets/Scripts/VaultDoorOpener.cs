@@ -19,7 +19,10 @@ public class VaultDoorOpener : MonoBehaviour
     private HVRGrabbable grabbable;
     [SerializeField] private UnityEvent onComplete;
     public AudioClip openClip;
+    public AudioClip rotateClip;
     public AudioSource audioSource;
+    public AudioSource audioSource2;
+    public bool hasPlayedRotate = false;
 
     private void Awake()
     {
@@ -45,13 +48,20 @@ public class VaultDoorOpener : MonoBehaviour
             grabbable.enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             wheelCollider.enabled = false;
-            
+
             animator.SetBool("unlocked", true); //Animate the door opening
 
             onComplete.Invoke(); //Invoke anything that would happen once completed (e.g. dialogue lines)
+            audioSource2.clip = openClip;
+            audioSource2.Play();
+
         }
 
-        audioSource.clip = openClip;
-        audioSource.Play();
+        if (hasPlayedRotate == false)
+        {
+            audioSource.clip = rotateClip;
+            audioSource.Play();
+            hasPlayedRotate = true;
+        }
     }
 }

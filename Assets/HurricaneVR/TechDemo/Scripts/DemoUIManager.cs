@@ -40,6 +40,11 @@ namespace HurricaneVR.TechDemo.Scripts
         private bool Paused;
         public GameObject pauseStuff;
 
+        public AudioSource audioSource;
+
+        public AudioClip pauseSound;
+        public AudioClip unpauseSound;
+
         void Start()
         {
             if (!Player)
@@ -209,6 +214,8 @@ namespace HurricaneVR.TechDemo.Scripts
                     LeftHand.transform.parent = leftparent;
                     RightHand.transform.parent = rightParent;
                     pauseStuff.SetActive(false);
+                    audioSource.clip = unpauseSound;
+                    audioSource.Play();
                 }
                 else
                 {
@@ -217,6 +224,8 @@ namespace HurricaneVR.TechDemo.Scripts
                     LeftHand.transform.parent = LeftHand.Target;
                     RightHand.transform.parent = RightHand.Target;
                     pauseStuff.SetActive(true);
+                    audioSource.clip = pauseSound;
+                    audioSource.Play();
                 }
 
                 Paused = !Paused;
