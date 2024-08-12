@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 3987588097678919278}
   - component: {fileID: 1645392487944922996}
   - component: {fileID: 669870246688482561}
+  - component: {fileID: 5007664683159105676}
   m_Layer: 30
   m_Name: Goal Line
   m_TagString: Untagged
@@ -558,6 +559,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layerToBe: 30
+--- !u!114 &5007664683159105676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284800863182536395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb084b01f9cc784c9d456f829f69c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRange: 3
+  minRange: 1
 --- !u!1 &6210257685565056608
 GameObject:
   m_ObjectHideFlags: 0
