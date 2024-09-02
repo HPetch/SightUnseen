@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7572048849301699804
 Transform:
@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 31894951432eb454aa9f21238b974a16, type: 2}
+    - target: {fileID: -4892455333473022950, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -1888429653086928068, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -126,6 +130,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
       propertyPath: m_Name
       value: SM_WaterCooler
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729079571467764762, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -139,7 +151,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4136578822457103552}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4892455333473022950, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6344290641944650546}
   m_SourcePrefab: {fileID: 100100000, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
 --- !u!4 &402785981088267670 stripped
 Transform:
@@ -151,6 +166,33 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -5990612672845953877, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
   m_PrefabInstance: {fileID: 152069923948501629}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4469474093251991143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4892455333473022950, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
+  m_PrefabInstance: {fileID: 152069923948501629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6344290641944650546
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469474093251991143}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7960938484042816015, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
 --- !u!23 &7482363501672405313 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -1888429653086928068, guid: c42cfe7184c4316498c32af18632f5ce, type: 3}
@@ -248,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: -2907307543104833310, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 641795520678525505, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -284,6 +330,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5305506569125562592, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -299,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 8471294074538117271, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471294074538117271, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -386,6 +440,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2907307543104833310, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -500918540876968398, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -426,6 +484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_WaterCooler_LOD1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5305506569125562592, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -434,6 +496,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 31894951432eb454aa9f21238b974a16, type: 2}
+    - target: {fileID: 8471294074538117271, guid: d6343828700c05c4a9c1fa9e78e57b3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -502,9 +568,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7441418528029889400, guid: 283f01fad2ddf3a439f8b00bf2a1bedc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 283f01fad2ddf3a439f8b00bf2a1bedc, type: 3}
       propertyPath: m_Name
       value: SM_WaterCooler_LOD2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 283f01fad2ddf3a439f8b00bf2a1bedc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796316138841884093, guid: 283f01fad2ddf3a439f8b00bf2a1bedc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4849493257728276276, guid: 283f01fad2ddf3a439f8b00bf2a1bedc, type: 3}
       propertyPath: m_LocalScale.x
