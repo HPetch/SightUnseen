@@ -14,6 +14,7 @@ namespace HurricaneVR.Framework.Core.UI
 
         [Tooltip("Button used to toggle presses.")]
         public HVRButtons PressButton;
+        public HVRButtons PressButton2;
 
         [Tooltip("Canvases for UI pointer interaction.")]
         public List<Canvas> UICanvases = new List<Canvas>();
@@ -112,6 +113,7 @@ namespace HurricaneVR.Framework.Core.UI
                 pointer.PointerEventData.delta = delta;
 
                 var buttonState = HVRController.GetButtonState(pointer.HandSide, PressButton);
+                var buttonState2 = HVRController.GetButtonState(pointer.HandSide, PressButton2);
 
                 HandlePointerExitAndEnter(pointer.PointerEventData, pointer.CurrentUIElement);
 
@@ -124,6 +126,19 @@ namespace HurricaneVR.Framework.Core.UI
                     ProcessDrag(pointer.PointerEventData);
                 }
                 else if (buttonState.JustDeactivated)
+                {
+                    ProcessRelease(pointer);
+                }
+                //Begin harry's horrible crimes of coding here, adding onto this to make it possible for A/X to activate UIs
+                else if (buttonState2.JustActivated)
+                {
+                    ProcessPress(pointer);
+                }
+                else if (buttonState2.Active)
+                {
+                    ProcessDrag(pointer.PointerEventData);
+                }
+                else if (buttonState2.JustDeactivated)
                 {
                     ProcessRelease(pointer);
                 }
