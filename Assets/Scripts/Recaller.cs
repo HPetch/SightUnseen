@@ -12,6 +12,7 @@ using INab.WorldScanFX;
 using QFX.MFX;
 using UnityEngine.InputSystem.HID;
 using HurricaneVR.Framework.Components;
+using HurricaneVR.TechDemo.Scripts;
 
 public class Recaller : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class Recaller : MonoBehaviour
     public HVRPosableGrabPoint GrabPoint;
     Rigidbody rightRb;
     Rigidbody leftRb;
+
+    public DemoHolster leftHolster;
+    public DemoHolster rightHolster;
 
     public AudioClip recallEye;
 
@@ -134,5 +138,10 @@ public class Recaller : MonoBehaviour
             Grabber = rightHand;
         }
         else { Grabber = leftHand; }
+    }
+
+    public void HolsterGun()
+    {
+        leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
     }
 }

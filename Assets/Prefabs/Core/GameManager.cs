@@ -328,6 +328,8 @@ public class GameManager : MonoBehaviour
                     ScanEffect(true);
                     MoveGlasses(true);
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    rightEye.enabled = false;
+                    leftEye.enabled = false;
                     PlayAudio(glassesOn);
                 }
                 else
@@ -336,7 +338,9 @@ public class GameManager : MonoBehaviour
                     switchCam = false;
                     ScanEffect(false);
                     MoveGlasses(false);
-                    if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    //if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    rightEye.enabled = true;
+                    leftEye.enabled = true;
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
                     PlayAudio(glassesOff);
                 }
@@ -446,6 +450,8 @@ public class GameManager : MonoBehaviour
                     ScanEffect(true);
 
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
+                    rightEye.enabled = false;
+                    leftEye.enabled = false;
                 }
                 else
                 {
@@ -453,7 +459,9 @@ public class GameManager : MonoBehaviour
 
                     ScanEffect(false);
 
-                    if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    //if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+                    rightEye.enabled = true;
+                    leftEye.enabled = true;
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
                 }
             }
