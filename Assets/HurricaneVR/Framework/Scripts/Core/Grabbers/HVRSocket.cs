@@ -383,6 +383,15 @@ namespace HurricaneVR.Framework.Core.Grabbers
             }
         }
 
+        public IEnumerator TryGrabSpecificGrabbable(HVRGrabbable grabbable)
+        {
+            yield return new WaitForFixedUpdate();
+
+            if (CanAddGrabbable && TryGrab(grabbable))
+            {
+            }
+        }
+
         protected override void OnHoverExit(HVRGrabbable grabbable)
         {
             grabbable.Released.RemoveListener(OnHoverGrabbableReleased);
