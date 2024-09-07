@@ -18,6 +18,8 @@ public class Recaller : MonoBehaviour
 {
     public bool alterHand;
 
+    public bool gunEnteredHolster;
+
     public HVRHandGrabber leftHand;
     public HVRHandGrabber rightHand;
     public HVRHandGrabber Grabber;
@@ -142,6 +144,21 @@ public class Recaller : MonoBehaviour
 
     public void HolsterGun()
     {
-        leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
+        if(gunEnteredHolster == false)
+        {
+            leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
+        }
+    }
+
+    public void EnterHolster(bool didIDoThat)
+    {
+        if (didIDoThat)
+        {
+            gunEnteredHolster = true;
+        }
+        else
+        {
+            gunEnteredHolster = false;
+        }
     }
 }
