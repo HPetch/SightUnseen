@@ -6,7 +6,7 @@ public class HidePrefabMeshRenderers : MonoBehaviour
 {
     [SerializeField] private GameObject[] prefabsToSearch;
     [SerializeField] private int targetLayer = 0; //Default by... default
-    [SerializeField] private bool hideImmediately = true;
+    //[SerializeField] private bool hideImmediately = true;
     private List<Renderer> renderers;
 
     void Awake()
