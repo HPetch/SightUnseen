@@ -20,7 +20,6 @@ public class HidePrefabMeshRenderers : MonoBehaviour
             {
                 if (y.gameObject.layer == targetLayer)
                 {
-                    Debug.Log("WOO");
                     renderers.Add(y);
                     //if (hideImmediately) y.enabled = false;
                 }
