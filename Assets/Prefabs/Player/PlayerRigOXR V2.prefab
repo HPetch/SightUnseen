@@ -13536,6 +13536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alterHand: 1
+  gunEnteredHolster: 0
   leftHand: {fileID: 6250105584622439639}
   rightHand: {fileID: 2460442787003282713}
   Grabber: {fileID: 0}
@@ -13543,6 +13544,9 @@ MonoBehaviour:
   eyePrefab: {fileID: 439892063209669087}
   GrabTrigger: 1
   GrabPoint: {fileID: 0}
+  leftHolster: {fileID: 0}
+  rightHolster: {fileID: 0}
+  recallEye: {fileID: 0}
 --- !u!4 &2149235436234872995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2923976313076319324, guid: c43ac1b5fbd2fc24ea40fb28bae6be3e, type: 3}
@@ -13862,10 +13866,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bcf643cf67a1fd642a33364c74852899, type: 2}
-    - target: {fileID: 6971634913962959012, guid: e60c669bbc250e5498f2bf525ff347a0, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7013828334893645350, guid: e60c669bbc250e5498f2bf525ff347a0, type: 3}
       propertyPath: m_Enabled
       value: 0

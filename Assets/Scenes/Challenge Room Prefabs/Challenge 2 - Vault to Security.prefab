@@ -110,7 +110,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4565099775152052238
 RectTransform:
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2032
+  m_VersionIndex: 2035
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3621,7 +3621,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1873
+  m_VersionIndex: 1876
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3944,7 +3944,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 840
+  m_VersionIndex: 843
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4015,7 +4015,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &8705241678908357053
 RectTransform:
@@ -5863,7 +5863,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2174
+  m_VersionIndex: 2177
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6120,7 +6120,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2079931789091681331
 RectTransform:
@@ -6701,7 +6701,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 793
+  m_VersionIndex: 796
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6885,7 +6885,7 @@ GameObject:
   - component: {fileID: 4542415340949018255}
   - component: {fileID: 1496963661453906222}
   m_Layer: 30
-  m_Name: Door(keyPad) Cyber
+  m_Name: Door wall Cyber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9098,7 +9098,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1873
+  m_VersionIndex: 1876
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9581,7 +9581,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 642
+  m_VersionIndex: 645
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9936,7 +9936,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 840
+  m_VersionIndex: 843
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10239,7 +10239,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 953
+  m_VersionIndex: 956
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10564,7 +10564,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1171
+  m_VersionIndex: 1174
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10883,11 +10883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815502045382564487, guid: b9d07720a700a4848992ae81ad707429, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.03
+      value: -0.815
       objectReference: {fileID: 0}
     - target: {fileID: 3815502045382564487, guid: b9d07720a700a4848992ae81ad707429, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.047
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 4085287670603671444, guid: b9d07720a700a4848992ae81ad707429, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11208,9 +11208,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 871915005962285155}
     m_Modifications:
+    - target: {fileID: 364024821054057196, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844710241829194557, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519736960503730040, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099302249225755956, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341961193297954324, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8618856494744361221, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
       propertyPath: m_Name
       value: PF_Computer_screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618856494744361221, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8995805005575226303, guid: b635d76b4b2da0d478899e1807601cf6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12704,7 +12728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.75
+      value: -1.872
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12716,7 +12740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710784
+      value: -0.70710546
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalRotation.x
@@ -12724,7 +12748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710576
+      value: -0.7071082
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalRotation.z
@@ -12736,7 +12760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 8351893701441829802, guid: 692ae8976a7cab343877e793aa714609, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
