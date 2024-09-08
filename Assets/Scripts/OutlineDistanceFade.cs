@@ -14,7 +14,7 @@ public class OutlineDistanceFade : MonoBehaviour
     void Start()
     {
         outline = GetComponent<Outline>();
-        player = GameObject.Find("PlayerController");
+        player = GameObject.FindObjectOfType<EyeHolder>().gameObject;
         presetAlpha = outline.OutlineColor.a;
         outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b,0);
     }

@@ -1275,7 +1275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6599404477516958831}
         m_TargetAssemblyTypeName: VaultDoorOpener, Assembly-CSharp
-        m_MethodName: updateRotate
+        m_MethodName: playSoundOnRotation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1320,6 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleGoal: 120
+  marginDegrees: 2
   onComplete:
     m_PersistentCalls:
       m_Calls: []
