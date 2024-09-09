@@ -29,6 +29,8 @@ public class Recaller : MonoBehaviour
     public HVRPosableGrabPoint GrabPoint;
     Rigidbody rightRb;
     Rigidbody leftRb;
+    public GameObject fadeOnlyGun;
+    public GameObject fadeGun;
 
     public DemoHolster leftHolster;
     public DemoHolster rightHolster;
@@ -73,6 +75,9 @@ public class Recaller : MonoBehaviour
             //    Grabber.ForceRelease();
            
             recaller.Grab(gunPrefab, GrabTrigger, GrabPoint);
+            var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
+            if (mfxActivator != null)
+                mfxActivator.ActivateBackward();
         }
     }
 
@@ -146,7 +151,17 @@ public class Recaller : MonoBehaviour
     {
         if(gunEnteredHolster == false)
         {
+            fadeGun = Instantiate(fadeOnlyGun, gunPrefab.transform.position, gunPrefab.transform.rotation);
+            fadeGun.GetComponent<MfxController>().ActivateForward();
+            //var fadeAwayGun = gun.gameObject.GetComponent<MfxController>();
+            //if (fadeAwayGun != null)
+            //    fadeAwayGun.ActivateBackward();
+
             leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
+            
+            var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
+            if (mfxActivator != null)
+                mfxActivator.ActivateBackward();
         }
     }
 

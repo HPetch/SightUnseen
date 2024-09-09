@@ -8,22 +8,25 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Gun Sight
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 6aa9c91f263550a499c96dc10745b1eb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHABLEND_ON
-  - _EMISSION
+  - _CUTOFFAXIS_Y
+  - _MASKTYPE_AXISLOCAL
+  - _SMOOTHNESSTEXTURECHANNEL_SPECULARALPHA
   m_InvalidKeywords:
-  - _BUILTIN_ALPHATEST_ON
-  - _BUILTIN_AlphaClip
-  - _BUILTIN_SURFACE_TYPE_TRANSPARENT
-  m_LightmapFlags: 0
+  - _ALPHATEST_ON
+  - _EMISSION
+  - _EMISSION2INVERT_ON
+  - _EMISSION2SMOOTH_ON
+  - _USEEMISSION2_ON
+  - _USEOBJECTWORLDPOSITION_ON
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -34,6 +37,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap2:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -49,12 +56,32 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DissolveMap1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EdgeMap1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 2800000, guid: 81e5fd7143092a84a846d4b089b6fa51, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissionMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 81e5fd7143092a84a846d4b089b6fa51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -73,6 +100,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_AlphaClip: 1
@@ -88,24 +123,52 @@ Material:
     - _BUILTIN_ZWriteControl: 0
     - _BumpScale: 1
     - _Cutoff: 0.08
+    - _CutoffAxis: 1
     - _DetailNormalMapScale: 1
+    - _DissolveEdgeSize: 0
+    - _DissolveSize: 0
+    - _DissolveStrength: 1
+    - _DistortionStrength: 1
     - _DstBlend: 10
+    - _EdgeOffset: 1
+    - _EdgeSize: 0.5
+    - _EdgeStrength: 0
+    - _Emission2Invert: 1
+    - _Emission2Offset: 1
+    - _Emission2Smooth: 1
+    - _GammaToLinear: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.68
     - _GlossyReflections: 1
+    - _Invert: 0
+    - _MaskOffset: 0.44
+    - _MaskType: 1
     - _Metallic: 0.067
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SPECGLOSSMAP: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _UVSec: 0
+    - _UseEmission2: 1
+    - _UseObjectWorldPosition: 1
     - _ZWrite: 0
+    - __dirty: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.990566, g: 0.62009454, b: 0.042052314, a: 1}
+    - _Color: {r: 0.99215686, g: 0.3697108, b: 0.043137245, a: 1}
+    - _Color2: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveEdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveMap1_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeMap1_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission2Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 0.7632414, b: 0.4198113, a: 1}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _EmissionMap2_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - _FlowMap_Scroll: {r: 0, g: 0.2, b: 0, a: 0}
+    - _MaskWorldPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
