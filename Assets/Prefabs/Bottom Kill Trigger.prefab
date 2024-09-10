@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 1847569770440763232}
   - component: {fileID: 4082720387378191934}
   - component: {fileID: 2368344451360476135}
-  - component: {fileID: 8947037894320701402}
-  - component: {fileID: 7681671929601818028}
   m_Layer: 0
   m_Name: Bottom Kill Trigger
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6151608654272873301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -107,47 +105,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8947037894320701402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151608654272873301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ca223a959d7e546a8d7749016abd1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7681671929601818028}
-        m_TargetAssemblyTypeName: SceneManaging, Assembly-CSharp
-        m_MethodName: reloadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  layersToCheck:
-    serializedVersion: 2
-    m_Bits: 256
-  isActive: 1
-  objectsToDisable: []
---- !u!114 &7681671929601818028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151608654272873301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebbcf8daa39eae14eb117d0c732767b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
