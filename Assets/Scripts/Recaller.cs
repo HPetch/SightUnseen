@@ -16,26 +16,34 @@ using HurricaneVR.TechDemo.Scripts;
 
 public class Recaller : MonoBehaviour
 {
+    [Header("General Settings")]
     public bool alterHand;
-
     public bool gunEnteredHolster;
 
+    [Header("Hand Settings")]
     public HVRHandGrabber leftHand;
     public HVRHandGrabber rightHand;
     public HVRHandGrabber Grabber;
-    public HVRGrabbable gunPrefab;
-    public HVRGrabbable eyePrefab;
     public HVRGrabTrigger GrabTrigger;
     public HVRPosableGrabPoint GrabPoint;
-    Rigidbody rightRb;
-    Rigidbody leftRb;
-    public GameObject fadeOnlyGun;
-    public GameObject fadeGun;
 
+    [Header("Prefabs")]
+    public HVRGrabbable gunPrefab;
+    public HVRGrabbable eyePrefab;
+    public GameObject fadeOnlyGun;
+    public GameObject fadeOnlyEye;
+    GameObject fadeGun;
+    public GameObject gunLine;
+
+    [Header("Holsters")]
     public DemoHolster leftHolster;
     public DemoHolster rightHolster;
 
+    [Header("Audio Stuff")]
     public AudioClip recallEye;
+
+    Rigidbody rightRb;
+    Rigidbody leftRb;
 
     public void Start()
     {
@@ -48,6 +56,8 @@ public class Recaller : MonoBehaviour
     {
         if (gunPrefab && Grabber)
         {
+            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject);
+
             //pick which hand to send the gun to based on the toggle use some UI menu or something to change this
             //AlterHandCheck();
             //just in case we want the button to drop the object if the player is holding it
@@ -88,6 +98,11 @@ public class Recaller : MonoBehaviour
         tracker.StepChanged.RemoveAllListeners();
         if (eyePrefab && Grabber)
         {
+            if (eyePrefab.GetComponent<EyeHolder>().eyeIsSpawned)
+            {
+                MaterialiseGun(fadeOnlyEye, eyePrefab.gameObject);
+            }
+            
             //AlterHandCheck();
             if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == eyePrefab)
             {
@@ -151,18 +166,35 @@ public class Recaller : MonoBehaviour
     {
         if(gunEnteredHolster == false)
         {
-            fadeGun = Instantiate(fadeOnlyGun, gunPrefab.transform.position, gunPrefab.transform.rotation);
-            fadeGun.GetComponent<MfxController>().ActivateForward();
+            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject);
+            gunLine.SetActive(false);
+            
             //var fadeAwayGun = gun.gameObject.GetComponent<MfxController>();
             //if (fadeAwayGun != null)
             //    fadeAwayGun.ActivateBackward();
 
-            leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
-            
+            if (gunPrefab.GetComponent<ConfigurableJoint>() != null)
+            {
+                if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == leftRb)
+                {
+                    leftHolster.StartCoroutine(leftHolster.TryGrabSpecificGrabbable(gunPrefab));
+                }
+                if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == rightRb)
+                {
+                    rightHolster.StartCoroutine(rightHolster.TryGrabSpecificGrabbable(gunPrefab));
+                }
+            }
+
             var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
             if (mfxActivator != null)
                 mfxActivator.ActivateBackward();
         }
+    }
+
+    public void MaterialiseGun(GameObject obj, GameObject prefab)
+    {
+        fadeGun = Instantiate(obj, prefab.transform.position, prefab.transform.rotation);
+        fadeGun.GetComponent<MfxController>().ActivateForward();
     }
 
     public void EnterHolster(bool didIDoThat)
@@ -175,5 +207,19 @@ public class Recaller : MonoBehaviour
         {
             gunEnteredHolster = false;
         }
+    }
+
+    public void EnableGunLine()
+    {
+        gunLine.SetActive(true);
+        //if(gunPrefab.GetComponent<ConfigurableJoint>().connectedBody != rightRb && gunPrefab.GetComponent<ConfigurableJoint>().connectedBody != leftRb)
+        //{
+        //    gunLine.SetActive(false);
+        //}
+        //else
+        //{
+        //    gunLine.SetActive(true);
+        //}
+
     }
 }

@@ -3628,6 +3628,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &504839304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8683409038213792303, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+  m_PrefabInstance: {fileID: 1967918753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &507629322
 Mesh:
   m_ObjectHideFlags: 0
@@ -16237,6 +16242,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7021884079728331238, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: gunLine
+      value: 
+      objectReference: {fileID: 504839304}
+    - target: {fileID: 7021884079728331238, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: fadeOnlyEye
+      value: 
+      objectReference: {fileID: 3841165042963561651, guid: 5b7b7a8390bc2fe498222c30073bcc1d, type: 3}
+    - target: {fileID: 7021884079728331238, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: fadeOnlyGun
       value: 
       objectReference: {fileID: 861023096637952389, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
@@ -16279,6 +16292,74 @@ PrefabInstance:
     - target: {fileID: 7278021493714272482, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1967918758}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableGunLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1967918758}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1967918755}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableGunLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636594229776500059, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8140958809752047507, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: m_IsActive
@@ -16363,6 +16444,17 @@ MonoBehaviour:
   lastCheckpoint: {fileID: 0}
   deathCounter: 0
   fader: {fileID: 191266760}
+--- !u!114 &1967918758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7021884079728331238, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+  m_PrefabInstance: {fileID: 1967918753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967918755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea86944e2243c374092ccabe78334b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1984158014
 Mesh:
   m_ObjectHideFlags: 0
