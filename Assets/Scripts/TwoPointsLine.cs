@@ -10,6 +10,10 @@ public class TwoPointsLine : MonoBehaviour
     public Transform pointB;
     private LineRenderer line;
 
+    //Used for contexts that change between teleporter movement and smooth movement
+    public bool hasTeleporterAlternate = false;
+    public TwoPointsLine teleporterAlternate;
+
     // Start is called before the first frame update
     void Start()
     {
