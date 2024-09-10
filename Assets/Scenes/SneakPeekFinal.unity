@@ -1866,67 +1866,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &238670624
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52116152422452031, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 861023096637952389, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: m_Name
-      value: FadeOnlyGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 2178342475799693084, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
-      propertyPath: AutoDestroy
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
 --- !u!43 &238921305
 Mesh:
   m_ObjectHideFlags: 0
@@ -12820,7 +12759,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &1555099364
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16523,6 +16462,10 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].x
       value: 7.4664993
       objectReference: {fileID: 0}
+    - target: {fileID: 696912844198179366, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 707600749518304718, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: target
       value: 
@@ -16647,6 +16590,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3212322430884328536, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 3591102890971995363, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16755,10 +16702,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7021884079728331238, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
-      propertyPath: fadeOnlyGun
-      value: 
-      objectReference: {fileID: 861023096637952389, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
     - target: {fileID: 7044940220975493171, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: target
       value: 
@@ -16838,6 +16781,10 @@ PrefabInstance:
     - target: {fileID: 8140958809752047507, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340339447304477282, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8401574665287542194, guid: c892e3d7294f12c49841f59e852cf1ff, type: 3}
       propertyPath: m_IsActive
@@ -18945,4 +18892,3 @@ SceneRoots:
   - {fileID: 1991673060}
   - {fileID: 2142347419}
   - {fileID: 368660813}
-  - {fileID: 238670624}

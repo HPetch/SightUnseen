@@ -12,14 +12,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _CUTOFFAXIS_Y
+  - _CUTOFFAXIS_Z
   - _MASKTYPE_AXISLOCAL
-  - _SMOOTHNESSTEXTURECHANNEL_METALLICALPHA
   m_InvalidKeywords:
   - _ALPHATEST_ON
-  - _EMISSION2INVERT_ON
-  - _EMISSION2SMOOTH_ON
-  - _USEEMISSION2_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -102,16 +98,16 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _CutoffAxis: 1
+    - _CutoffAxis: 2
     - _DetailNormalMapScale: 1
-    - _DissolveEdgeSize: 0.8
+    - _DissolveEdgeSize: 0.198
     - _DissolveSize: 1
     - _DissolveStrength: 1
     - _DistortionStrength: 1
     - _DstBlend: 0
     - _EdgeOffset: 1
-    - _EdgeSize: 0.29
-    - _EdgeStrength: 1
+    - _EdgeSize: 0
+    - _EdgeStrength: 0.348
     - _Emission2Invert: 1
     - _Emission2Offset: 0.57
     - _Emission2Smooth: 1
@@ -121,7 +117,7 @@ Material:
     - _GlossyReflections: 1
     - _Invert: 0
     - _METALLICGLOSSMAP: 0
-    - _MaskOffset: 0.82
+    - _MaskOffset: 0
     - _MaskType: 1
     - _Metallic: 0
     - _Mode: 0
@@ -136,7 +132,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.9433962, g: 0.85493815, b: 0.013349922, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveEdgeColor: {r: 1.3979713, g: 0.44117644, b: 2, a: 1}
     - _DissolveMap1_Scroll: {r: 0.2, g: 0.2, b: 0, a: 0}

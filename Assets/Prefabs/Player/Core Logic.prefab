@@ -3894,6 +3894,14 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 9b3e5ae744cacfb4f967e20c6b3c9d22, type: 3}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -3905,11 +3913,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7021884079728331238}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HolsterGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableGunLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HolsterGun
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -3917,7 +3957,23 @@ PrefabInstance:
       value: Recaller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4220,6 +4276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc937e678155e4d86feeb9248cca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8683409038213792303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8009214575802390376, guid: fe20aa426e4192048916a0759127446a, type: 3}
+  m_PrefabInstance: {fileID: 1704569284383167815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2707787377423799606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6243,6 +6304,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: gunLine
+      value: 
+      objectReference: {fileID: 8683409038213792303}
+    - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: gunPrefab
       value: 
       objectReference: {fileID: 7636594229776500059}
@@ -6250,6 +6315,14 @@ PrefabInstance:
       propertyPath: recallEye
       value: 
       objectReference: {fileID: 8300000, guid: 5778eacb0a5177f48878716bcccfd455, type: 3}
+    - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: fadeOnlyEye
+      value: 
+      objectReference: {fileID: 3841165042963561651, guid: 5b7b7a8390bc2fe498222c30073bcc1d, type: 3}
+    - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: fadeOnlyGun
+      value: 
+      objectReference: {fileID: 861023096637952389, guid: f0fb03ed4082971479e9bfa99c93500f, type: 3}
     - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: leftHolster
       value: 
