@@ -13,6 +13,7 @@ using QFX.MFX;
 using UnityEngine.InputSystem.HID;
 using HurricaneVR.Framework.Components;
 using HurricaneVR.TechDemo.Scripts;
+using DG.Tweening;
 
 public class Recaller : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Recaller : MonoBehaviour
     public GameObject fadeOnlyEye;
     GameObject fadeGun;
     public GameObject gunLine;
+    public GameObject recallEffect;
 
     [Header("Holsters")]
     public DemoHolster leftHolster;
@@ -193,8 +195,15 @@ public class Recaller : MonoBehaviour
 
     public void MaterialiseGun(GameObject obj, GameObject prefab)
     {
+        GameObject recallVFX = Instantiate(recallEffect, prefab.transform.position, prefab.transform.rotation);
+        recallVFX.GetComponent<TrackingVFX>().objToFollow = prefab;
         fadeGun = Instantiate(obj, prefab.transform.position, prefab.transform.rotation);
         fadeGun.GetComponent<MfxController>().ActivateForward();
+    }
+
+    void DestroyOBJ(GameObject obj)
+    {
+        Destroy(obj);
     }
 
     public void EnterHolster(bool didIDoThat)
