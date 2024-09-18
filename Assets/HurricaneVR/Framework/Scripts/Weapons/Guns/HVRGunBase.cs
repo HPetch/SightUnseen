@@ -934,14 +934,18 @@ namespace HurricaneVR.Framework.Weapons.Guns
         {
             var bullet = GetFreeBullet();
             bullet.Reset();
-            //bullet.Bullet = Instantiate(BulletPrefab);
-            //bullet.Bullet.hideFlags = HideFlags.HideInHierarchy;
+            bullet.Bullet.SetActive(false);
+            bullet.Bullet = Instantiate(BulletPrefab);
+            bullet.Bullet.hideFlags = HideFlags.HideInHierarchy;
+            TrailRenderer trail = bullet.Bullet.GetComponentInChildren<TrailRenderer>();
+            trail.emitting = false;
             bullet.Range = BulletRange;
             bullet.Direction = direction;
             bullet.TimeToLive = BulletLife;
             bullet.Speed = BulletSpeed;
             bullet.Bullet.transform.position = BulletOrigin.position;
             bullet.Bullet.SetActive(true);
+            trail.emitting = true;
             bullet.Bullet.transform.rotation = Quaternion.FromToRotation(bullet.Bullet.transform.forward, direction) *
                                                bullet.Bullet.transform.rotation;
             bullet.SetRenderersActive(!SlowMotionBulletOnly || HVRTimeManager.Instance.IsTimeSlowed);

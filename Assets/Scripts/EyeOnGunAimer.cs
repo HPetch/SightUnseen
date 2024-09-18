@@ -38,7 +38,7 @@ public class EyeOnGunAimer : MonoBehaviour
         if (StartPosition == null)
             StartPosition = transform;
 
-        SetTrajectoryVisible(false);
+        //SetTrajectoryVisible(false);
     }
 
     private void Update()
