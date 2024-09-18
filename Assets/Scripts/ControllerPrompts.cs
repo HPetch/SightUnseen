@@ -107,6 +107,7 @@ public class ControllerPrompts : MonoBehaviour
 
     private void setHandActive(bool isVisible)
     {
+        /*
         if (isVisible)
         {
             handJoint.localScale = Vector3.one;
@@ -114,7 +115,7 @@ public class ControllerPrompts : MonoBehaviour
         else
         {
             handJoint.localScale = new Vector3(0.01f,0.01f,0.01f);
-        }
+        }*/
     }
 
     //For forcing a prompt to be the only one on the controller. Use carefully!
