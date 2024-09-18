@@ -10,6 +10,8 @@ using HurricaneVR.Framework.Shared;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
+using Random = UnityEngine.Random;
 
 namespace HurricaneVR.Framework.Weapons.Guns
 {
@@ -121,6 +123,13 @@ namespace HurricaneVR.Framework.Weapons.Guns
         public bool SlowMotionBulletOnly;
         public GameObject BulletPrefab;
         public float BulletLife = 5f;
+
+        [Header("Projectile Impact")]
+        public List<Sprite> bulletHoles;
+        public List<GameObject> spawnedBullets;
+        public GameObject bulletHolePrefab;
+        public GameObject hitVFX;
+        public float positionMultiplier;
 
         private readonly List<HVRBulletTracker> _objects = new List<HVRBulletTracker>();
         private HVRGunPart[] _animatableGunParts;
@@ -619,6 +628,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
                         OnHit(hit, tracker.Direction);
                         bullet.SetActive(false);
                         _objects[i].SetRenderersActive(false);
+
                     }
                     else
                     {
@@ -1019,6 +1029,32 @@ namespace HurricaneVR.Framework.Weapons.Guns
             if (AddForceOnHit && hit.collider.attachedRigidbody)
             {
                 hit.collider.attachedRigidbody.AddForceAtPosition(direction.normalized * Force, hit.point, ForceMode.Impulse);
+            }
+
+
+            if (hitVFX != null)
+            {
+                float spawnX = hit.point.x - direction.x * positionMultiplier;
+                float spawnY = hit.point.y - direction.y * positionMultiplier;
+                float spawnZ = hit.point.z - direction.z * positionMultiplier;
+                Vector3 spawnPosition = new Vector3(spawnX, spawnY, spawnZ);
+
+                GameObject spawnedObject = Instantiate(bulletHolePrefab, spawnPosition, Quaternion.identity);
+                GameObject spawnVFX = Instantiate(hitVFX, hit.point, Quaternion.identity);
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+                spawnedObject.transform.rotation = targetRotation;
+                spawnedObject.transform.SetParent(hit.transform);
+                spawnedObject.transform.Rotate(Vector3.forward, Random.Range(0f, 360f));
+                spawnVFX.transform.rotation = Quaternion.LookRotation(-direction);
+                spawnVFX.transform.Rotate(Vector3.forward, Random.Range(0f, 360f));
+                //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+                //Vector3 pos = contact.point;
+                //rot.y -= 90;
+                //GameObject hole = Instantiate(bulletHole, pos, rot);
+                //Instantiate(hitVFX, pos, rot);
+                //spawnedBullets.Add(hole);
+                //hole.transform.parent = collision.transform;
             }
 
             Hit.Invoke(new GunHitArgs(this, direction, hit));

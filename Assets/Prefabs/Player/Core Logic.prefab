@@ -3673,11 +3673,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 3624388242970295607, guid: a6602ff8fc3a43046972f4c5b5303e72, type: 3}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Fired.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -3685,7 +3693,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 544876631524724068}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7303752357888441140}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -3693,11 +3709,23 @@ PrefabInstance:
       value: FireEye
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EyeHolder, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GunVFX, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146417307376494912, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: Fired.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1272125065186692390, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -3998,6 +4026,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1640801102521217970, guid: fe20aa426e4192048916a0759127446a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5186181866943619998}
+    - targetCorrespondingSourceObject: {fileID: 1640801102521217970, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7303752357888441140}
   m_SourcePrefab: {fileID: 100100000, guid: fe20aa426e4192048916a0759127446a, type: 3}
 --- !u!1 &99804128266151669 stripped
 GameObject:
@@ -4249,6 +4280,20 @@ MonoBehaviour:
   Tags:
     Tags: {fileID: 11400000, guid: 0e83bcde818c784468e6c9a69d44702f, type: 2}
     _data: 4
+--- !u!114 &7303752357888441140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99804128266151669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6659304541979a748b3d11d2855086b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxParent: {fileID: 8367552989013893183}
+  muzzleFlash: {fileID: 3049106629227218962, guid: 8cb744f6bea618a43b032afec13267ec, type: 3}
 --- !u!4 &755253480025273789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2151853872836763898, guid: fe20aa426e4192048916a0759127446a, type: 3}
@@ -4276,6 +4321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc937e678155e4d86feeb9248cca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8367552989013893183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7185596179992622456, guid: fe20aa426e4192048916a0759127446a, type: 3}
+  m_PrefabInstance: {fileID: 1704569284383167815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8683409038213792303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8009214575802390376, guid: fe20aa426e4192048916a0759127446a, type: 3}
