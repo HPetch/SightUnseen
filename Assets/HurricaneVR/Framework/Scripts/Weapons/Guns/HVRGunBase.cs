@@ -1052,6 +1052,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
                 spawnedObject.transform.Rotate(Vector3.forward, Random.Range(0f, 360f));
                 spawnVFX.transform.rotation = Quaternion.LookRotation(-direction);
                 spawnVFX.transform.Rotate(Vector3.forward, Random.Range(0f, 360f));
+                spawnedObject.GetComponent<HVRDestroyTimer>().StartTimer(7.5f);
                 //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
                 //Vector3 pos = contact.point;
                 //rot.y -= 90;

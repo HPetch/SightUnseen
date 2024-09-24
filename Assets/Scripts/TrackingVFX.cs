@@ -45,7 +45,7 @@ public class TrackingVFX : MonoBehaviour
 
     IEnumerator DestoryMe()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.5f);
         Destroy(this.gameObject);
     }
 }

@@ -36,6 +36,8 @@ public class Recaller : MonoBehaviour
     GameObject fadeGun;
     public GameObject gunLine;
     public GameObject recallEffect;
+    public GameObject eyeRecall;
+    public GameObject gunRecall;
 
     [Header("Holsters")]
     public DemoHolster leftHolster;
@@ -58,7 +60,7 @@ public class Recaller : MonoBehaviour
     {
         if (gunPrefab && Grabber)
         {
-            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject);
+            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject, gunRecall);
 
             //pick which hand to send the gun to based on the toggle use some UI menu or something to change this
             //AlterHandCheck();
@@ -102,7 +104,7 @@ public class Recaller : MonoBehaviour
         {
             if (eyePrefab.GetComponent<EyeHolder>().eyeIsSpawned)
             {
-                MaterialiseGun(fadeOnlyEye, eyePrefab.gameObject);
+                MaterialiseGun(fadeOnlyEye, eyePrefab.gameObject, eyeRecall);
             }
             
             //AlterHandCheck();
@@ -168,7 +170,7 @@ public class Recaller : MonoBehaviour
     {
         if(gunEnteredHolster == false)
         {
-            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject);
+            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject, gunRecall);
             gunLine.SetActive(false);
             
             //var fadeAwayGun = gun.gameObject.GetComponent<MfxController>();
@@ -193,9 +195,9 @@ public class Recaller : MonoBehaviour
         }
     }
 
-    public void MaterialiseGun(GameObject obj, GameObject prefab)
+    public void MaterialiseGun(GameObject obj, GameObject prefab, GameObject recallPrefab)
     {
-        GameObject recallVFX = Instantiate(recallEffect, prefab.transform.position, prefab.transform.rotation);
+        GameObject recallVFX = Instantiate(recallPrefab, prefab.transform.position, prefab.transform.rotation);
         recallVFX.GetComponent<TrackingVFX>().objToFollow = prefab;
         fadeGun = Instantiate(obj, prefab.transform.position, prefab.transform.rotation);
         fadeGun.GetComponent<MfxController>().ActivateForward();
