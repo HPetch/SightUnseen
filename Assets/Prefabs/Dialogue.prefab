@@ -55,12 +55,19 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &7633827253747708553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -160,12 +167,19 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &823706586887094846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -326,40 +340,92 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: I am Candy. Your assistant that comes with the secret cybernetic
       cyber eye 3001.
     audio: {fileID: 8300000, guid: 36ed2063a5def41489845e5085bb1fbe, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 1
   - dialogueText: 'By previous user, I have been set to the setting: Girlfriend.'
     audio: {fileID: 8300000, guid: 320aa7ad611b69a4a97a45ee8edc4c6d, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: "You may change this setting but your history with women indicates
       you probably won\u2019t."
     audio: {fileID: 8300000, guid: d32f88a6ffd58ab4aabc3496f20f8673, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: 'It turns out it is currently: Dark.'
     audio: {fileID: 8300000, guid: 1191deb61a39d5442acd2c9c5821846b, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: You should turn on the cybervision to help you see me and find
       us a lightswitch.
     audio: {fileID: 8300000, guid: 031603eccfacf86458bfcae34f5822d9, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue:
+  - dialogueText: MR BEAST TEST 69696969 WOOOO
+    audio: {fileID: 8300000, guid: 62102964e237a3c4bbecae5ec371a8ef, type: 3}
+    waitTimer: 10
+    isNotInteruptable: 0
+    isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  - dialogueText: MR BEAST TEST 69696969 WOOOO
+    audio: {fileID: 8300000, guid: 62102964e237a3c4bbecae5ec371a8ef, type: 3}
+    waitTimer: 10
+    isNotInteruptable: 0
+    isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &3080818212121820911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -439,23 +505,40 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: There's an enemy around the corner and it will shoot anything that
       has a heat signature.
     audio: {fileID: 8300000, guid: 59444533f745bf446843a6048929a001, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: If only you could see around the corner to help you in there.
     audio: {fileID: 8300000, guid: afd3e442bc2bba344a39bdd5e09cd189, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &2329232197836338166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -533,12 +616,19 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &686914586152815541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -633,18 +723,30 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: But you might want to grab that convenient gun on the table just
       in case.
     audio: {fileID: 8300000, guid: 8138fba692a43044792506739bf9b285, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &1991849545943666743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -720,24 +822,41 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: Between you and me, the security here sucks so they probably have
       hidden it somewhere nearby. Like the next room.
     audio: {fileID: 8300000, guid: 9e1227c2974c6744eb6bfb99a3a8debc, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: Bring your hand close to your right/left eyesocket, where the secret
       cybernetic cyber eye 3002 is.
     audio: {fileID: 8300000, guid: aa2cb2bc8fe4d204fac8e77e60afa748, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &8428172936590663964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -919,18 +1038,30 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: "We can avoid that\u2026 We\u2019ll just need to be able to aim
       at it without it being able to aim at us."
     audio: {fileID: 8300000, guid: 28db1278f1ca0d24b9ffaf05d09cc5e3, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
+  inExtraDialogue: 0
 --- !u!65 &2153406198966218876
 BoxCollider:
   m_ObjectHideFlags: 0
