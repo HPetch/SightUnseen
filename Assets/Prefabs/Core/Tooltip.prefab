@@ -78,8 +78,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 7.5437555, y: 2.8388333, z: 6.5900316}
-  - {x: 7.4664993, y: 2.90415, z: 6.5845494}
+  - {x: 6.5499997, y: 2.6547503, z: 6.6819983}
+  - {x: 6.53925, y: 2.7227502, z: 6.736748}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -153,6 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 7750599127316973693}
   pointB: {fileID: 6837782244526880952}
+  hasTeleporterAlternate: 0
+  teleporterAlternate: {fileID: 0}
 --- !u!1 &2369826521940117174
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6837782244526880952}
   - component: {fileID: 5211451269109623812}
+  - component: {fileID: 7081067843640015269}
   m_Layer: 5
   m_Name: Point B
   m_TagString: Untagged
@@ -466,6 +469,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &7081067843640015269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805181932949175913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d6ecb5f903074ca0ed80ede070ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8584676458800766851
 GameObject:
   m_ObjectHideFlags: 0

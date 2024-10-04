@@ -10,6 +10,8 @@ public class ControllerPrompts : MonoBehaviour
     //Array for each *prompt* (so the highlighted sphere) to show and hide. Must be in order as the above
     [SerializeField] private GameObject[] objects;
     [SerializeField] private Transform handJoint;
+    [SerializeField] private Renderer controllerMesh;
+    [SerializeField] private AudioSource controllerSource;
     
     //Set up an array or something to hold which billboard messages should be shown?
 
@@ -51,6 +53,8 @@ public class ControllerPrompts : MonoBehaviour
                 Debug.LogError("Cannot add prompt '" + input + "' as it is invalid. Is there a typo?");
                 break;
         }
+        setControllerActive(true);
+        if (!controllerSource.isPlaying) controllerSource.Play();
 
         //Hide the hand
         setHandActive(false);
@@ -93,6 +97,7 @@ public class ControllerPrompts : MonoBehaviour
             if (obj.activeInHierarchy) somethingIsStillEnabled = true;
         }
         setHandActive(!somethingIsStillEnabled);
+        setControllerActive(somethingIsStillEnabled);
     }
 
     //For clearing all prompts from the controller immediately. Use sparingly!
@@ -103,6 +108,16 @@ public class ControllerPrompts : MonoBehaviour
             item.SetActive(false);
             setHandActive(true);
         }
+    }
+
+
+    private void setControllerActive(bool isVisible)
+    {
+        if (isVisible)
+        {
+            controllerMesh.enabled = true;
+        }
+        else controllerMesh.enabled = false;
     }
 
     private void setHandActive(bool isVisible)

@@ -24,6 +24,7 @@ namespace HurricaneVR.Framework.Core.HandPoser
         public HVRHandPoser Poser;
 
         [SerializeField] private GameObject[] objectsToEnableWhenPosing;
+        [SerializeField] private GameObject[] objectsToDisableWhenPosing;
 
         private readonly List<HVRHandGrabber> overlappedHands = new List<HVRHandGrabber>(2);
         private readonly List<HVRHandGrabber> hands = new List<HVRHandGrabber>(2);
@@ -77,9 +78,15 @@ namespace HurricaneVR.Framework.Core.HandPoser
 
                 //Enable precise finger colliders if in zone.
                 if (objectsToEnableWhenPosing[0].activeInHierarchy == false)
-                foreach (GameObject obj in objectsToEnableWhenPosing)
                 {
+                    foreach (GameObject obj in objectsToEnableWhenPosing)
+                    {
                         obj.SetActive(true);
+                    }
+                    foreach (GameObject obj in objectsToDisableWhenPosing)
+                    {
+                        obj.SetActive(false);
+                    }
                 }
             }
 
@@ -104,6 +111,10 @@ namespace HurricaneVR.Framework.Core.HandPoser
                     foreach (GameObject obj in objectsToEnableWhenPosing)
                     {
                         obj.SetActive(false);
+                    }
+                    foreach (GameObject obj in objectsToDisableWhenPosing)
+                    {
+                        obj.SetActive(true);
                     }
                 }
             }
