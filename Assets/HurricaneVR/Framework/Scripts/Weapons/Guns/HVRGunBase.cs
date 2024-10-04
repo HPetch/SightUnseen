@@ -10,7 +10,6 @@ using HurricaneVR.Framework.Shared;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
-using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
 using Random = UnityEngine.Random;
 
 namespace HurricaneVR.Framework.Weapons.Guns

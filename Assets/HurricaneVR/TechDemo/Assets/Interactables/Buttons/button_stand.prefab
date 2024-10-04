@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 3296179270562688924}
   - component: {fileID: 6742033214810536088}
   - component: {fileID: 2836268519642675102}
-  - component: {fileID: 4602523762312654266}
   m_Layer: 0
   m_Name: button_top
   m_TagString: Untagged
@@ -119,7 +118,6 @@ MonoBehaviour:
   EndPosition: {x: 0, y: 1.2741, z: 0}
   SFXButtonDown: {fileID: 8300000, guid: 1897675e908b0034cbff933d6aa1076a, type: 3}
   SFXButtonUp: {fileID: 8300000, guid: 0f2a350493cafab4d8f981aacf239c8f, type: 3}
-  alarmBlaring: {fileID: 8300000, guid: a3e2fd0e9f29be741939d2ff6c96b28a, type: 3}
   ButtonDown:
     m_PersistentCalls:
       m_Calls:
@@ -199,29 +197,29 @@ MonoBehaviour:
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
   - dialogueText: "Let\u2019s get out of here as quickly as possible."
     audio: {fileID: 8300000, guid: 4043b0353dae14546a9da8a2c7aa7baf, type: 3}
     waitTimer: 2
     isNotInteruptable: 0
     isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
   subtitles: []
   newClipPlaying: 0
   currentClipID: 0
   playedFirstClip: 0
   interupted: 0
   repeatable: 0
---- !u!114 &4602523762312654266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2542507330497284484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f84de313c042e4cb74b608faa9114d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  inExtraDialogue: 0
 --- !u!1 &5076000081392733241
 GameObject:
   m_ObjectHideFlags: 0
