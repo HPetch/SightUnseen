@@ -2253,6 +2253,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7ac238d90054d2b419a62d29e082a3d3, type: 2}
   - {fileID: 2100000, guid: 8f7aa08f14ffe5b4ba67d67251f71af0, type: 2}
   - {fileID: 2100000, guid: 476f2e7ec66ab7a4eaedd493fcbd42ce, type: 2}
+  - {fileID: 2100000, guid: e34f3f230019af649bed33e23edfd871, type: 2}
+  - {fileID: 2100000, guid: 3f0726821f6935a4e94dabe717c590eb, type: 2}
 --- !u!1 &5030379905551505237
 GameObject:
   m_ObjectHideFlags: 0
@@ -11034,6 +11036,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7818258113788567150, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
   m_PrefabInstance: {fileID: 5378100603707895302}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &2761347776698227092 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1373425069728254062, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+  m_PrefabInstance: {fileID: 5378100603707895302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2972450563597265739 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7197488914939856205, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
@@ -11724,7 +11731,7 @@ MonoBehaviour:
   - {fileID: 1592618427779161854}
   - {fileID: 7990963656203354895}
   handJoint: {fileID: 0}
-  controllerMesh: {fileID: 0}
+  controllerMesh: {fileID: 2761347776698227092}
   controllerSource: {fileID: 0}
 --- !u!224 &7777188303832804414 stripped
 RectTransform:

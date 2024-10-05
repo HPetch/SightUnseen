@@ -1547,7 +1547,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToSearch: []
   targetLayer: 0
-  hideImmediately: 1
 --- !u!1 &2676626143641587315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,10 +1884,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8221256460871327646}
     m_Modifications:
+    - target: {fileID: 5145073932806123706, guid: 8ad200e014e10aa4a9f5721c117856f2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e34f3f230019af649bed33e23edfd871, type: 2}
     - target: {fileID: 5783145085238990753, guid: 8ad200e014e10aa4a9f5721c117856f2, type: 3}
       propertyPath: m_Name
       value: PF_Button_Stand
       objectReference: {fileID: 0}
+    - target: {fileID: 5878714426134796340, guid: 8ad200e014e10aa4a9f5721c117856f2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f0726821f6935a4e94dabe717c590eb, type: 2}
     - target: {fileID: 6129009175576326587, guid: 8ad200e014e10aa4a9f5721c117856f2, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

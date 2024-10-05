@@ -53,12 +53,29 @@ public class SlidingDoorLogic : MonoBehaviour
         }
     }
 
+
+    public void openDoorWithDelay(float time)
+    {
+        StartCoroutine(delayedOpen(time));
+    }
+    private IEnumerator delayedOpen(float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.SetBool("isOpening", true);
+        opening = true;
+        audioSource.clip = openClip;
+        audioSource.Play();
+    }
+
+
     public void openDoorButtonTimer(bool Permanent)
     {
         if (!opening)
         {
             animator.SetBool("isOpening", true);
             opening = true;
+            audioSource.clip = openClip;
+            audioSource.Play();
 
             if (!Permanent)
             StartCoroutine(countdownToClose());
