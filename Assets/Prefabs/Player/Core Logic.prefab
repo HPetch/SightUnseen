@@ -1208,9 +1208,9 @@ MonoBehaviour:
   ReleasedAngularFactor: 1
   GrabIndicator: {fileID: 0}
   ForceGrabIndicator: {fileID: 0}
-  ShowGrabIndicator: 1
-  ShowTriggerGrabIndicator: 1
-  ShowForceGrabIndicator: 1
+  ShowGrabIndicator: 0
+  ShowTriggerGrabIndicator: 0
+  ShowForceGrabIndicator: 0
   ForceGrabbable: 0
   ForcePullOverride: {fileID: 0}
   JointOverride: {fileID: 0}
@@ -1244,7 +1244,8 @@ MonoBehaviour:
   LinkStartingSocket: 0
   ShowBoundingBox: 0
   DrawCenterOfMass: 0
-  GrabPoints: []
+  GrabPoints:
+  - {fileID: 6173009241936273659}
   Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -1949,7 +1950,7 @@ Transform:
   m_GameObject: {fileID: 3715043295976986523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -3.5652826e-14, z: -1.8559688e-14, w: 1}
-  m_LocalPosition: {x: -0.14129993, y: -0.07835287, z: 0.25925457}
+  m_LocalPosition: {x: -0.14129993, y: -0.1089, z: 0.2469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1978,7 +1979,7 @@ MonoBehaviour:
   PoseNames:
   - 'Primary: key'
   PrimaryPose:
-    Pose: {fileID: 11400000, guid: 2f541e38e00fa5943b4438e5cda1af5b, type: 2}
+    Pose: {fileID: 11400000, guid: 3c58484b721bf3b4abe0c85b9ac803e6, type: 2}
     Weight: 1
     Mask: 0
     Type: 0
@@ -2013,8 +2014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoserIndex: 0
   IsJointAnchor: 0
-  IsForceGrabbable: 1
-  OneHandOnly: 0
+  IsForceGrabbable: 0
+  OneHandOnly: 1
   AllowedAngleDifference: 360
   CheckDistance: 0
   MaxDistance: 0.3
@@ -2027,7 +2028,7 @@ MonoBehaviour:
   VisualGrabPoint: {fileID: 0}
   HandPoser: {fileID: 6088648598400350207}
   Grabbable: {fileID: 0}
-  IsLineGrab: 1
+  IsLineGrab: 0
   LineStart: {fileID: 0}
   LineEnd: {fileID: 0}
   CanLineFlip: 1
