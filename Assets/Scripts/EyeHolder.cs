@@ -43,6 +43,7 @@ public class EyeHolder : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip turnOnSound;
 
+    public bool canGoOnGun = true;
     public GameObject onGunPos;
     public bool onGun;
     public HVRSocket gunSocket;
@@ -261,7 +262,7 @@ public class EyeHolder : MonoBehaviour
 
     public void AttachToGun(bool attached)
     {
-        if (attached)
+        if (attached /*&& canGoOnGun == true*/)
         {
             GameManager.Instance.hideViewport("cyber", true);
             eyeSetDown = false;
@@ -296,6 +297,18 @@ public class EyeHolder : MonoBehaviour
             rb.isKinematic = false;
             rb.AddForce(transform.forward * 3, ForceMode.Impulse);
             onGun = false;
+        }
+    }
+
+    public void CanEyeGoOnGun(bool canI)
+    {
+        if (canI)
+        {
+            canGoOnGun = true;
+        }
+        else
+        {
+            canGoOnGun = false;
         }
     }
 }

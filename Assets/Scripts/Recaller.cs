@@ -189,6 +189,11 @@ public class Recaller : MonoBehaviour
                 }
             }
 
+            if (eyePrefab.GetComponent<EyeHolder>().onGun)
+            {
+                GrabEye();
+            }
+
             var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
             if (mfxActivator != null)
                 mfxActivator.ActivateBackward();

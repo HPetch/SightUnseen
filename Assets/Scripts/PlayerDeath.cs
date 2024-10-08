@@ -52,10 +52,24 @@ public class PlayerDeath : MonoBehaviour
         {
             //move the player to the last checkpoint pos and fade the black screen out
             respawning = false;
+            GameManager.Instance.hvrPlayerController.teleportModeOn = true;
+            //characterController.enabled = false;
+            GameManager.Instance.teleportCol.enabled = true;
+            GameManager.Instance.teleporter.enabled = true;
             transform.position = lastCheckpoint.position;
             fader.Fade(0, 1);
+            StartCoroutine(EnableMovement());
         }
         
         //fadeImage.DOFade(0, 1);
+    }
+
+    public IEnumerator EnableMovement()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameManager.Instance.hvrPlayerController.teleportModeOn = false;
+        //characterController.enabled = false;
+        GameManager.Instance.teleportCol.enabled = false;
+        GameManager.Instance.teleporter.enabled = false;
     }
 }
