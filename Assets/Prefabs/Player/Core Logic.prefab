@@ -4325,7 +4325,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
   Grabbed:
     m_PersistentCalls:
       m_Calls:
@@ -4365,7 +4365,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 0
   Released:
     m_PersistentCalls:
       m_Calls: []
@@ -4382,7 +4382,7 @@ MonoBehaviour:
   GrabBags: []
   GrabControl: 0
   GrabDetectionType: 1
-  CheckHandOverlap: 0
+  CheckHandOverlap: 1
   ReleasesOnHover: 0
   InstantHandPose: 0
   HoldType: 0
@@ -5677,11 +5677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5696,13 +5696,81 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 8285948209354817080}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 376822841181420323}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 376822841181420323}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -5712,6 +5780,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7021884079728331238}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 376822841181420323}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 8285948209354817080}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HolsterGun
       objectReference: {fileID: 0}
@@ -5720,16 +5808,80 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnableGunLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: EnableAutoGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ForceRelease
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: GrabEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: AttachToGun
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HolsterGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ForceRelease
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: GrabEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: AttachToGun
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -5740,8 +5892,76 @@ PrefabInstance:
       value: Recaller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: HurricaneVR.Framework.Core.Grabbers.HVRSocket, HurricaneVR.Framework
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: HurricaneVR.Framework.Core.Grabbers.HVRGrabberBase, HurricaneVR.Framework
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: HurricaneVR.Framework.Core.Grabbers.HVRGrabberBase, HurricaneVR.Framework
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: Recaller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5752,7 +5972,51 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8254,6 +8518,58 @@ PrefabInstance:
       propertyPath: StartingSocket
       value: 
       objectReference: {fileID: 8431597197466286562}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8171984657617407049}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToNormalGravity
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetCybervisionState
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 439892063209669087, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 464587726102628837, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -9258,6 +9574,14 @@ PrefabInstance:
       propertyPath: leftHolster
       value: 
       objectReference: {fileID: 1253079828710391077}
+    - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: canRecallEye
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: canRecallGun
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3157133688316045280, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: recallEffect
       value: 

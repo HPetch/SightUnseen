@@ -48,6 +48,9 @@ public class EyeHolder : MonoBehaviour
     public bool onGun;
     public HVRSocket gunSocket;
 
+    public bool isGravityReversed;
+    public float eyeReverseOffset;
+
     private void Awake()
     {
         playerController = FindObjectOfType<HVRPlayerController>();
@@ -196,13 +199,27 @@ public class EyeHolder : MonoBehaviour
         Quaternion newRotation = transform.rotation;
         if (playerController.transform.rotation.y >= 0)
         {
-            newRotation.y -= 90;
-            //newRotation.y -= playerController.snapVar;
+            if (isGravityReversed)
+            {
+                newRotation.y -= eyeReverseOffset; 
+            }
+            else
+            {
+                newRotation.y -= 90;
+                //newRotation.y -= playerController.snapVar;
+            }
         }
         else
         {
-            newRotation.y += 90;
-            //newRotation.y += playerController.snapVar;
+            if (isGravityReversed)
+            {
+                newRotation.y += eyeReverseOffset;
+            }
+            else
+            {
+                newRotation.y += 90;
+                //newRotation.y += playerController.snapVar;
+            }
         }
 
         transform.rotation = newRotation.normalized;
@@ -310,5 +327,10 @@ public class EyeHolder : MonoBehaviour
         {
             canGoOnGun = false;
         }
+    }
+
+    public void BackToNormalGravity()
+    {
+        isGravityReversed = false;
     }
 }

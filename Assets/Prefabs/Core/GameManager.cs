@@ -525,7 +525,7 @@ public class GameManager : MonoBehaviour
             if (isDouble.isOn && eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
             }
             CybervisionOn = true;
         }
@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
             if (isDouble.isOn && eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
             }
             CybervisionOn = false;
         }
