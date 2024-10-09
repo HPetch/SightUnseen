@@ -49,6 +49,8 @@ public class Recaller : MonoBehaviour
     Rigidbody rightRb;
     Rigidbody leftRb;
 
+    public bool canRecallEye;
+    public bool canRecallGun;
     public void Start()
     {
         //Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
@@ -58,101 +60,107 @@ public class Recaller : MonoBehaviour
 
     public void GrabGun()
     {
-        if (gunPrefab && Grabber)
+        if (canRecallGun)
         {
-            MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject, gunRecall);
-
-            //pick which hand to send the gun to based on the toggle use some UI menu or something to change this
-            //AlterHandCheck();
-            //just in case we want the button to drop the object if the player is holding it
-            if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == gunPrefab)
+            if (gunPrefab && Grabber)
             {
-                Grabber.ForceRelease();
-                return;
-            }
+                MaterialiseGun(fadeOnlyGun, gunPrefab.gameObject, gunRecall);
 
-            //grabber needs to have it's release sequence completed if it's holding something
-            HVRHandGrabber recaller = Grabber;
+                //pick which hand to send the gun to based on the toggle use some UI menu or something to change this
+                //AlterHandCheck();
+                //just in case we want the button to drop the object if the player is holding it
+                if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == gunPrefab)
+                {
+                    Grabber.ForceRelease();
+                    return;
+                }
 
-            if (eyePrefab.GetComponent<ConfigurableJoint>() != null)
-            {
-                if (eyePrefab.GetComponent<ConfigurableJoint>().connectedBody == leftRb)
+                //grabber needs to have it's release sequence completed if it's holding something
+                HVRHandGrabber recaller = Grabber;
+
+                if (eyePrefab.GetComponent<ConfigurableJoint>() != null)
                 {
-                    recaller = rightHand;
+                    if (eyePrefab.GetComponent<ConfigurableJoint>().connectedBody == leftRb)
+                    {
+                        recaller = rightHand;
+                    }
+                    if (eyePrefab.GetComponent<ConfigurableJoint>().connectedBody == rightRb)
+                    {
+                        recaller = leftHand;
+                    }
                 }
-                if (eyePrefab.GetComponent<ConfigurableJoint>().connectedBody == rightRb)
-                {
-                    recaller = leftHand;
-                }
+                //if (Grabber.IsGrabbing)
+                //    Grabber.ForceRelease();
+
+                recaller.Grab(gunPrefab, GrabTrigger, GrabPoint);
+                var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
+                if (mfxActivator != null)
+                    mfxActivator.ActivateBackward();
             }
-            //if (Grabber.IsGrabbing)
-            //    Grabber.ForceRelease();
-           
-            recaller.Grab(gunPrefab, GrabTrigger, GrabPoint);
-            var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
-            if (mfxActivator != null)
-                mfxActivator.ActivateBackward();
         }
     }
 
     //same as above but for the eye instead
     public void GrabEye()
     {
-        HVRRotationTracker tracker = GameManager.Instance.glasses.GetComponent<HVRRotationTracker>();
-        tracker.StepChanged.RemoveAllListeners();
-        if (eyePrefab && Grabber)
+        if (canRecallEye)
         {
-            if (eyePrefab.GetComponent<EyeHolder>().eyeIsSpawned)
+            HVRRotationTracker tracker = GameManager.Instance.glasses.GetComponent<HVRRotationTracker>();
+            tracker.StepChanged.RemoveAllListeners();
+            if (eyePrefab && Grabber)
             {
-                MaterialiseGun(fadeOnlyEye, eyePrefab.gameObject, eyeRecall);
-            }
-            
-            //AlterHandCheck();
-            if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == eyePrefab)
-            {
-                Grabber.ForceRelease();
-                return;
-            }
-
-            //grabber needs to have it's release sequence completed if it's holding something
-            HVRHandGrabber recaller = Grabber;
-            if (gunPrefab.GetComponent<ConfigurableJoint>() != null)
-            {
-                if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == leftRb)
+                if (eyePrefab.GetComponent<EyeHolder>().eyeIsSpawned)
                 {
-                    recaller = rightHand;
+                    MaterialiseGun(fadeOnlyEye, eyePrefab.gameObject, eyeRecall);
                 }
-                if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == rightRb)
-                {
-                    recaller = leftHand;
-                }
-            }
-            else
-            {
-                recaller = Grabber;
-            }
-            //if (Grabber.IsGrabbing)
-            //    Grabber.ForceRelease();
-            
-            
-            recaller.Grab(eyePrefab, GrabTrigger, GrabPoint);
-            //materialise eye
-            var mfxActivator = eyePrefab.gameObject.GetComponent<MfxController>();
-            if (mfxActivator != null)
-                mfxActivator.ActivateBackward();
 
-            AudioSource source = eyePrefab.GetComponent<AudioSource>();
-            source.clip = recallEye;
-            source.Play();
-
-            //force player view if in glasses mode
-            if (GameManager.Instance.isDouble.isOn)
-            {
-                if (GameManager.Instance.switchCam)
+                //AlterHandCheck();
+                if (GrabTrigger == HVRGrabTrigger.ManualRelease && Grabber.GrabbedTarget == eyePrefab)
                 {
-                    GameManager.Instance.ToggleCybervision();
+                    Grabber.ForceRelease();
+                    return;
                 }
-                GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+
+                //grabber needs to have it's release sequence completed if it's holding something
+                HVRHandGrabber recaller = Grabber;
+                if (gunPrefab.GetComponent<ConfigurableJoint>() != null)
+                {
+                    if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == leftRb)
+                    {
+                        recaller = rightHand;
+                    }
+                    if (gunPrefab.GetComponent<ConfigurableJoint>().connectedBody == rightRb)
+                    {
+                        recaller = leftHand;
+                    }
+                }
+                else
+                {
+                    recaller = Grabber;
+                }
+                //if (Grabber.IsGrabbing)
+                //    Grabber.ForceRelease();
+
+
+                recaller.Grab(eyePrefab, GrabTrigger, GrabPoint);
+                //materialise eye
+                var mfxActivator = eyePrefab.gameObject.GetComponent<MfxController>();
+                if (mfxActivator != null)
+                    mfxActivator.ActivateBackward();
+
+                AudioSource source = eyePrefab.GetComponent<AudioSource>();
+                source.clip = recallEye;
+                source.Play();
+
+                //force player view if in glasses mode
+                if (GameManager.Instance.isDouble.isOn)
+                {
+                    if (GameManager.Instance.switchCam)
+                    {
+                        GameManager.Instance.ToggleCybervision();
+                    }
+                    GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
+                }
             }
         }
     }
@@ -187,6 +195,11 @@ public class Recaller : MonoBehaviour
                 {
                     rightHolster.StartCoroutine(rightHolster.TryGrabSpecificGrabbable(gunPrefab));
                 }
+            }
+
+            if (eyePrefab.GetComponent<EyeHolder>().onGun)
+            {
+                GrabEye();
             }
 
             var mfxActivator = gunPrefab.gameObject.GetComponent<MfxController>();
@@ -232,5 +245,30 @@ public class Recaller : MonoBehaviour
         //    gunLine.SetActive(true);
         //}
 
+    }
+
+    public void EnableGunRecall(bool enabler)
+    {
+        if (enabler)
+        {
+            canRecallGun = true;
+        }
+        else
+        {
+            canRecallGun = false;
+        }
+        
+    }
+
+    public void EnableEyeRecall(bool enabler)
+    {
+        if (enabler)
+        {
+            canRecallEye = true;
+        }
+        else
+        {
+            canRecallEye = false;
+        }
     }
 }

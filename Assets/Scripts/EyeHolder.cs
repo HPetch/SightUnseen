@@ -43,9 +43,13 @@ public class EyeHolder : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip turnOnSound;
 
+    public bool canGoOnGun = true;
     public GameObject onGunPos;
     public bool onGun;
     public HVRSocket gunSocket;
+
+    public bool isGravityReversed;
+    public float eyeReverseOffset;
 
     private void Awake()
     {
@@ -195,13 +199,27 @@ public class EyeHolder : MonoBehaviour
         Quaternion newRotation = transform.rotation;
         if (playerController.transform.rotation.y >= 0)
         {
-            newRotation.y -= 90;
-            //newRotation.y -= playerController.snapVar;
+            if (isGravityReversed)
+            {
+                newRotation.y -= eyeReverseOffset; 
+            }
+            else
+            {
+                newRotation.y -= 90;
+                //newRotation.y -= playerController.snapVar;
+            }
         }
         else
         {
-            newRotation.y += 90;
-            //newRotation.y += playerController.snapVar;
+            if (isGravityReversed)
+            {
+                newRotation.y += eyeReverseOffset;
+            }
+            else
+            {
+                newRotation.y += 90;
+                //newRotation.y += playerController.snapVar;
+            }
         }
 
         transform.rotation = newRotation.normalized;
@@ -261,7 +279,7 @@ public class EyeHolder : MonoBehaviour
 
     public void AttachToGun(bool attached)
     {
-        if (attached)
+        if (attached /*&& canGoOnGun == true*/)
         {
             GameManager.Instance.hideViewport("cyber", true);
             eyeSetDown = false;
@@ -297,5 +315,22 @@ public class EyeHolder : MonoBehaviour
             rb.AddForce(transform.forward * 3, ForceMode.Impulse);
             onGun = false;
         }
+    }
+
+    public void CanEyeGoOnGun(bool canI)
+    {
+        if (canI)
+        {
+            canGoOnGun = true;
+        }
+        else
+        {
+            canGoOnGun = false;
+        }
+    }
+
+    public void BackToNormalGravity()
+    {
+        isGravityReversed = false;
     }
 }
