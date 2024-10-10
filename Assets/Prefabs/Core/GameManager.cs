@@ -79,12 +79,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Movement Data")]
     public Toggle smoothMovement;
-    HVRTeleportCollisonHandler teleportCol;
-    HVRTeleporter teleporter;
+    public HVRTeleportCollisonHandler teleportCol;
+    public HVRTeleporter teleporter;
     CharacterController characterController;
     Recaller recall;
     public float fallDelayTimer = 1;
-    HVRPlayerController hvrPlayerController;
+    public HVRPlayerController hvrPlayerController;
 
     private void Awake()
     {
@@ -525,7 +525,7 @@ public class GameManager : MonoBehaviour
             if (isDouble.isOn && eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
             }
             CybervisionOn = true;
         }
@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
             if (isDouble.isOn && eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
             }
             CybervisionOn = false;
         }

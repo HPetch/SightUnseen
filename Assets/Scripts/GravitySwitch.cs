@@ -9,7 +9,7 @@ public class GravitySwitch : MonoBehaviour
     private Collider eye;
     public AudioSource audioSource;
     public AudioClip eyeStick;
-
+    public bool shouldReverseEyeRotation;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Eyeball")
@@ -19,6 +19,10 @@ public class GravitySwitch : MonoBehaviour
             eye.attachedRigidbody.useGravity = false;
             audioSource.clip = eyeStick;
             audioSource.Play();
+            if (shouldReverseEyeRotation)
+            {
+                other.GetComponent<EyeHolder>().isGravityReversed = true;
+            }
         }
     }
 
@@ -28,6 +32,10 @@ public class GravitySwitch : MonoBehaviour
         {
             drivingObjectGravity = false;
             eye.attachedRigidbody.useGravity = true;
+            if (shouldReverseEyeRotation)
+            {
+                other.GetComponent<EyeHolder>().isGravityReversed = false;
+            }
         }
             
     }
