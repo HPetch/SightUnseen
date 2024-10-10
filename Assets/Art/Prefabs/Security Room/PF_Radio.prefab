@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 1825165839941881815}
   - component: {fileID: 7898367247210127224}
   - component: {fileID: 4661229611988876052}
+  - component: {fileID: 7343548133063636133}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -310,6 +311,19 @@ CapsuleCollider:
   m_Height: 0.41053724
   m_Direction: 1
   m_Center: {x: 0.07, y: 0.1397953, z: -0.18615627}
+--- !u!114 &7343548133063636133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303864701744532510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c75c5c18c01eee4ab0ab9c8cd3c3000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentGrabbable: {fileID: 0}
 --- !u!1 &4099592434412810153
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,14 +549,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8593869613360636991}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000035762784}
   m_LocalPosition: {x: 0.0103, y: -0.0543, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3358149395853527005}
   m_Father: {fileID: 2194370298149621582}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &5700171186642998590
 MonoBehaviour:
   m_ObjectHideFlags: 0

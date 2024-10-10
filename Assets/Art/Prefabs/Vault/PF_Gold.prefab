@@ -90,7 +90,7 @@ Rigidbody:
   m_GameObject: {fileID: 5320609248721731090}
   serializedVersion: 4
   m_Mass: 10
-  m_Drag: 10
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -161,8 +161,8 @@ MonoBehaviour:
   ForceGrabIndicator: {fileID: 0}
   ShowGrabIndicator: 1
   ShowTriggerGrabIndicator: 0
-  ShowForceGrabIndicator: 0
-  ForceGrabbable: 0
+  ShowForceGrabIndicator: 1
+  ForceGrabbable: 1
   ForcePullOverride: {fileID: 0}
   JointOverride: {fileID: 0}
   OneHandStrength: {fileID: 0}
