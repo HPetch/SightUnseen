@@ -5814,7 +5814,7 @@ PrefabInstance:
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 6139799974496804500}
+      objectReference: {fileID: 8285948209354817080}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HolsterGun
@@ -5837,7 +5837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
@@ -5885,7 +5885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
@@ -5913,7 +5913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: SetActive
+      value: AttachToGun
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -5977,7 +5977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: EyeHolder, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9105567365131866140, guid: fe20aa426e4192048916a0759127446a, type: 3}
       propertyPath: HandGrabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -11915,7 +11915,19 @@ PrefabInstance:
       value: -0.10614065
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
@@ -11923,8 +11935,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7083387856157986892}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7083387856157986892}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11937,25 +11965,113 @@ PrefabInstance:
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: LeftSecondaryActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 544876631524724068}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7083387856157986892}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7083387856157986892}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 7083387856157986892}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeftStickPressedIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToggleCybervision
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftSecondaryActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchRotationTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RightStickPressedIn
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightTrackPadDownActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8171984657617407049}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeftStickPressedIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RightStickPressedIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftSecondaryActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EyeHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HurricaneVR.TechDemo.Scripts.DemoUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: RightPrimaryActivated.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: LeftJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180245916601212717, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: RightJoystickDeactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9187382290158576406, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
@@ -13487,8 +13603,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -424141729473967503, guid: 6e60e9b460ff77f4b85f59f8ff7fa19b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8858647955265136444}
   m_SourcePrefab: {fileID: 100100000, guid: 6e60e9b460ff77f4b85f59f8ff7fa19b, type: 3}
+--- !u!137 &2433373035446109106 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -562798529985175433, guid: 6e60e9b460ff77f4b85f59f8ff7fa19b, type: 3}
+  m_PrefabInstance: {fileID: 6482256950340395973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2587528002100292020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -424141729473967503, guid: 6e60e9b460ff77f4b85f59f8ff7fa19b, type: 3}
+  m_PrefabInstance: {fileID: 6482256950340395973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8858647955265136444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587528002100292020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217d88d64dd407b4789b91dcf3575c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myModel: {fileID: 2433373035446109106}
+  maxRange: 0.6
+  minRange: 0
+  eye: {fileID: 5607991884728263036}
 --- !u!1 &6139799974496804500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e60e9b460ff77f4b85f59f8ff7fa19b, type: 3}
