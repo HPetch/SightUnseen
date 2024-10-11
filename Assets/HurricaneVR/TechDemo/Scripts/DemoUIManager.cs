@@ -45,6 +45,9 @@ namespace HurricaneVR.TechDemo.Scripts
         public AudioClip pauseSound;
         public AudioClip unpauseSound;
 
+        public bool leftStickIn;
+        public bool rightStickIn;
+
         void Start()
         {
             if (!Player)
@@ -231,5 +234,44 @@ namespace HurricaneVR.TechDemo.Scripts
                 Paused = !Paused;
             }
         }
+
+        public void RightStickPressedIn(bool held)
+        {
+            if (held)
+            {
+                rightStickIn = true;
+            }
+            else
+            {
+                rightStickIn = false;
+            }
+
+            if(leftStickIn == true)
+            {
+                rightStickIn = false;
+                leftStickIn = false;
+                TogglePause();
+            }
+        }
+        public void LeftStickPressedIn(bool held)
+        {
+            if (held)
+            {
+                leftStickIn = true;
+            }
+            else
+            {
+                leftStickIn = false;
+            }
+
+            if (rightStickIn == true)
+            {
+                rightStickIn = false;
+                leftStickIn = false;
+                TogglePause();
+            }
+        }
     }
+
+    
 }

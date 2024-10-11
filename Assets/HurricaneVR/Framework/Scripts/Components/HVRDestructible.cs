@@ -24,9 +24,16 @@ namespace HurricaneVR.Framework.Components
 
         public bool Destroyed { get; protected set; }
 
+        public GameObject destroyVFX;
+
         public virtual void Destroy()
         {
             if (Destroyed) return;
+
+            if(destroyVFX != null)
+            {
+                Instantiate(destroyVFX, this.transform.position, this.transform.rotation);
+            }
 
             if (DestroyedVersion)
             {

@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     [Header("Scan Data")]
     public ScanFXBase scanFX;
     public GameObject scanMask;
+    public GameObject playerController;
     Coroutine scanRoutine;
     bool isScanning = false;
     float currentScanTime;
@@ -399,6 +400,7 @@ public class GameManager : MonoBehaviour
             {
                 StopCoroutine(scanRoutine);
             }
+            scanMask.transform.parent = this.transform.parent;
             scanMask.transform.localScale = Vector3.zero;
             scanMask.transform.position = detachedEyePrefab.transform.position;
             scanFX.scansLeft = 0;
@@ -501,6 +503,7 @@ public class GameManager : MonoBehaviour
             {
                 isScanning = false;
                 scanRoutine = null;
+                scanMask.transform.parent = playerController.transform;
             }
 
             if (isScanning == true)
