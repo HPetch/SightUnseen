@@ -115,9 +115,9 @@ public class ControllerPrompts : MonoBehaviour
     {
         if (isVisible)
         {
-            controllerMesh.enabled = true;
+            controllerMesh.gameObject.SetActive(true);
         }
-        else controllerMesh.enabled = false;
+        else controllerMesh.gameObject.SetActive(false);
     }
 
     private void setHandActive(bool isVisible)
