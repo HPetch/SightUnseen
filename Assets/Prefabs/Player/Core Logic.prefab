@@ -5317,6 +5317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Head Centred
       objectReference: {fileID: 0}
+    - target: {fileID: 579005349100866963, guid: f4614611e11c0834e899c56825471f56, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 998517478126892250, guid: f4614611e11c0834e899c56825471f56, type: 3}
       propertyPath: m_LocalScale.x
       value: 100
@@ -6906,6 +6910,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4752216711043480134, guid: f6f2c9eccbdcfd445ab642a77fbf8e81, type: 3}
+      propertyPath: cybereyeMask.m_Bits
+      value: 4168090623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752216711043480134, guid: f6f2c9eccbdcfd445ab642a77fbf8e81, type: 3}
       propertyPath: leftDefaultMask.m_Bits
       value: 745538559
       objectReference: {fileID: 0}
@@ -7577,6 +7585,10 @@ PrefabInstance:
     - target: {fileID: 6931807070714554288, guid: 15008718e80a5ae46952117e13ec0df5, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.6181455
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409006857660517263, guid: 15008718e80a5ae46952117e13ec0df5, type: 3}
+      propertyPath: m_Layer
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 7409006857660517263, guid: 15008718e80a5ae46952117e13ec0df5, type: 3}
       propertyPath: m_IsActive
@@ -10375,6 +10387,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5561119161891152738, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: thisCam
+      value: 
+      objectReference: {fileID: 1415538041875763087}
+    - target: {fileID: 5561119161891152738, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: ghostEye
       value: 
       objectReference: {fileID: 6139799974496804500}
@@ -10402,6 +10418,10 @@ PrefabInstance:
       propertyPath: turnOnSound
       value: 
       objectReference: {fileID: 8300000, guid: 55b4210bd61da7e438c3b415245fd0f4, type: 3}
+    - target: {fileID: 5561119161891152738, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: eyeMask.m_Bits
+      value: 4168090623
+      objectReference: {fileID: 0}
     - target: {fileID: 5575189918994575240, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.100762725
@@ -10727,6 +10747,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10734,6 +10758,14 @@ PrefabInstance:
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8683409038213792303}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
@@ -10747,9 +10779,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7021884079728331238}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -10767,6 +10807,10 @@ PrefabInstance:
       value: EnterHolster
       objectReference: {fileID: 0}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Recaller, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -10777,6 +10821,10 @@ PrefabInstance:
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6611582728027493155, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -11407,6 +11455,10 @@ PrefabInstance:
       value: 0.099788085
       objectReference: {fileID: 0}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11414,6 +11466,14 @@ PrefabInstance:
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8683409038213792303}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
@@ -11427,9 +11487,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7021884079728331238}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7021884079728331238}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -11447,6 +11515,10 @@ PrefabInstance:
       value: EnterHolster
       objectReference: {fileID: 0}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Recaller, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -11457,6 +11529,10 @@ PrefabInstance:
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8302127646194075257, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       propertyPath: HoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -12473,6 +12549,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d924166925eb40e2be6e7d5a2f425dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1415538041875763087 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6415336267220525449, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+  m_PrefabInstance: {fileID: 5378100603707895302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443882717943036509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6821662263708177499, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}

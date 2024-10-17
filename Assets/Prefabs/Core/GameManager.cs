@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private GameObject RightEyepatchCanvas;
     [SerializeField] public LayerMask rightDefaultMask;
     [SerializeField] public LayerMask rightCybereyeMask;
+    [SerializeField] public LayerMask cybereyeMask;
 
     [Header("Head Polish")]
     [SerializeField] private bool IgnoreHeadPolish;
@@ -525,10 +526,10 @@ public class GameManager : MonoBehaviour
                 //We should know which eye this is affecting, and thus which culling masks to set for the current eyes
                 if (isRightEye) cam.cullingMask = rightCybereyeMask; else cam.cullingMask = leftCybereyeMask;
             }
-            if (isDouble.isOn && eyeHolder.eyeIsSpawned)
+            if (/*isDouble.isOn &&*/ eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                if (isRightEye) eyeCam.cullingMask = cybereyeMask; else eyeCam.cullingMask = cybereyeMask;
             }
             CybervisionOn = true;
         }
@@ -541,10 +542,10 @@ public class GameManager : MonoBehaviour
                 //We should know which eye this is affecting, and thus which culling masks to set for the current eyes
                 if (isRightEye) cam.cullingMask = rightDefaultMask; else cam.cullingMask = leftDefaultMask;
             }
-            if (isDouble.isOn && eyeHolder.eyeIsSpawned)
+            if (/*isDouble.isOn &&*/ eyeHolder.eyeIsSpawned)
             {
                 Camera eyeCam = detachedEyePrefab.GetComponentInChildren<Camera>();
-                //if (isRightEye) eyeCam.cullingMask = rightCybereyeMask; else eyeCam.cullingMask = leftCybereyeMask;
+                if (isRightEye) eyeCam.cullingMask = cybereyeMask; else eyeCam.cullingMask = cybereyeMask;
             }
             CybervisionOn = false;
         }
