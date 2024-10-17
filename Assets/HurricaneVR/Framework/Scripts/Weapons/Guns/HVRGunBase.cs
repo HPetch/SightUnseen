@@ -1061,6 +1061,11 @@ namespace HurricaneVR.Framework.Weapons.Guns
                 //hole.transform.parent = collision.transform;
             }
 
+            if(hit.transform.gameObject.tag == "Button")
+            {
+                hit.transform.gameObject.GetComponent<HVRPhysicsButton>().InvokeButtonDown = true;
+            }
+
             Hit.Invoke(new GunHitArgs(this, direction, hit));
         }
 

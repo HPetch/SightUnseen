@@ -16,7 +16,8 @@ public class EyeHolder : MonoBehaviour
 {
     public bool eyeIsSpawned = false;
     private GameManager gameManager;
-    private Camera thisCam;
+    public Camera thisCam;
+    public LayerMask eyeMask;
     private Rigidbody rb;
 
     private Renderer[] renderers;
@@ -100,8 +101,13 @@ public class EyeHolder : MonoBehaviour
                 watchCam.transform.DOScale(secondScale, 0.3f);
             }
             Camera eyeCam = GameManager.Instance.detachedEyePrefab.GetComponentInChildren<Camera>();
-            if (GameManager.Instance.isRightEye) eyeCam.cullingMask = GameManager.Instance.rightCybereyeMask; else eyeCam.cullingMask = GameManager.Instance.leftCybereyeMask;
-        } else
+            //if (GameManager.Instance.isRightEye) eyeCam.cullingMask = GameManager.Instance.rightCybereyeMask; else eyeCam.cullingMask = GameManager.Instance.leftCybereyeMask;
+            int headLayer = LayerMask.NameToLayer("EyeVisibleOnly");
+            thisCam.cullingMask = (1 << headLayer);
+            thisCam.cullingMask = eyeMask;
+
+        }
+        else
         {
             //If not, we want to return vision to the Right Camera
             GameManager.Instance.UpdateDetachedEyeTarget();
@@ -124,7 +130,12 @@ public class EyeHolder : MonoBehaviour
                 Vector3 firstScale = new Vector3(0, 0.013761f, 0f);
                 watchCam.transform.DOScale(firstScale, 0.3f);
             }
+
+            
+            
             GameManager.Instance.SetCybervisionState(false);
+
+            
         }
     }
 
