@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class DemoTimer : MonoBehaviour
 {
+    public bool testActivate;
     public float timerToStartup;
     public HVRCanvasFade fader;
     public float baseTimer = 600f;
@@ -18,6 +19,15 @@ public class DemoTimer : MonoBehaviour
     void Start()
     {
         canvasGroup.alpha = 0f;
+    }
+
+    private void Update()
+    {
+        if (testActivate)
+        {
+            testActivate = false;
+            StartTimer();
+        }
     }
 
     public void StartTimer()

@@ -52,6 +52,11 @@ public class EyeHolder : MonoBehaviour
     public bool isGravityReversed;
     public float eyeReverseOffset;
 
+    public Animator animator;
+    public bool canBlink;
+    public int blinkPity = 3;
+    public bool eyeAnimStopper;
+
     private void Awake()
     {
         playerController = FindObjectOfType<HVRPlayerController>();
@@ -179,6 +184,8 @@ public class EyeHolder : MonoBehaviour
                     //GameManager.Instance.ToggleCybervision();
                 }
 
+                animator.SetBool("Close", false);
+
                 audioSource.clip = turnOnSound;
                 audioSource.Play();
                 
@@ -191,6 +198,32 @@ public class EyeHolder : MonoBehaviour
                 hmdTracker.enabled = false; //Disable this so eye doesnt move about in hand
             }
             //transform.LookAt(TargetOffset());
+        }
+
+        if (canBlink)
+        {
+            canBlink = false;
+            StartCoroutine(BlinkTimer(Random.Range(3.5f, 4.2f)));
+        }
+    }
+
+    IEnumerator BlinkTimer(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        if(eyeAnimStopper == false)
+        {
+            int randomNumb = Random.Range(1, 100);
+            if (randomNumb <= blinkPity)
+            {
+                animator.Play("DoubleBlink");
+                blinkPity = 3;
+            }
+            else
+            {
+                animator.Play("Blink");
+                blinkPity += 2;
+            }
+            canBlink = true;
         }
     }
 
@@ -343,5 +376,20 @@ public class EyeHolder : MonoBehaviour
     public void BackToNormalGravity()
     {
         isGravityReversed = false;
+    }
+
+    public void EyeAnimStopper(bool canDo)
+    {
+        if (canDo)
+        {
+            eyeAnimStopper = true;
+            animator.SetBool("Close", true);
+        }
+        else
+        {
+            eyeAnimStopper = false;
+            animator.SetBool("Close", false);
+            canBlink = true;
+        }
     }
 }

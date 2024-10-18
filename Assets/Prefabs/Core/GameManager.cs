@@ -9,6 +9,7 @@ using UnityEngine.Events;
 using DG.Tweening;
 using HurricaneVR.Framework.Core.Player;
 using UnityEngine.InputSystem;
+using INab.WorldScanFX.Builtin;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,6 +69,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Scan Data")]
     public ScanFXBase scanFX;
+    public ScanFXBase leftScanner;
+    public ScanFXBase rightScanner;
     public GameObject scanMask;
     public GameObject playerController;
     Coroutine scanRoutine;
@@ -169,18 +172,31 @@ public class GameManager : MonoBehaviour
             currentCybereyes.Add(rightEye);
             currentCybereyes.Add(leftEye);
             if (isRightEye) rightEye.enabled = true; else leftEye.enabled = true;
+            //if (eyeHolder.eyeSetDown)
+            //{
+
+            //}
             detachedEyePrefab.GetComponentInChildren<Camera>().enabled = false;
             Debug.Log("1");
-            
+
         }
         else
         {
             if(forceBabyMode == false)
             {
                 glasses.SetActive(false);
-                if (eyeHolder.eyeIsSpawned)
+                if (eyeHolder.eyeSetDown)
                 {
-                    if (isRightEye) rightEye.enabled = false; else leftEye.enabled = false;
+                    if (isRightEye)
+                    {
+                        rightEye.enabled = false;
+                        leftEye.enabled = true;
+                    }
+                    else
+                    {
+                        leftEye.enabled = false;
+                        rightEye.enabled = true;
+                    }
                     detachedEyePrefab.GetComponentInChildren<Camera>().enabled = true;
                 }
                 else
@@ -213,13 +229,16 @@ public class GameManager : MonoBehaviour
     //Activates whenever the option is changed in the settings for the cybervision eye, updates it immediately
     public void eyeChoiceToggle()
     {
+        SetCybervisionState(false);
         switch (eyeChoice.value)
         {
             //0 = Right, 1 = Left eyes
             case 0:
+                currentCybereyes[0] = rightEye;
                 isRightEye = true;
                 break;
             case 1:
+                currentCybereyes[0] = leftEye;
                 isRightEye = false;
                 break;
             default:
@@ -404,17 +423,55 @@ public class GameManager : MonoBehaviour
             scanMask.transform.parent = this.transform.parent;
             scanMask.transform.localScale = Vector3.zero;
             scanMask.transform.position = detachedEyePrefab.transform.position;
-            scanFX.scansLeft = 0;
-            scanFX.timeLeft = 0f;
-            scanFX.timePassed = 0f;
+            ScanFXBase scanner;
+            if (isDouble.isOn)
+            {
+                
+                leftScanner.enabled = true;
+                leftScanner.scansLeft = 0;
+                leftScanner.timeLeft = 0f;
+                leftScanner.timePassed = 0f;
 
-            //run the scan
-            scanFX.PassScanOriginProperties();
-            scanFX.StartScan(1);
-            SetCybervisionState(true);
-            currentScanTime = 0;
+                //run the scan
+                leftScanner.PassScanOriginProperties();
+                leftScanner.StartScan(1);
+
+                //do it again for the right eye
+                rightScanner.enabled = true;
+                rightScanner.scansLeft = 0;
+                rightScanner.timeLeft = 0f;
+                rightScanner.timePassed = 0f;
+
+                //run the scan
+                rightScanner.PassScanOriginProperties();
+                rightScanner.StartScan(1);
+            }
+            else
+            {
+                if (isRightEye)
+                {
+                    scanner = rightScanner;
+                    leftScanner.enabled = false;
+                }
+                else
+                {
+                    scanner = leftScanner;
+                    rightScanner.enabled = false;
+                }
+                scanner.enabled = true;
+                scanner.scansLeft = 0;
+                scanner.timeLeft = 0f;
+                scanner.timePassed = 0f;
+
+                //run the scan
+                scanner.PassScanOriginProperties();
+                scanner.StartScan(1);
+                
+            }
             isScanning = true;
             scanRoutine = StartCoroutine(ScanMaskExpand());
+            SetCybervisionState(true);
+            currentScanTime = 0;
             PlayAudio(enableCyberVision);
         }
         else
@@ -505,6 +562,8 @@ public class GameManager : MonoBehaviour
                 isScanning = false;
                 scanRoutine = null;
                 scanMask.transform.parent = playerController.transform;
+                leftScanner.enabled = false;
+                rightScanner.enabled = false;
             }
 
             if (isScanning == true)
