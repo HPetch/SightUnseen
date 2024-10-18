@@ -10,7 +10,6 @@ using Unity.VisualScripting;
 using DG.Tweening;
 using HurricaneVR.Framework.Core.Utils;
 using HurricaneVR.Framework.Core.Grabbers;
-using static System.Security.Cryptography.ECCurve;
 
 public class EyeHolder : MonoBehaviour
 {
@@ -56,6 +55,9 @@ public class EyeHolder : MonoBehaviour
     public bool canBlink;
     public int blinkPity = 3;
     public bool eyeAnimStopper;
+    [SerializeField] private ControllerPrompts rightController;
+    [SerializeField] private TwoPointsLine recallTooltip;
+    private bool tooltipCountdownStarted = false;
 
     private void Awake()
     {
@@ -149,11 +151,21 @@ public class EyeHolder : MonoBehaviour
         Debug.Log("TEST " + test);
     }
 
+    private IEnumerator ShowTooltipAfterDelay(float time)
+    {
+        tooltipCountdownStarted = true;
+        yield return new WaitForSeconds(time);
+        rightController.ShowTooltip(recallTooltip);
+        
+    }
+
     private void Update()
     {
         //While eye is spawned, keep checking for the velocity to be 0 for multiple seconds uninterrupted, then unhide viewport.
         if (eyeIsSpawned)
         {
+            if (!tooltipCountdownStarted) StartCoroutine(ShowTooltipAfterDelay(10f));
+
             //Debug.Log(rb.velocity);
             stillMotionTimer -= Time.deltaTime; //Subtract from change in time, so once it hits 0 after X seconds
 
@@ -198,6 +210,14 @@ public class EyeHolder : MonoBehaviour
                 hmdTracker.enabled = false; //Disable this so eye doesnt move about in hand
             }
             //transform.LookAt(TargetOffset());
+        } else
+        {
+            //IF THE EYE IS NO LONGER SPAWNED, it's in the head. Unset the tooltip.
+            if (recallTooltip.gameObject.activeSelf == true)
+            {
+                rightController.HideTooltip(recallTooltip);
+                tooltipCountdownStarted = false; //Reset countdo
+            }
         }
 
         if (canBlink)
