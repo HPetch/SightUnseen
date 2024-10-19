@@ -445,6 +445,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5668570202350805135}
+  - {fileID: 5190155188350389855}
   - {fileID: 8409661059412074562}
   - {fileID: 4152907255144909316}
   - {fileID: 7746548254996771014}
@@ -1068,6 +1069,96 @@ Transform:
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
   m_PrefabInstance: {fileID: 5269343426797012836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5732409254145157556
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6421029318290327440}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ac238d90054d2b419a62d29e082a3d3, type: 2}
+    - target: {fileID: 919132149155446097, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_Name
+      value: SM_Sofa_Double Cyber
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+--- !u!4 &5190155188350389855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85b67974ff9fd794bbc5fd41ec9492b5, type: 3}
+  m_PrefabInstance: {fileID: 5732409254145157556}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &-2258093614387043130
 Mesh:
