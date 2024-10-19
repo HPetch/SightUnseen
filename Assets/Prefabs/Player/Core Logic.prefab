@@ -2111,7 +2111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8171984657617407049}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: SubtitlesToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12626,6 +12626,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2154288480993480277}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2149235434527066635, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1968726153176747873}
     - targetCorrespondingSourceObject: {fileID: 2149235436234872994, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3816723491657469026}
@@ -13444,6 +13447,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2149235434527066628, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
   m_PrefabInstance: {fileID: 5378100603707895302}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6300892380974916621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2149235434527066635, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}
+  m_PrefabInstance: {fileID: 5378100603707895302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1968726153176747873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300892380974916621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a805580cca1fc4e9cd76e8ead9b700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Respawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2268419639271224085}
+        m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
+        m_MethodName: Repawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EndDemo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 965617860811688824}
+        m_TargetAssemblyTypeName: DemoTimer, Assembly-CSharp
+        m_MethodName: EndDemo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  HotswitchCalibrateHeightToggle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7083387856157986892}
+        m_TargetAssemblyTypeName: HurricaneVR.TechDemo.Scripts.DemoUIManager, Assembly-CSharp
+        m_MethodName: CalibrateHeight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6300892381531387556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2149235436234872994, guid: ba3f93a9de13a854ab4c6bc60d8d6ea4, type: 3}

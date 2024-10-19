@@ -72,4 +72,14 @@ public class PlayerDeath : MonoBehaviour
         GameManager.Instance.teleportCol.enabled = false;
         GameManager.Instance.teleporter.enabled = false;
     }
+
+    public void Repawn()
+    {
+        //up the death counter
+        deathCounter++;
+        //fadeImage.DOFade(1, 1).OnComplete(MovePlayerToCheckpoint);
+        //start fading and set the respawn bool to true
+        fader.Fade(1, 1);
+        respawning = true;
+    }
 }

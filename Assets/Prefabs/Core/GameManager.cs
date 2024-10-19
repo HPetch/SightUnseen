@@ -264,6 +264,18 @@ public class GameManager : MonoBehaviour
         UpdateDetachedEyeTarget();
     }
 
+    public void SubtitlesToggle()
+    {
+        //if (displaySubtitles.isOn)
+        //{
+        //    displaySubtitles.isOn = false;
+        //}
+        //else
+        //{
+        //    displaySubtitles.isOn = true;
+        //}
+    }
+
     private void refreshCybereye()
     {
         //Make sure whenever cybervision is changed by setting, its disabled immediately
@@ -562,6 +574,7 @@ public class GameManager : MonoBehaviour
                 isScanning = false;
                 scanRoutine = null;
                 scanMask.transform.parent = playerController.transform;
+                scanMask.transform.position = Vector3.zero;
                 leftScanner.enabled = false;
                 rightScanner.enabled = false;
             }

@@ -1086,6 +1086,174 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Keyboard Hotkeys"",
+            ""id"": ""21cc97b3-befe-4f5b-b6da-62a6bd34db8a"",
+            ""actions"": [
+                {
+                    ""name"": ""Respawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""c186f2a3-376e-40e2-9a19-b513c17c510e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EndDemo"",
+                    ""type"": ""Button"",
+                    ""id"": ""70f081ce-8dca-434b-83d0-766b72c436ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BackToSetup"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6277f3b-f742-4cb4-a526-0ccaa6ee97b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EyeToggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""df64ce1a-4c23-4cc5-9efd-919aa1cf5676"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GlassesToggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""cda168df-af35-44b1-b533-86ed87e57629"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CalibrateHeight"",
+                    ""type"": ""Button"",
+                    ""id"": ""59934bdb-1e87-4067-a6e4-e8b1d6427233"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HandToggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad4a8238-c0ad-4483-ac2e-e4a115f8d6ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SubtitlesToggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""15a850f2-9c4a-4cbe-9f54-3dcf2103a98e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a5d51248-89d0-43be-b210-9fd97d94f6c4"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc82118d-a67b-4bd8-b35e-6c9f00341828"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EndDemo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f026539d-e81f-4c29-b72a-24e541f604a6"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackToSetup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7314a269-79a4-45aa-ad6d-93ed78ee98dd"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EyeToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""679c5d9b-f576-44e1-b7e1-f9587dadfc3f"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GlassesToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba104ab7-8339-4ad1-b42b-2697907ff77b"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CalibrateHeight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49970cb1-2064-4ec0-93e5-e88bd5b166d5"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aeb072b1-ac51-4a73-a4c1-19c17a11af5c"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SubtitlesToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1155,6 +1323,16 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
         m_UI_pointerPosition = m_UI.FindAction("pointerPosition", throwIfNotFound: true);
         m_UI_pointerRotation = m_UI.FindAction("pointerRotation", throwIfNotFound: true);
+        // Keyboard Hotkeys
+        m_KeyboardHotkeys = asset.FindActionMap("Keyboard Hotkeys", throwIfNotFound: true);
+        m_KeyboardHotkeys_Respawn = m_KeyboardHotkeys.FindAction("Respawn", throwIfNotFound: true);
+        m_KeyboardHotkeys_EndDemo = m_KeyboardHotkeys.FindAction("EndDemo", throwIfNotFound: true);
+        m_KeyboardHotkeys_BackToSetup = m_KeyboardHotkeys.FindAction("BackToSetup", throwIfNotFound: true);
+        m_KeyboardHotkeys_EyeToggle = m_KeyboardHotkeys.FindAction("EyeToggle", throwIfNotFound: true);
+        m_KeyboardHotkeys_GlassesToggle = m_KeyboardHotkeys.FindAction("GlassesToggle", throwIfNotFound: true);
+        m_KeyboardHotkeys_CalibrateHeight = m_KeyboardHotkeys.FindAction("CalibrateHeight", throwIfNotFound: true);
+        m_KeyboardHotkeys_HandToggle = m_KeyboardHotkeys.FindAction("HandToggle", throwIfNotFound: true);
+        m_KeyboardHotkeys_SubtitlesToggle = m_KeyboardHotkeys.FindAction("SubtitlesToggle", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1724,6 +1902,108 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Keyboard Hotkeys
+    private readonly InputActionMap m_KeyboardHotkeys;
+    private List<IKeyboardHotkeysActions> m_KeyboardHotkeysActionsCallbackInterfaces = new List<IKeyboardHotkeysActions>();
+    private readonly InputAction m_KeyboardHotkeys_Respawn;
+    private readonly InputAction m_KeyboardHotkeys_EndDemo;
+    private readonly InputAction m_KeyboardHotkeys_BackToSetup;
+    private readonly InputAction m_KeyboardHotkeys_EyeToggle;
+    private readonly InputAction m_KeyboardHotkeys_GlassesToggle;
+    private readonly InputAction m_KeyboardHotkeys_CalibrateHeight;
+    private readonly InputAction m_KeyboardHotkeys_HandToggle;
+    private readonly InputAction m_KeyboardHotkeys_SubtitlesToggle;
+    public struct KeyboardHotkeysActions
+    {
+        private @HVRInputActions m_Wrapper;
+        public KeyboardHotkeysActions(@HVRInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Respawn => m_Wrapper.m_KeyboardHotkeys_Respawn;
+        public InputAction @EndDemo => m_Wrapper.m_KeyboardHotkeys_EndDemo;
+        public InputAction @BackToSetup => m_Wrapper.m_KeyboardHotkeys_BackToSetup;
+        public InputAction @EyeToggle => m_Wrapper.m_KeyboardHotkeys_EyeToggle;
+        public InputAction @GlassesToggle => m_Wrapper.m_KeyboardHotkeys_GlassesToggle;
+        public InputAction @CalibrateHeight => m_Wrapper.m_KeyboardHotkeys_CalibrateHeight;
+        public InputAction @HandToggle => m_Wrapper.m_KeyboardHotkeys_HandToggle;
+        public InputAction @SubtitlesToggle => m_Wrapper.m_KeyboardHotkeys_SubtitlesToggle;
+        public InputActionMap Get() { return m_Wrapper.m_KeyboardHotkeys; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(KeyboardHotkeysActions set) { return set.Get(); }
+        public void AddCallbacks(IKeyboardHotkeysActions instance)
+        {
+            if (instance == null || m_Wrapper.m_KeyboardHotkeysActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_KeyboardHotkeysActionsCallbackInterfaces.Add(instance);
+            @Respawn.started += instance.OnRespawn;
+            @Respawn.performed += instance.OnRespawn;
+            @Respawn.canceled += instance.OnRespawn;
+            @EndDemo.started += instance.OnEndDemo;
+            @EndDemo.performed += instance.OnEndDemo;
+            @EndDemo.canceled += instance.OnEndDemo;
+            @BackToSetup.started += instance.OnBackToSetup;
+            @BackToSetup.performed += instance.OnBackToSetup;
+            @BackToSetup.canceled += instance.OnBackToSetup;
+            @EyeToggle.started += instance.OnEyeToggle;
+            @EyeToggle.performed += instance.OnEyeToggle;
+            @EyeToggle.canceled += instance.OnEyeToggle;
+            @GlassesToggle.started += instance.OnGlassesToggle;
+            @GlassesToggle.performed += instance.OnGlassesToggle;
+            @GlassesToggle.canceled += instance.OnGlassesToggle;
+            @CalibrateHeight.started += instance.OnCalibrateHeight;
+            @CalibrateHeight.performed += instance.OnCalibrateHeight;
+            @CalibrateHeight.canceled += instance.OnCalibrateHeight;
+            @HandToggle.started += instance.OnHandToggle;
+            @HandToggle.performed += instance.OnHandToggle;
+            @HandToggle.canceled += instance.OnHandToggle;
+            @SubtitlesToggle.started += instance.OnSubtitlesToggle;
+            @SubtitlesToggle.performed += instance.OnSubtitlesToggle;
+            @SubtitlesToggle.canceled += instance.OnSubtitlesToggle;
+        }
+
+        private void UnregisterCallbacks(IKeyboardHotkeysActions instance)
+        {
+            @Respawn.started -= instance.OnRespawn;
+            @Respawn.performed -= instance.OnRespawn;
+            @Respawn.canceled -= instance.OnRespawn;
+            @EndDemo.started -= instance.OnEndDemo;
+            @EndDemo.performed -= instance.OnEndDemo;
+            @EndDemo.canceled -= instance.OnEndDemo;
+            @BackToSetup.started -= instance.OnBackToSetup;
+            @BackToSetup.performed -= instance.OnBackToSetup;
+            @BackToSetup.canceled -= instance.OnBackToSetup;
+            @EyeToggle.started -= instance.OnEyeToggle;
+            @EyeToggle.performed -= instance.OnEyeToggle;
+            @EyeToggle.canceled -= instance.OnEyeToggle;
+            @GlassesToggle.started -= instance.OnGlassesToggle;
+            @GlassesToggle.performed -= instance.OnGlassesToggle;
+            @GlassesToggle.canceled -= instance.OnGlassesToggle;
+            @CalibrateHeight.started -= instance.OnCalibrateHeight;
+            @CalibrateHeight.performed -= instance.OnCalibrateHeight;
+            @CalibrateHeight.canceled -= instance.OnCalibrateHeight;
+            @HandToggle.started -= instance.OnHandToggle;
+            @HandToggle.performed -= instance.OnHandToggle;
+            @HandToggle.canceled -= instance.OnHandToggle;
+            @SubtitlesToggle.started -= instance.OnSubtitlesToggle;
+            @SubtitlesToggle.performed -= instance.OnSubtitlesToggle;
+            @SubtitlesToggle.canceled -= instance.OnSubtitlesToggle;
+        }
+
+        public void RemoveCallbacks(IKeyboardHotkeysActions instance)
+        {
+            if (m_Wrapper.m_KeyboardHotkeysActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IKeyboardHotkeysActions instance)
+        {
+            foreach (var item in m_Wrapper.m_KeyboardHotkeysActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_KeyboardHotkeysActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public KeyboardHotkeysActions @KeyboardHotkeys => new KeyboardHotkeysActions(this);
     private int m_XRUsageSchemeIndex = -1;
     public InputControlScheme XRUsageScheme
     {
@@ -1789,5 +2069,16 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         void OnClick(InputAction.CallbackContext context);
         void OnPointerPosition(InputAction.CallbackContext context);
         void OnPointerRotation(InputAction.CallbackContext context);
+    }
+    public interface IKeyboardHotkeysActions
+    {
+        void OnRespawn(InputAction.CallbackContext context);
+        void OnEndDemo(InputAction.CallbackContext context);
+        void OnBackToSetup(InputAction.CallbackContext context);
+        void OnEyeToggle(InputAction.CallbackContext context);
+        void OnGlassesToggle(InputAction.CallbackContext context);
+        void OnCalibrateHeight(InputAction.CallbackContext context);
+        void OnHandToggle(InputAction.CallbackContext context);
+        void OnSubtitlesToggle(InputAction.CallbackContext context);
     }
 }
