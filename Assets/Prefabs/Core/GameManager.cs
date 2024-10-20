@@ -574,7 +574,7 @@ public class GameManager : MonoBehaviour
                 isScanning = false;
                 scanRoutine = null;
                 scanMask.transform.parent = playerController.transform;
-                scanMask.transform.position = Vector3.zero;
+                scanMask.transform.localPosition = Vector3.zero;
                 leftScanner.enabled = false;
                 rightScanner.enabled = false;
             }
