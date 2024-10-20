@@ -839,7 +839,7 @@ MonoBehaviour:
   Cooldown: 0.06666667
   HitLayerMask:
     serializedVersion: 2
-    m_Bits: 1613758743
+    m_Bits: 1613758739
   MuzzleFlashTime: 0.2
   BarrelRange: 10
   RequiresAmmo: 1
@@ -879,6 +879,11 @@ MonoBehaviour:
   SlowMotionBulletOnly: 0
   BulletPrefab: {fileID: 7570415639619388451, guid: 416e18e376860fc499add1ebea2501b4, type: 3}
   BulletLife: 5
+  bulletHoles: []
+  spawnedBullets: []
+  bulletHolePrefab: {fileID: 0}
+  hitVFX: {fileID: 0}
+  positionMultiplier: 0
   Fired:
     m_PersistentCalls:
       m_Calls: []
