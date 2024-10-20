@@ -14,14 +14,17 @@ public class GravitySwitch : MonoBehaviour
     {
         if (other.tag == "Eyeball")
         {
-            drivingObjectGravity = true;
-            eye = other;
-            eye.attachedRigidbody.useGravity = false;
-            audioSource.clip = eyeStick;
-            audioSource.Play();
-            if (shouldReverseEyeRotation)
+            if (other.GetComponent<EyeHolder>().eyeIsSpawned)
             {
-                other.GetComponent<EyeHolder>().isGravityReversed = true;
+                drivingObjectGravity = true;
+                eye = other;
+                eye.attachedRigidbody.useGravity = false;
+                audioSource.clip = eyeStick;
+                audioSource.Play();
+                if (shouldReverseEyeRotation)
+                {
+                    other.GetComponent<EyeHolder>().isGravityReversed = true;
+                }
             }
         }
     }
@@ -30,11 +33,14 @@ public class GravitySwitch : MonoBehaviour
     {
         if (other.tag == "Eyeball")
         {
-            drivingObjectGravity = false;
-            eye.attachedRigidbody.useGravity = true;
-            if (shouldReverseEyeRotation)
+            if (other.GetComponent<EyeHolder>().eyeIsSpawned)
             {
-                other.GetComponent<EyeHolder>().isGravityReversed = false;
+                drivingObjectGravity = false;
+                eye.attachedRigidbody.useGravity = true;
+                if (shouldReverseEyeRotation)
+                {
+                    other.GetComponent<EyeHolder>().isGravityReversed = false;
+                }
             }
         }
             
@@ -42,9 +48,20 @@ public class GravitySwitch : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (drivingObjectGravity)
+        if (drivingObjectGravity && !eye.attachedRigidbody.isKinematic)
         {
             eye.attachedRigidbody.AddForce(Physics.gravity * -1.5f, ForceMode.Acceleration);
+
+            //Attempt to fix all instances of eyeball being weird on the ceiling by forcing velocity to be 0 if, when rounded, it is 0
+            Vector3 roundedVelocity = new Vector3();
+            roundedVelocity.x = Mathf.Round(eye.attachedRigidbody.velocity.x * 100) / 100;
+            roundedVelocity.y = Mathf.Round(eye.attachedRigidbody.velocity.y * 100) / 100;
+            roundedVelocity.z = Mathf.Round(eye.attachedRigidbody.velocity.z * 100) / 100;
+
+            if (roundedVelocity == Vector3.zero)
+            {
+                eye.attachedRigidbody.velocity = Vector3.zero;
+            }
         }
     }
 }
