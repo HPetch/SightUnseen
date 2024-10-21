@@ -14,7 +14,7 @@ public class StartupCoruitine : MonoBehaviour
 
     IEnumerator AliveMe()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(2f);
         col.enabled = true;
     }
 }

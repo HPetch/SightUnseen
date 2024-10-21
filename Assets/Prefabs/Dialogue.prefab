@@ -220,6 +220,141 @@ MonoBehaviour:
   isEyeStopCheck: 0
   col: {fileID: 823706586887094846}
   playerEye: {fileID: 0}
+--- !u!1 &893234613745608748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298515303181104023}
+  - component: {fileID: 8216770625003811261}
+  - component: {fileID: 6380605039112912631}
+  - component: {fileID: 7243419600113951755}
+  m_Layer: 0
+  m_Name: OH NO GONNA DIE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1298515303181104023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893234613745608748}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.13383007, y: -1.0303416, z: 0.8417187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1567943360949376355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8216770625003811261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893234613745608748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedDialogue: {fileID: 0}
+  isWalkableTrigger: 1
+  onlyTriggerableInCyberVision: 0
+  dialogue:
+  - dialogueText: Oh no. I think that was the emergency alarm instead of the lightswitch.
+    audio: {fileID: 8300000, guid: 564632ab9926aa541b1aacbdd94bac9f, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 0
+    myEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 074c8ada04098f849b834f9cca39f9d3, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  - dialogueText: "Let\u2019s get out of here as quickly as possible."
+    audio: {fileID: 8300000, guid: 4043b0353dae14546a9da8a2c7aa7baf, type: 3}
+    waitTimer: 2
+    isNotInteruptable: 0
+    isLastInSequence: 1
+    myEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 066f2ff277b2b3140a65adfc394d5dd4, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isGlassesDialogue: 0
+    isNormalModeDialogue: 0
+  TimerDialogue: []
+  subtitles: []
+  newClipPlaying: 0
+  currentClipID: 0
+  playedFirstClip: 0
+  interupted: 0
+  repeatable: 0
+  inExtraDialogue: 0
+--- !u!65 &6380605039112912631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893234613745608748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 5.8922653, y: 3.1374366, z: 8.165038}
+  m_Center: {x: 1.4199829, y: 1.0687183, z: 0.2735238}
+--- !u!114 &7243419600113951755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893234613745608748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e39e2fb4fa39d489d217966fa29f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1819736834919464729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1164,7 @@ Transform:
   m_Children:
   - {fileID: 5732952515357095855}
   - {fileID: 3310698924276400182}
+  - {fileID: 1298515303181104023}
   m_Father: {fileID: 9004986749353645234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8835947235270423610
