@@ -63,5 +63,11 @@ public class GravitySwitch : MonoBehaviour
                 eye.attachedRigidbody.velocity = Vector3.zero;
             }
         }
+
+        //Ensure values are reset if recalling the eye causes OnTriggerExit to not trigger.
+        if (eye.attachedRigidbody.isKinematic && drivingObjectGravity == true)
+        {
+            drivingObjectGravity = false;
+        }
     }
 }
