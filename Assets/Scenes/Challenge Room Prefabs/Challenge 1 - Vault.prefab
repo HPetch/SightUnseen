@@ -12353,10 +12353,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1930527666923200082}
     - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
-      propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 6212031100811502981}
-    - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 6937008476377595781}
@@ -12430,7 +12426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayFirstAudioClip
+      value: Activate
       objectReference: {fileID: 0}
     - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -12482,7 +12478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueTrigger, Assembly-CSharp
+      value: StartupCoruitine, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5204149710890219030, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
       propertyPath: ButtonDown.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -17400,17 +17396,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8221256460871327646, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
   m_PrefabInstance: {fileID: 4171126903287488896}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6212031100811502981 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8058981037873218565, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
-  m_PrefabInstance: {fileID: 4171126903287488896}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac85a920edb4d349bbfde0495f0e9ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &6283257829330549452 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7984966136053029708, guid: bb34ac23e5a2b0c48b5be7d40d712644, type: 3}
