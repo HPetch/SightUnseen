@@ -26,6 +26,8 @@ namespace HurricaneVR.Framework.Components
 
         public GameObject destroyVFX;
 
+        public AudioSource source;
+
         public virtual void Destroy()
         {
             if (Destroyed) return;
@@ -33,6 +35,11 @@ namespace HurricaneVR.Framework.Components
             if(destroyVFX != null)
             {
                 Instantiate(destroyVFX, this.transform.position, this.transform.rotation);
+            }
+
+            if (source)
+            {
+                source.Play();
             }
 
             if (DestroyedVersion)
