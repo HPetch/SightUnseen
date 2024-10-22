@@ -1162,13 +1162,22 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetupBabyMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""043d737b-cf0a-46ca-ba75-76addc70569c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""a5d51248-89d0-43be-b210-9fd97d94f6c4"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1179,7 +1188,7 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fc82118d-a67b-4bd8-b35e-6c9f00341828"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1190,7 +1199,7 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f026539d-e81f-4c29-b72a-24e541f604a6"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1211,8 +1220,30 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""184a28e6-ed0c-4919-8fa8-90912b584186"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EyeToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""679c5d9b-f576-44e1-b7e1-f9587dadfc3f"",
                     ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GlassesToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec5bf567-cd13-4bc8-a7b7-f53680960ea2"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1233,8 +1264,30 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""381a72bf-1a03-4cc3-8ece-aea2c44b7e1f"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CalibrateHeight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""49970cb1-2064-4ec0-93e5-e88bd5b166d5"",
                     ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20e92c56-838c-45de-93c3-1c3938b6b458"",
+                    ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1250,6 +1303,28 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SubtitlesToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22c4f5e5-a95b-4373-9add-110568bb9a85"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetupBabyMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dee6e322-97c5-4107-b311-5fb027e771d6"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetupBabyMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1333,6 +1408,7 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         m_KeyboardHotkeys_CalibrateHeight = m_KeyboardHotkeys.FindAction("CalibrateHeight", throwIfNotFound: true);
         m_KeyboardHotkeys_HandToggle = m_KeyboardHotkeys.FindAction("HandToggle", throwIfNotFound: true);
         m_KeyboardHotkeys_SubtitlesToggle = m_KeyboardHotkeys.FindAction("SubtitlesToggle", throwIfNotFound: true);
+        m_KeyboardHotkeys_SetupBabyMode = m_KeyboardHotkeys.FindAction("SetupBabyMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1914,6 +1990,7 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardHotkeys_CalibrateHeight;
     private readonly InputAction m_KeyboardHotkeys_HandToggle;
     private readonly InputAction m_KeyboardHotkeys_SubtitlesToggle;
+    private readonly InputAction m_KeyboardHotkeys_SetupBabyMode;
     public struct KeyboardHotkeysActions
     {
         private @HVRInputActions m_Wrapper;
@@ -1926,6 +2003,7 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         public InputAction @CalibrateHeight => m_Wrapper.m_KeyboardHotkeys_CalibrateHeight;
         public InputAction @HandToggle => m_Wrapper.m_KeyboardHotkeys_HandToggle;
         public InputAction @SubtitlesToggle => m_Wrapper.m_KeyboardHotkeys_SubtitlesToggle;
+        public InputAction @SetupBabyMode => m_Wrapper.m_KeyboardHotkeys_SetupBabyMode;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardHotkeys; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1959,6 +2037,9 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
             @SubtitlesToggle.started += instance.OnSubtitlesToggle;
             @SubtitlesToggle.performed += instance.OnSubtitlesToggle;
             @SubtitlesToggle.canceled += instance.OnSubtitlesToggle;
+            @SetupBabyMode.started += instance.OnSetupBabyMode;
+            @SetupBabyMode.performed += instance.OnSetupBabyMode;
+            @SetupBabyMode.canceled += instance.OnSetupBabyMode;
         }
 
         private void UnregisterCallbacks(IKeyboardHotkeysActions instance)
@@ -1987,6 +2068,9 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
             @SubtitlesToggle.started -= instance.OnSubtitlesToggle;
             @SubtitlesToggle.performed -= instance.OnSubtitlesToggle;
             @SubtitlesToggle.canceled -= instance.OnSubtitlesToggle;
+            @SetupBabyMode.started -= instance.OnSetupBabyMode;
+            @SetupBabyMode.performed -= instance.OnSetupBabyMode;
+            @SetupBabyMode.canceled -= instance.OnSetupBabyMode;
         }
 
         public void RemoveCallbacks(IKeyboardHotkeysActions instance)
@@ -2080,5 +2164,6 @@ public partial class @HVRInputActions: IInputActionCollection2, IDisposable
         void OnCalibrateHeight(InputAction.CallbackContext context);
         void OnHandToggle(InputAction.CallbackContext context);
         void OnSubtitlesToggle(InputAction.CallbackContext context);
+        void OnSetupBabyMode(InputAction.CallbackContext context);
     }
 }

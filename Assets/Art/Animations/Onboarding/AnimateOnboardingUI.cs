@@ -19,7 +19,7 @@ public class AnimateOnboardingUI : MonoBehaviour
     
     [SerializeField] private Ease showEaseType;
     [SerializeField] private Ease hideEaseType;
-    [SerializeField] private GameObject nextSlide;
+    [SerializeField] public GameObject nextSlide;
     
     private void Awake()
     {

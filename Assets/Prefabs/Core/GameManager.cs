@@ -133,16 +133,18 @@ public class GameManager : MonoBehaviour
         eyepatchCanvas = detachedEyePrefab.GetComponentInChildren<Canvas>();
         eyeHolder = detachedEyePrefab.GetComponent<EyeHolder>();
 
+        if (isInSetup == false)
+        {
+            ApplyStartupSettings();
+        }
+
         if (forceBabyMode)
         {
             isDouble.isOn = true;
             ToggleDoubleCybereyes();
         }
 
-        if(isInSetup == false)
-        {
-            ApplyStartupSettings();
-        }
+        
 
         if (!isDouble.isOn)
         {
@@ -787,6 +789,11 @@ public class GameManager : MonoBehaviour
     }
     void ApplyStartupSettings()
     {
+        if (settings.babyMode)
+        {
+            forceBabyMode = true;
+        }
+
         if (settings.rightEye)
         {
             eyeChoice.value = 0;

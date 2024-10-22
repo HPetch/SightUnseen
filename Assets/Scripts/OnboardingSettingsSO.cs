@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Settings")]
 public class OnboardingSettingsSO : ScriptableObject
 {
+    public bool babyMode;
     public bool rightHanded;
     public bool rightEye;
     public bool glassesOn;
