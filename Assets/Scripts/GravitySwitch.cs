@@ -48,26 +48,29 @@ public class GravitySwitch : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (drivingObjectGravity && !eye.attachedRigidbody.isKinematic)
+        if (eye != null)
         {
-            eye.attachedRigidbody.AddForce(Physics.gravity * -1.5f, ForceMode.Acceleration);
-
-            //Attempt to fix all instances of eyeball being weird on the ceiling by forcing velocity to be 0 if, when rounded, it is 0
-            Vector3 roundedVelocity = new Vector3();
-            roundedVelocity.x = Mathf.Round(eye.attachedRigidbody.velocity.x * 100) / 100;
-            roundedVelocity.y = Mathf.Round(eye.attachedRigidbody.velocity.y * 100) / 100;
-            roundedVelocity.z = Mathf.Round(eye.attachedRigidbody.velocity.z * 100) / 100;
-
-            if (roundedVelocity == Vector3.zero)
+            if (drivingObjectGravity && !eye.attachedRigidbody.isKinematic)
             {
-                eye.attachedRigidbody.velocity = Vector3.zero;
-            }
-        }
+                eye.attachedRigidbody.AddForce(Physics.gravity * -1.5f, ForceMode.Acceleration);
 
-        //Ensure values are reset if recalling the eye causes OnTriggerExit to not trigger.
-        if (eye.attachedRigidbody.isKinematic && drivingObjectGravity == true)
-        {
-            drivingObjectGravity = false;
+                //Attempt to fix all instances of eyeball being weird on the ceiling by forcing velocity to be 0 if, when rounded, it is 0
+                Vector3 roundedVelocity = new Vector3();
+                roundedVelocity.x = Mathf.Round(eye.attachedRigidbody.velocity.x * 100) / 100;
+                roundedVelocity.y = Mathf.Round(eye.attachedRigidbody.velocity.y * 100) / 100;
+                roundedVelocity.z = Mathf.Round(eye.attachedRigidbody.velocity.z * 100) / 100;
+
+                if (roundedVelocity == Vector3.zero)
+                {
+                    eye.attachedRigidbody.velocity = Vector3.zero;
+                }
+            }
+
+            //Ensure values are reset if recalling the eye causes OnTriggerExit to not trigger.
+            if (eye.attachedRigidbody.isKinematic && drivingObjectGravity == true)
+            {
+                drivingObjectGravity = false;
+            }
         }
     }
 }

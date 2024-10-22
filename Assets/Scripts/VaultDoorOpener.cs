@@ -68,6 +68,19 @@ public class VaultDoorOpener : MonoBehaviour
                 audioSource2.Play();
             }
 
+        } else if (currentAngle > (angleGoal * 3))
+        {
+            grabbable.ForceRelease();
+            grabbable.enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            wheelCollider.enabled = false;
+
+            animator.SetBool("unlocked", true); //Animate the door opening
+            isDone = true;
+
+            onComplete.Invoke(); //Invoke anything that would happen once completed (e.g. dialogue lines)
+            audioSource2.clip = openClip;
+            audioSource2.Play();
         }
     }
 
