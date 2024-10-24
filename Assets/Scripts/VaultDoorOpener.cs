@@ -52,10 +52,10 @@ public class VaultDoorOpener : MonoBehaviour
 
 
             //Wait for player to release grip on this angle
-            if (!grabbable.IsHandGrabbed)
-            {
+            //if (!grabbable.IsHandGrabbed)
+            //{
                 //Force the player to no longer hold the wheel and turn it off, to prevent any bugs with animation.
-                //grabbable.ForceRelease();
+                grabbable.ForceRelease();
                 grabbable.enabled = false;
                 GetComponent<Rigidbody>().isKinematic = true;
                 wheelCollider.enabled = false;
@@ -66,21 +66,8 @@ public class VaultDoorOpener : MonoBehaviour
                 onComplete.Invoke(); //Invoke anything that would happen once completed (e.g. dialogue lines)
                 audioSource2.clip = openClip;
                 audioSource2.Play();
-            }
+            //}
 
-        } else if (currentAngle > (angleGoal * 3))
-        {
-            grabbable.ForceRelease();
-            grabbable.enabled = false;
-            GetComponent<Rigidbody>().isKinematic = true;
-            wheelCollider.enabled = false;
-
-            animator.SetBool("unlocked", true); //Animate the door opening
-            isDone = true;
-
-            onComplete.Invoke(); //Invoke anything that would happen once completed (e.g. dialogue lines)
-            audioSource2.clip = openClip;
-            audioSource2.Play();
         }
     }
 
